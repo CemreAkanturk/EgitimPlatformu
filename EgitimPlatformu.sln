@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgitimPlatformu", "EgitimPlatformu\EgitimPlatformu.csproj", "{8121AE69-4611-40C7-ABD7-AF1693183874}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8121AE69-4611-40C7-ABD7-AF1693183874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8121AE69-4611-40C7-ABD7-AF1693183874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8121AE69-4611-40C7-ABD7-AF1693183874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8121AE69-4611-40C7-ABD7-AF1693183874}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67EA3AAF-1DB2-4FE5-8FF1-152BAE512FBD}
+	EndGlobalSection
+EndGlobal
