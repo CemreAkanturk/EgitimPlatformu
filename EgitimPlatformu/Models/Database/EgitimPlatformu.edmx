@@ -1,0 +1,2028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EgitimPlatformModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetPermissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PermissionAdi" Type="nvarchar" MaxLength="55" Nullable="false" />
+          <Property Name="icerik" Type="nvarchar" MaxLength="500" />
+          <Property Name="FKPermissionKategori" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRolePermissions">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LastLoginTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Bolum">
+          <Key>
+            <PropertyRef Name="BolumId" />
+          </Key>
+          <Property Name="BolumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolumAdi" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="FKFirmaId" Type="int" Nullable="false" />
+          <Property Name="BolumKodu" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="BolumAcıklama" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoktanSecmeliSorular">
+          <Key>
+            <PropertyRef Name="CoktanSecmeliSorularId" />
+          </Key>
+          <Property Name="CoktanSecmeliSorularId" Type="int" Nullable="false" />
+          <Property Name="Secenek1" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Secenek2" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Secenek3" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Secenek4" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Cevap" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dersler">
+          <Key>
+            <PropertyRef Name="DersId" />
+          </Key>
+          <Property Name="DersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKKategoriId" Type="int" Nullable="false" />
+          <Property Name="DersAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DersKodu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="EgitimTuru" Type="int" Nullable="false" />
+          <Property Name="FKEgitmenId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DogruYanlisSorular">
+          <Key>
+            <PropertyRef Name="DogruYanlisSorularId" />
+          </Key>
+          <Property Name="DogruYanlisSorularId" Type="int" Nullable="false" />
+          <Property Name="DogruSecenek" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EgitimSeans">
+          <Key>
+            <PropertyRef Name="EgitimSeansId" />
+          </Key>
+          <Property Name="EgitimSeansId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DersId" Type="int" Nullable="false" />
+          <Property Name="Katilimcilar" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="FKEgitmenId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HedefTarihi" Type="datetime" Nullable="false" />
+          <Property Name="BitisTarihi" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Egitmen">
+          <Key>
+            <PropertyRef Name="EgitmenId" />
+          </Key>
+          <Property Name="EgitmenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="DogumTarih" Type="datetime" Nullable="false" />
+          <Property Name="Resim" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DerslerId" Type="int" Nullable="false" />
+          <Property Name="IlId" Type="int" Nullable="false" />
+          <Property Name="UzmanlikAlani" Type="nvarchar(max)" />
+          <Property Name="EgitmenAciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Firma">
+          <Key>
+            <PropertyRef Name="FirmaId" />
+          </Key>
+          <Property Name="FirmaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirmaAdi" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Adres" Type="varchar(max)" />
+          <Property Name="PostaKodu" Type="varchar" MaxLength="50" />
+          <Property Name="IlId" Type="int" Nullable="false" />
+          <Property Name="Tel" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Cep" Type="varchar" MaxLength="20" />
+          <Property Name="Faks" Type="varchar" MaxLength="255" />
+          <Property Name="Mail" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FirmaImagePath" Type="varchar(max)" />
+          <Property Name="FirmaKodu" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FirmaBankaBilgileri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKFirma" Type="int" Nullable="false" />
+          <Property Name="BankaAdi" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HesapNumarasi" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Il">
+          <Key>
+            <PropertyRef Name="IlId" />
+          </Key>
+          <Property Name="IlId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IlAdi" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kategoriler">
+          <Key>
+            <PropertyRef Name="KategoriId" />
+          </Key>
+          <Property Name="KategoriId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Bolum" Type="int" Nullable="false" />
+          <Property Name="KategoriAdi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KategoriKodu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kisi">
+          <Key>
+            <PropertyRef Name="KisiId" />
+          </Key>
+          <Property Name="KisiId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="KisiKimlikNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KisiAdi" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="KisiSoyadi" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="KisiDogumTarihi" Type="date" Nullable="false" />
+          <Property Name="KisiCinsiyet" Type="int" />
+          <Property Name="KisiEgitimSeviyesi" Type="varchar" MaxLength="50" />
+          <Property Name="IlId" Type="int" Nullable="false" />
+          <Property Name="FKFirma" Type="int" Nullable="false" />
+          <Property Name="KisiImagePath" Type="varchar(max)" />
+          <Property Name="EhliyetSinifi" Type="int" />
+          <Property Name="EngelDurumu" Type="varchar" MaxLength="50" />
+          <Property Name="TelefonNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BolumId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KisiSeans">
+          <Key>
+            <PropertyRef Name="KisiSeansId" />
+          </Key>
+          <Property Name="KisiSeansId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KisiId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="EgitimSeansid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modul">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OnlineDers">
+          <Key>
+            <PropertyRef Name="OnlineId" />
+          </Key>
+          <Property Name="OnlineId" Type="int" Nullable="false" />
+          <Property Name="OgrenimHedefleri" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Sure" Type="int" Nullable="false" />
+          <Property Name="OrtamGereklilikleri" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Medya" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="BasarimOlcutleri" Type="int" />
+        </EntityType>
+        <EntityType Name="OnlineIcerik">
+          <Key>
+            <PropertyRef Name="OnlineIcerikId" />
+          </Key>
+          <Property Name="OnlineIcerikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OnlineId" Type="int" Nullable="false" />
+          <Property Name="SoruSayisi" Type="int" Nullable="false" />
+          <Property Name="CevapTipi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BasarimOlcutu" Type="int" />
+        </EntityType>
+        <EntityType Name="PermissionKategori">
+          <Key>
+            <PropertyRef Name="PermissionKategoriId" />
+          </Key>
+          <Property Name="PermissionKategoriId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PermissionKategoriAdi" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FkModul" Type="int" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SinifIciDers">
+          <Key>
+            <PropertyRef Name="SinifIciId" />
+          </Key>
+          <Property Name="SinifIciId" Type="int" Nullable="false" />
+          <Property Name="EgitimSorumlusu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="HedefKitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Seans" Type="int" Nullable="false" />
+          <Property Name="SeansPeriyodu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SinifIciIcerik">
+          <Key>
+            <PropertyRef Name="SinifIciIcerikId" />
+          </Key>
+          <Property Name="SinifIciIcerikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SinifIciId" Type="int" Nullable="false" />
+          <Property Name="OgrenimHedefleri" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Sure" Type="int" Nullable="false" />
+          <Property Name="OrtamGereklilikleri" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="EgitmenMedya" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sorular">
+          <Key>
+            <PropertyRef Name="SoruId" />
+          </Key>
+          <Property Name="SoruId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OnlineIcerikId" Type="int" Nullable="false" />
+          <Property Name="Sorular1" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori">
+          <End Role="PermissionKategori" Type="Self.PermissionKategori" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetPermissions" Type="Self.AspNetPermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermissionKategori">
+              <PropertyRef Name="PermissionKategoriId" />
+            </Principal>
+            <Dependent Role="AspNetPermissions">
+              <PropertyRef Name="FKPermissionKategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetRolePermissions_dbo_AspNetPermissions_PermissionId">
+          <End Role="AspNetPermissions" Type="Self.AspNetPermissions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRolePermissions" Type="Self.AspNetRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetPermissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRolePermissions">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetRolePermissions_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRolePermissions" Type="Self.AspNetRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRolePermissions">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Bolum_dbo_Firma_FKFirmaId">
+          <End Role="Firma" Type="Self.Firma" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="FirmaId" />
+            </Principal>
+            <Dependent Role="Bolum">
+              <PropertyRef Name="FKFirmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId">
+          <End Role="Sorular" Type="Self.Sorular" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CoktanSecmeliSorular" Type="Self.CoktanSecmeliSorular" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sorular">
+              <PropertyRef Name="SoruId" />
+            </Principal>
+            <Dependent Role="CoktanSecmeliSorular">
+              <PropertyRef Name="CoktanSecmeliSorularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Derslers_dbo_Kategorilers_KategoriId">
+          <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategoriler">
+              <PropertyRef Name="KategoriId" />
+            </Principal>
+            <Dependent Role="Dersler">
+              <PropertyRef Name="FKKategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId">
+          <End Role="Sorular" Type="Self.Sorular" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DogruYanlisSorular" Type="Self.DogruYanlisSorular" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sorular">
+              <PropertyRef Name="SoruId" />
+            </Principal>
+            <Dependent Role="DogruYanlisSorular">
+              <PropertyRef Name="DogruYanlisSorularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_EgitimSeans_dbo_Derslers_DersId">
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EgitimSeans" Type="Self.EgitimSeans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="EgitimSeans">
+              <PropertyRef Name="DersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma">
+          <End Role="Firma" Type="Self.Firma" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FirmaBankaBilgileri" Type="Self.FirmaBankaBilgileri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="FirmaId" />
+            </Principal>
+            <Dependent Role="FirmaBankaBilgileri">
+              <PropertyRef Name="FKFirma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Kisi_dbo_AspNetUsers_KisiId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="KisiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Kisi_dbo_Firma_FKFirma">
+          <End Role="Firma" Type="Self.Firma" Multiplicity="1" />
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="FirmaId" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="FKFirma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId">
+          <End Role="OnlineDers" Type="Self.OnlineDers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OnlineIcerik" Type="Self.OnlineIcerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OnlineDers">
+              <PropertyRef Name="OnlineId" />
+            </Principal>
+            <Dependent Role="OnlineIcerik">
+              <PropertyRef Name="OnlineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Onlines_dbo_Derslers_OnlineId">
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OnlineDers" Type="Self.OnlineDers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Dersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="OnlineDers">
+              <PropertyRef Name="OnlineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionKategori_dbo_Modul_FkModul">
+          <End Role="Modul" Type="Self.Modul" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PermissionKategori" Type="Self.PermissionKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modul">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="PermissionKategori">
+              <PropertyRef Name="FkModul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId">
+          <End Role="SinifIciDers" Type="Self.SinifIciDers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SinifIciIcerik" Type="Self.SinifIciIcerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SinifIciDers">
+              <PropertyRef Name="SinifIciId" />
+            </Principal>
+            <Dependent Role="SinifIciIcerik">
+              <PropertyRef Name="SinifIciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SinifIcis_dbo_Derslers_SinifIciId">
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SinifIciDers" Type="Self.SinifIciDers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Dersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="SinifIciDers">
+              <PropertyRef Name="SinifIciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId">
+          <End Role="OnlineIcerik" Type="Self.OnlineIcerik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sorular" Type="Self.Sorular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OnlineIcerik">
+              <PropertyRef Name="OnlineIcerikId" />
+            </Principal>
+            <Dependent Role="Sorular">
+              <PropertyRef Name="OnlineIcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Derslers_Egitmen">
+          <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egitmen">
+              <PropertyRef Name="EgitmenId" />
+            </Principal>
+            <Dependent Role="Dersler">
+              <PropertyRef Name="FKEgitmenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Firma_Il">
+          <End Role="Il" Type="Self.Il" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Firma" Type="Self.Firma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Il">
+              <PropertyRef Name="IlId" />
+            </Principal>
+            <Dependent Role="Firma">
+              <PropertyRef Name="IlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kisi_Bolum">
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolum">
+              <PropertyRef Name="BolumId" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="BolumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kisi_Il">
+          <End Role="Il" Type="Self.Il" Multiplicity="1" />
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Il">
+              <PropertyRef Name="IlId" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="IlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KisiSeans_EgitimSeans">
+          <End Role="EgitimSeans" Type="Self.EgitimSeans" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KisiSeans" Type="Self.KisiSeans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimSeans">
+              <PropertyRef Name="EgitimSeansId" />
+            </Principal>
+            <Dependent Role="KisiSeans">
+              <PropertyRef Name="EgitimSeansid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KisiSeans_Kisi">
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KisiSeans" Type="Self.KisiSeans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kisi">
+              <PropertyRef Name="KisiId" />
+            </Principal>
+            <Dependent Role="KisiSeans">
+              <PropertyRef Name="KisiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="EgitimPlatformModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetPermissions" EntityType="Self.AspNetPermissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRolePermissions" EntityType="Self.AspNetRolePermissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bolum" EntityType="Self.Bolum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoktanSecmeliSorular" EntityType="Self.CoktanSecmeliSorular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dersler" EntityType="Self.Dersler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DogruYanlisSorular" EntityType="Self.DogruYanlisSorular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EgitimSeans" EntityType="Self.EgitimSeans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Egitmen" EntityType="Self.Egitmen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Firma" EntityType="Self.Firma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirmaBankaBilgileri" EntityType="Self.FirmaBankaBilgileri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Il" EntityType="Self.Il" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kisi" EntityType="Self.Kisi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KisiSeans" EntityType="Self.KisiSeans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modul" EntityType="Self.Modul" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OnlineDers" EntityType="Self.OnlineDers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OnlineIcerik" EntityType="Self.OnlineIcerik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermissionKategori" EntityType="Self.PermissionKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinifIciDers" EntityType="Self.SinifIciDers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinifIciIcerik" EntityType="Self.SinifIciIcerik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sorular" EntityType="Self.Sorular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori" Association="Self.FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori">
+            <End Role="PermissionKategori" EntitySet="PermissionKategori" />
+            <End Role="AspNetPermissions" EntitySet="AspNetPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetRolePermissions_dbo_AspNetPermissions_PermissionId" Association="Self.FK_dbo_AspNetRolePermissions_dbo_AspNetPermissions_PermissionId">
+            <End Role="AspNetPermissions" EntitySet="AspNetPermissions" />
+            <End Role="AspNetRolePermissions" EntitySet="AspNetRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetRolePermissions_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetRolePermissions_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRolePermissions" EntitySet="AspNetRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Bolum_dbo_Firma_FKFirmaId" Association="Self.FK_dbo_Bolum_dbo_Firma_FKFirmaId">
+            <End Role="Firma" EntitySet="Firma" />
+            <End Role="Bolum" EntitySet="Bolum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId" Association="Self.FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId">
+            <End Role="Sorular" EntitySet="Sorular" />
+            <End Role="CoktanSecmeliSorular" EntitySet="CoktanSecmeliSorular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Derslers_dbo_Kategorilers_KategoriId" Association="Self.FK_dbo_Derslers_dbo_Kategorilers_KategoriId">
+            <End Role="Kategoriler" EntitySet="Kategoriler" />
+            <End Role="Dersler" EntitySet="Dersler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId" Association="Self.FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId">
+            <End Role="Sorular" EntitySet="Sorular" />
+            <End Role="DogruYanlisSorular" EntitySet="DogruYanlisSorular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_EgitimSeans_dbo_Derslers_DersId" Association="Self.FK_dbo_EgitimSeans_dbo_Derslers_DersId">
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="EgitimSeans" EntitySet="EgitimSeans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma" Association="Self.FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma">
+            <End Role="Firma" EntitySet="Firma" />
+            <End Role="FirmaBankaBilgileri" EntitySet="FirmaBankaBilgileri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Kisi_dbo_AspNetUsers_KisiId" Association="Self.FK_dbo_Kisi_dbo_AspNetUsers_KisiId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Kisi_dbo_Firma_FKFirma" Association="Self.FK_dbo_Kisi_dbo_Firma_FKFirma">
+            <End Role="Firma" EntitySet="Firma" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId" Association="Self.FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId">
+            <End Role="OnlineDers" EntitySet="OnlineDers" />
+            <End Role="OnlineIcerik" EntitySet="OnlineIcerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Onlines_dbo_Derslers_OnlineId" Association="Self.FK_dbo_Onlines_dbo_Derslers_OnlineId">
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="OnlineDers" EntitySet="OnlineDers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionKategori_dbo_Modul_FkModul" Association="Self.FK_dbo_PermissionKategori_dbo_Modul_FkModul">
+            <End Role="Modul" EntitySet="Modul" />
+            <End Role="PermissionKategori" EntitySet="PermissionKategori" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId" Association="Self.FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId">
+            <End Role="SinifIciDers" EntitySet="SinifIciDers" />
+            <End Role="SinifIciIcerik" EntitySet="SinifIciIcerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SinifIcis_dbo_Derslers_SinifIciId" Association="Self.FK_dbo_SinifIcis_dbo_Derslers_SinifIciId">
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="SinifIciDers" EntitySet="SinifIciDers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId" Association="Self.FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId">
+            <End Role="OnlineIcerik" EntitySet="OnlineIcerik" />
+            <End Role="Sorular" EntitySet="Sorular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Derslers_Egitmen" Association="Self.FK_Derslers_Egitmen">
+            <End Role="Egitmen" EntitySet="Egitmen" />
+            <End Role="Dersler" EntitySet="Dersler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Firma_Il" Association="Self.FK_Firma_Il">
+            <End Role="Il" EntitySet="Il" />
+            <End Role="Firma" EntitySet="Firma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kisi_Bolum" Association="Self.FK_Kisi_Bolum">
+            <End Role="Bolum" EntitySet="Bolum" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kisi_Il" Association="Self.FK_Kisi_Il">
+            <End Role="Il" EntitySet="Il" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KisiSeans_EgitimSeans" Association="Self.FK_KisiSeans_EgitimSeans">
+            <End Role="EgitimSeans" EntitySet="EgitimSeans" />
+            <End Role="KisiSeans" EntitySet="KisiSeans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KisiSeans_Kisi" Association="Self.FK_KisiSeans_Kisi">
+            <End Role="Kisi" EntitySet="Kisi" />
+            <End Role="KisiSeans" EntitySet="KisiSeans" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EgitimPlatformModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetPermissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PermissionAdi" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="icerik" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FKPermissionKategori" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PermissionKategori" Relationship="Self.FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori" FromRole="AspNetPermissions" ToRole="PermissionKategori" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetRolePermissions" FromRole="AspNetPermissions" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetPermissions" Relationship="Self.AspNetRolePermissions" FromRole="AspNetRoles" ToRole="AspNetPermissions" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="Kisi" Relationship="Self.FK_dbo_Kisi_dbo_AspNetUsers_KisiId" FromRole="AspNetUsers" ToRole="Kisi" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Bolum">
+          <Key>
+            <PropertyRef Name="BolumId" />
+          </Key>
+          <Property Name="BolumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolumAdi" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FKFirmaId" Type="Int32" Nullable="false" />
+          <Property Name="BolumKodu" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BolumAcıklama" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Firma" Relationship="Self.FK_dbo_Bolum_dbo_Firma_FKFirmaId" FromRole="Bolum" ToRole="Firma" />
+          <NavigationProperty Name="Kisi" Relationship="Self.FK_Kisi_Bolum" FromRole="Bolum" ToRole="Kisi" />
+        </EntityType>
+        <EntityType Name="CoktanSecmeliSorular">
+          <Key>
+            <PropertyRef Name="CoktanSecmeliSorularId" />
+          </Key>
+          <Property Name="CoktanSecmeliSorularId" Type="Int32" Nullable="false" />
+          <Property Name="Secenek1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Secenek2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Secenek3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Secenek4" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cevap" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sorular" Relationship="Self.FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId" FromRole="CoktanSecmeliSorular" ToRole="Sorular" />
+        </EntityType>
+        <EntityType Name="Dersler">
+          <Key>
+            <PropertyRef Name="DersId" />
+          </Key>
+          <Property Name="DersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKKategoriId" Type="Int32" Nullable="false" />
+          <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DersKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EgitimTuru" Type="Int32" Nullable="false" />
+          <Property Name="FKEgitmenId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kategoriler" Relationship="Self.FK_dbo_Derslers_dbo_Kategorilers_KategoriId" FromRole="Dersler" ToRole="Kategoriler" />
+          <NavigationProperty Name="EgitimSeans" Relationship="Self.FK_dbo_EgitimSeans_dbo_Derslers_DersId" FromRole="Dersler" ToRole="EgitimSeans" />
+          <NavigationProperty Name="OnlineDers" Relationship="Self.FK_dbo_Onlines_dbo_Derslers_OnlineId" FromRole="Dersler" ToRole="OnlineDers" />
+          <NavigationProperty Name="SinifIciDers" Relationship="Self.FK_dbo_SinifIcis_dbo_Derslers_SinifIciId" FromRole="Dersler" ToRole="SinifIciDers" />
+          <NavigationProperty Name="Egitmen" Relationship="Self.FK_Derslers_Egitmen" FromRole="Dersler" ToRole="Egitmen" />
+        </EntityType>
+        <EntityType Name="DogruYanlisSorular">
+          <Key>
+            <PropertyRef Name="DogruYanlisSorularId" />
+          </Key>
+          <Property Name="DogruYanlisSorularId" Type="Int32" Nullable="false" />
+          <Property Name="DogruSecenek" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Sorular" Relationship="Self.FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId" FromRole="DogruYanlisSorular" ToRole="Sorular" />
+        </EntityType>
+        <EntityType Name="EgitimSeans">
+          <Key>
+            <PropertyRef Name="EgitimSeansId" />
+          </Key>
+          <Property Name="EgitimSeansId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DersId" Type="Int32" Nullable="false" />
+          <Property Name="Katilimcilar" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FKEgitmenId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HedefTarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Dersler" Relationship="Self.FK_dbo_EgitimSeans_dbo_Derslers_DersId" FromRole="EgitimSeans" ToRole="Dersler" />
+          <NavigationProperty Name="KisiSeans" Relationship="Self.FK_KisiSeans_EgitimSeans" FromRole="EgitimSeans" ToRole="KisiSeans" />
+        </EntityType>
+        <EntityType Name="Egitmen">
+          <Key>
+            <PropertyRef Name="EgitmenId" />
+          </Key>
+          <Property Name="EgitmenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DogumTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DerslerId" Type="Int32" Nullable="false" />
+          <Property Name="IlId" Type="Int32" Nullable="false" />
+          <Property Name="UzmanlikAlani" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EgitmenAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dersler" Relationship="Self.FK_Derslers_Egitmen" FromRole="Egitmen" ToRole="Dersler" />
+        </EntityType>
+        <EntityType Name="Firma">
+          <Key>
+            <PropertyRef Name="FirmaId" />
+          </Key>
+          <Property Name="FirmaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirmaAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IlId" Type="Int32" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Faks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirmaImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FirmaKodu" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bolum" Relationship="Self.FK_dbo_Bolum_dbo_Firma_FKFirmaId" FromRole="Firma" ToRole="Bolum" />
+          <NavigationProperty Name="FirmaBankaBilgileri" Relationship="Self.FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma" FromRole="Firma" ToRole="FirmaBankaBilgileri" />
+          <NavigationProperty Name="Kisi" Relationship="Self.FK_dbo_Kisi_dbo_Firma_FKFirma" FromRole="Firma" ToRole="Kisi" />
+          <NavigationProperty Name="Il" Relationship="Self.FK_Firma_Il" FromRole="Firma" ToRole="Il" />
+        </EntityType>
+        <EntityType Name="FirmaBankaBilgileri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKFirma" Type="Int32" Nullable="false" />
+          <Property Name="BankaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HesapNumarasi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Firma" Relationship="Self.FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma" FromRole="FirmaBankaBilgileri" ToRole="Firma" />
+        </EntityType>
+        <EntityType Name="Il">
+          <Key>
+            <PropertyRef Name="IlId" />
+          </Key>
+          <Property Name="IlId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IlAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Firma" Relationship="Self.FK_Firma_Il" FromRole="Il" ToRole="Firma" />
+          <NavigationProperty Name="Kisi" Relationship="Self.FK_Kisi_Il" FromRole="Il" ToRole="Kisi" />
+        </EntityType>
+        <EntityType Name="Kategoriler">
+          <Key>
+            <PropertyRef Name="KategoriId" />
+          </Key>
+          <Property Name="KategoriId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Bolum" Type="Int32" Nullable="false" />
+          <Property Name="KategoriAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KategoriKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Dersler" Relationship="Self.FK_dbo_Derslers_dbo_Kategorilers_KategoriId" FromRole="Kategoriler" ToRole="Dersler" />
+        </EntityType>
+        <EntityType Name="Kisi">
+          <Key>
+            <PropertyRef Name="KisiId" />
+          </Key>
+          <Property Name="KisiId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KisiKimlikNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KisiAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KisiSoyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KisiDogumTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KisiCinsiyet" Type="Int32" />
+          <Property Name="KisiEgitimSeviyesi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IlId" Type="Int32" Nullable="false" />
+          <Property Name="FKFirma" Type="Int32" Nullable="false" />
+          <Property Name="KisiImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EhliyetSinifi" Type="Int32" />
+          <Property Name="EngelDurumu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BolumId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_Kisi_dbo_AspNetUsers_KisiId" FromRole="Kisi" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Bolum" Relationship="Self.FK_Kisi_Bolum" FromRole="Kisi" ToRole="Bolum" />
+          <NavigationProperty Name="Firma" Relationship="Self.FK_dbo_Kisi_dbo_Firma_FKFirma" FromRole="Kisi" ToRole="Firma" />
+          <NavigationProperty Name="Il" Relationship="Self.FK_Kisi_Il" FromRole="Kisi" ToRole="Il" />
+          <NavigationProperty Name="KisiSeans" Relationship="Self.FK_KisiSeans_Kisi" FromRole="Kisi" ToRole="KisiSeans" />
+        </EntityType>
+        <EntityType Name="KisiSeans">
+          <Key>
+            <PropertyRef Name="KisiSeansId" />
+          </Key>
+          <Property Name="KisiSeansId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KisiId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EgitimSeansid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EgitimSeans" Relationship="Self.FK_KisiSeans_EgitimSeans" FromRole="KisiSeans" ToRole="EgitimSeans" />
+          <NavigationProperty Name="Kisi" Relationship="Self.FK_KisiSeans_Kisi" FromRole="KisiSeans" ToRole="Kisi" />
+        </EntityType>
+        <EntityType Name="Modul">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PermissionKategori" Relationship="Self.FK_dbo_PermissionKategori_dbo_Modul_FkModul" FromRole="Modul" ToRole="PermissionKategori" />
+        </EntityType>
+        <EntityType Name="OnlineDers">
+          <Key>
+            <PropertyRef Name="OnlineId" />
+          </Key>
+          <Property Name="OnlineId" Type="Int32" Nullable="false" />
+          <Property Name="OgrenimHedefleri" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sure" Type="Int32" Nullable="false" />
+          <Property Name="OrtamGereklilikleri" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Medya" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BasarimOlcutleri" Type="Int32" />
+          <NavigationProperty Name="Dersler" Relationship="Self.FK_dbo_Onlines_dbo_Derslers_OnlineId" FromRole="OnlineDers" ToRole="Dersler" />
+          <NavigationProperty Name="OnlineIcerik" Relationship="Self.FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId" FromRole="OnlineDers" ToRole="OnlineIcerik" />
+        </EntityType>
+        <EntityType Name="OnlineIcerik">
+          <Key>
+            <PropertyRef Name="OnlineIcerikId" />
+          </Key>
+          <Property Name="OnlineIcerikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OnlineId" Type="Int32" Nullable="false" />
+          <Property Name="SoruSayisi" Type="Int32" Nullable="false" />
+          <Property Name="CevapTipi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BasarimOlcutu" Type="Int32" />
+          <NavigationProperty Name="OnlineDers" Relationship="Self.FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId" FromRole="OnlineIcerik" ToRole="OnlineDers" />
+          <NavigationProperty Name="Sorular" Relationship="Self.FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId" FromRole="OnlineIcerik" ToRole="Sorular" />
+        </EntityType>
+        <EntityType Name="PermissionKategori">
+          <Key>
+            <PropertyRef Name="PermissionKategoriId" />
+          </Key>
+          <Property Name="PermissionKategoriId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PermissionKategoriAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FkModul" Type="Int32" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetPermissions" Relationship="Self.FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori" FromRole="PermissionKategori" ToRole="AspNetPermissions" />
+          <NavigationProperty Name="Modul" Relationship="Self.FK_dbo_PermissionKategori_dbo_Modul_FkModul" FromRole="PermissionKategori" ToRole="Modul" />
+        </EntityType>
+        <EntityType Name="SinifIciDers">
+          <Key>
+            <PropertyRef Name="SinifIciId" />
+          </Key>
+          <Property Name="SinifIciId" Type="Int32" Nullable="false" />
+          <Property Name="EgitimSorumlusu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HedefKitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Seans" Type="Int32" Nullable="false" />
+          <Property Name="SeansPeriyodu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dersler" Relationship="Self.FK_dbo_SinifIcis_dbo_Derslers_SinifIciId" FromRole="SinifIciDers" ToRole="Dersler" />
+          <NavigationProperty Name="SinifIciIcerik" Relationship="Self.FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId" FromRole="SinifIciDers" ToRole="SinifIciIcerik" />
+        </EntityType>
+        <EntityType Name="SinifIciIcerik">
+          <Key>
+            <PropertyRef Name="SinifIciIcerikId" />
+          </Key>
+          <Property Name="SinifIciIcerikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SinifIciId" Type="Int32" Nullable="false" />
+          <Property Name="OgrenimHedefleri" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sure" Type="Int32" Nullable="false" />
+          <Property Name="OrtamGereklilikleri" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EgitmenMedya" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SinifIciDers" Relationship="Self.FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId" FromRole="SinifIciIcerik" ToRole="SinifIciDers" />
+        </EntityType>
+        <EntityType Name="Sorular">
+          <Key>
+            <PropertyRef Name="SoruId" />
+          </Key>
+          <Property Name="SoruId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OnlineIcerikId" Type="Int32" Nullable="false" />
+          <Property Name="Sorular1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CoktanSecmeliSorular" Relationship="Self.FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId" FromRole="Sorular" ToRole="CoktanSecmeliSorular" />
+          <NavigationProperty Name="DogruYanlisSorular" Relationship="Self.FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId" FromRole="Sorular" ToRole="DogruYanlisSorular" />
+          <NavigationProperty Name="OnlineIcerik" Relationship="Self.FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId" FromRole="Sorular" ToRole="OnlineIcerik" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori">
+          <End Role="PermissionKategori" Type="Self.PermissionKategori" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetPermissions" Type="Self.AspNetPermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermissionKategori">
+              <PropertyRef Name="PermissionKategoriId" />
+            </Principal>
+            <Dependent Role="AspNetPermissions">
+              <PropertyRef Name="FKPermissionKategori" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Kisi_dbo_AspNetUsers_KisiId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="KisiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Bolum_dbo_Firma_FKFirmaId">
+          <End Role="Firma" Type="Self.Firma" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="FirmaId" />
+            </Principal>
+            <Dependent Role="Bolum">
+              <PropertyRef Name="FKFirmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kisi_Bolum">
+          <End Role="Bolum" Type="Self.Bolum" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolum">
+              <PropertyRef Name="BolumId" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="BolumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId">
+          <End Role="Sorular" Type="Self.Sorular" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CoktanSecmeliSorular" Type="Self.CoktanSecmeliSorular" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sorular">
+              <PropertyRef Name="SoruId" />
+            </Principal>
+            <Dependent Role="CoktanSecmeliSorular">
+              <PropertyRef Name="CoktanSecmeliSorularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Derslers_dbo_Kategorilers_KategoriId">
+          <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategoriler">
+              <PropertyRef Name="KategoriId" />
+            </Principal>
+            <Dependent Role="Dersler">
+              <PropertyRef Name="FKKategoriId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_EgitimSeans_dbo_Derslers_DersId">
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EgitimSeans" Type="Self.EgitimSeans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="EgitimSeans">
+              <PropertyRef Name="DersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Onlines_dbo_Derslers_OnlineId">
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OnlineDers" Type="Self.OnlineDers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Dersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="OnlineDers">
+              <PropertyRef Name="OnlineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SinifIcis_dbo_Derslers_SinifIciId">
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SinifIciDers" Type="Self.SinifIciDers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Dersler">
+              <PropertyRef Name="DersId" />
+            </Principal>
+            <Dependent Role="SinifIciDers">
+              <PropertyRef Name="SinifIciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Derslers_Egitmen">
+          <End Role="Egitmen" Type="Self.Egitmen" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dersler" Type="Self.Dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egitmen">
+              <PropertyRef Name="EgitmenId" />
+            </Principal>
+            <Dependent Role="Dersler">
+              <PropertyRef Name="FKEgitmenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId">
+          <End Role="Sorular" Type="Self.Sorular" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DogruYanlisSorular" Type="Self.DogruYanlisSorular" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sorular">
+              <PropertyRef Name="SoruId" />
+            </Principal>
+            <Dependent Role="DogruYanlisSorular">
+              <PropertyRef Name="DogruYanlisSorularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KisiSeans_EgitimSeans">
+          <End Role="EgitimSeans" Type="Self.EgitimSeans" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KisiSeans" Type="Self.KisiSeans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EgitimSeans">
+              <PropertyRef Name="EgitimSeansId" />
+            </Principal>
+            <Dependent Role="KisiSeans">
+              <PropertyRef Name="EgitimSeansid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma">
+          <End Role="Firma" Type="Self.Firma" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FirmaBankaBilgileri" Type="Self.FirmaBankaBilgileri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="FirmaId" />
+            </Principal>
+            <Dependent Role="FirmaBankaBilgileri">
+              <PropertyRef Name="FKFirma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Kisi_dbo_Firma_FKFirma">
+          <End Role="Firma" Type="Self.Firma" Multiplicity="1" />
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="FirmaId" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="FKFirma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Firma_Il">
+          <End Role="Il" Type="Self.Il" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Firma" Type="Self.Firma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Il">
+              <PropertyRef Name="IlId" />
+            </Principal>
+            <Dependent Role="Firma">
+              <PropertyRef Name="IlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kisi_Il">
+          <End Role="Il" Type="Self.Il" Multiplicity="1" />
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Il">
+              <PropertyRef Name="IlId" />
+            </Principal>
+            <Dependent Role="Kisi">
+              <PropertyRef Name="IlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KisiSeans_Kisi">
+          <End Role="Kisi" Type="Self.Kisi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KisiSeans" Type="Self.KisiSeans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kisi">
+              <PropertyRef Name="KisiId" />
+            </Principal>
+            <Dependent Role="KisiSeans">
+              <PropertyRef Name="KisiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionKategori_dbo_Modul_FkModul">
+          <End Role="Modul" Type="Self.Modul" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PermissionKategori" Type="Self.PermissionKategori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modul">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="PermissionKategori">
+              <PropertyRef Name="FkModul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId">
+          <End Role="OnlineDers" Type="Self.OnlineDers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OnlineIcerik" Type="Self.OnlineIcerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OnlineDers">
+              <PropertyRef Name="OnlineId" />
+            </Principal>
+            <Dependent Role="OnlineIcerik">
+              <PropertyRef Name="OnlineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId">
+          <End Role="OnlineIcerik" Type="Self.OnlineIcerik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sorular" Type="Self.Sorular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OnlineIcerik">
+              <PropertyRef Name="OnlineIcerikId" />
+            </Principal>
+            <Dependent Role="Sorular">
+              <PropertyRef Name="OnlineIcerikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId">
+          <End Role="SinifIciDers" Type="Self.SinifIciDers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SinifIciIcerik" Type="Self.SinifIciIcerik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SinifIciDers">
+              <PropertyRef Name="SinifIciId" />
+            </Principal>
+            <Dependent Role="SinifIciIcerik">
+              <PropertyRef Name="SinifIciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetRolePermissions">
+          <End Role="AspNetPermissions" Type="Self.AspNetPermissions" Multiplicity="*" />
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="EgitimPlatformEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetPermissions" EntityType="Self.AspNetPermissions" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="Bolum" EntityType="Self.Bolum" />
+          <EntitySet Name="CoktanSecmeliSorular" EntityType="Self.CoktanSecmeliSorular" />
+          <EntitySet Name="Dersler" EntityType="Self.Dersler" />
+          <EntitySet Name="DogruYanlisSorular" EntityType="Self.DogruYanlisSorular" />
+          <EntitySet Name="EgitimSeans" EntityType="Self.EgitimSeans" />
+          <EntitySet Name="Egitmen" EntityType="Self.Egitmen" />
+          <EntitySet Name="Firma" EntityType="Self.Firma" />
+          <EntitySet Name="FirmaBankaBilgileri" EntityType="Self.FirmaBankaBilgileri" />
+          <EntitySet Name="Il" EntityType="Self.Il" />
+          <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
+          <EntitySet Name="Kisi" EntityType="Self.Kisi" />
+          <EntitySet Name="KisiSeans" EntityType="Self.KisiSeans" />
+          <EntitySet Name="Modul" EntityType="Self.Modul" />
+          <EntitySet Name="OnlineDers" EntityType="Self.OnlineDers" />
+          <EntitySet Name="OnlineIcerik" EntityType="Self.OnlineIcerik" />
+          <EntitySet Name="PermissionKategori" EntityType="Self.PermissionKategori" />
+          <EntitySet Name="SinifIciDers" EntityType="Self.SinifIciDers" />
+          <EntitySet Name="SinifIciIcerik" EntityType="Self.SinifIciIcerik" />
+          <EntitySet Name="Sorular" EntityType="Self.Sorular" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori" Association="Self.FK_dbo_AspNetPermissions_dbo_PermissionKategori_FKPermissionKategori">
+            <End Role="PermissionKategori" EntitySet="PermissionKategori" />
+            <End Role="AspNetPermissions" EntitySet="AspNetPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Kisi_dbo_AspNetUsers_KisiId" Association="Self.FK_dbo_Kisi_dbo_AspNetUsers_KisiId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Bolum_dbo_Firma_FKFirmaId" Association="Self.FK_dbo_Bolum_dbo_Firma_FKFirmaId">
+            <End Role="Firma" EntitySet="Firma" />
+            <End Role="Bolum" EntitySet="Bolum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kisi_Bolum" Association="Self.FK_Kisi_Bolum">
+            <End Role="Bolum" EntitySet="Bolum" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId" Association="Self.FK_dbo_CoktanSecmeliSorulars_dbo_Sorulars_CoktanSecmeliSorularId">
+            <End Role="Sorular" EntitySet="Sorular" />
+            <End Role="CoktanSecmeliSorular" EntitySet="CoktanSecmeliSorular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Derslers_dbo_Kategorilers_KategoriId" Association="Self.FK_dbo_Derslers_dbo_Kategorilers_KategoriId">
+            <End Role="Kategoriler" EntitySet="Kategoriler" />
+            <End Role="Dersler" EntitySet="Dersler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_EgitimSeans_dbo_Derslers_DersId" Association="Self.FK_dbo_EgitimSeans_dbo_Derslers_DersId">
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="EgitimSeans" EntitySet="EgitimSeans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Onlines_dbo_Derslers_OnlineId" Association="Self.FK_dbo_Onlines_dbo_Derslers_OnlineId">
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="OnlineDers" EntitySet="OnlineDers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SinifIcis_dbo_Derslers_SinifIciId" Association="Self.FK_dbo_SinifIcis_dbo_Derslers_SinifIciId">
+            <End Role="Dersler" EntitySet="Dersler" />
+            <End Role="SinifIciDers" EntitySet="SinifIciDers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Derslers_Egitmen" Association="Self.FK_Derslers_Egitmen">
+            <End Role="Egitmen" EntitySet="Egitmen" />
+            <End Role="Dersler" EntitySet="Dersler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId" Association="Self.FK_dbo_DogruYanlisSorulars_dbo_Sorulars_DogruYanlisSorularId">
+            <End Role="Sorular" EntitySet="Sorular" />
+            <End Role="DogruYanlisSorular" EntitySet="DogruYanlisSorular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KisiSeans_EgitimSeans" Association="Self.FK_KisiSeans_EgitimSeans">
+            <End Role="EgitimSeans" EntitySet="EgitimSeans" />
+            <End Role="KisiSeans" EntitySet="KisiSeans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma" Association="Self.FK_dbo_FirmaBankaBilgileri_dbo_Firma_FKFirma">
+            <End Role="Firma" EntitySet="Firma" />
+            <End Role="FirmaBankaBilgileri" EntitySet="FirmaBankaBilgileri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Kisi_dbo_Firma_FKFirma" Association="Self.FK_dbo_Kisi_dbo_Firma_FKFirma">
+            <End Role="Firma" EntitySet="Firma" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Firma_Il" Association="Self.FK_Firma_Il">
+            <End Role="Il" EntitySet="Il" />
+            <End Role="Firma" EntitySet="Firma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kisi_Il" Association="Self.FK_Kisi_Il">
+            <End Role="Il" EntitySet="Il" />
+            <End Role="Kisi" EntitySet="Kisi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KisiSeans_Kisi" Association="Self.FK_KisiSeans_Kisi">
+            <End Role="Kisi" EntitySet="Kisi" />
+            <End Role="KisiSeans" EntitySet="KisiSeans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionKategori_dbo_Modul_FkModul" Association="Self.FK_dbo_PermissionKategori_dbo_Modul_FkModul">
+            <End Role="Modul" EntitySet="Modul" />
+            <End Role="PermissionKategori" EntitySet="PermissionKategori" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId" Association="Self.FK_dbo_OnlineIceriks_dbo_Onlines_OnlineId">
+            <End Role="OnlineDers" EntitySet="OnlineDers" />
+            <End Role="OnlineIcerik" EntitySet="OnlineIcerik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId" Association="Self.FK_dbo_Sorulars_dbo_OnlineIceriks_OnlineIcerikId">
+            <End Role="OnlineIcerik" EntitySet="OnlineIcerik" />
+            <End Role="Sorular" EntitySet="Sorular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId" Association="Self.FK_dbo_SinifIciIceriks_dbo_SinifIcis_SinifIciId">
+            <End Role="SinifIciDers" EntitySet="SinifIciDers" />
+            <End Role="SinifIciIcerik" EntitySet="SinifIciIcerik" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetRolePermissions" Association="Self.AspNetRolePermissions">
+            <End Role="AspNetPermissions" EntitySet="AspNetPermissions" />
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(EgitimPlatformModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(EgitimPlatformModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EgitimPlatformModelStoreContainer" CdmEntityContainer="EgitimPlatformEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetPermissions">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.AspNetPermissions">
+              <MappingFragment StoreEntitySet="AspNetPermissions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PermissionAdi" ColumnName="PermissionAdi" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="FKPermissionKategori" ColumnName="FKPermissionKategori" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bolum">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Bolum">
+              <MappingFragment StoreEntitySet="Bolum">
+                <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+                <ScalarProperty Name="BolumAdi" ColumnName="BolumAdi" />
+                <ScalarProperty Name="FKFirmaId" ColumnName="FKFirmaId" />
+                <ScalarProperty Name="BolumKodu" ColumnName="BolumKodu" />
+                <ScalarProperty Name="BolumAcıklama" ColumnName="BolumAcıklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoktanSecmeliSorular">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.CoktanSecmeliSorular">
+              <MappingFragment StoreEntitySet="CoktanSecmeliSorular">
+                <ScalarProperty Name="CoktanSecmeliSorularId" ColumnName="CoktanSecmeliSorularId" />
+                <ScalarProperty Name="Secenek1" ColumnName="Secenek1" />
+                <ScalarProperty Name="Secenek2" ColumnName="Secenek2" />
+                <ScalarProperty Name="Secenek3" ColumnName="Secenek3" />
+                <ScalarProperty Name="Secenek4" ColumnName="Secenek4" />
+                <ScalarProperty Name="Cevap" ColumnName="Cevap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dersler">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Dersler">
+              <MappingFragment StoreEntitySet="Dersler">
+                <ScalarProperty Name="DersId" ColumnName="DersId" />
+                <ScalarProperty Name="FKKategoriId" ColumnName="FKKategoriId" />
+                <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+                <ScalarProperty Name="DersKodu" ColumnName="DersKodu" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="EgitimTuru" ColumnName="EgitimTuru" />
+                <ScalarProperty Name="FKEgitmenId" ColumnName="FKEgitmenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DogruYanlisSorular">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.DogruYanlisSorular">
+              <MappingFragment StoreEntitySet="DogruYanlisSorular">
+                <ScalarProperty Name="DogruYanlisSorularId" ColumnName="DogruYanlisSorularId" />
+                <ScalarProperty Name="DogruSecenek" ColumnName="DogruSecenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimSeans">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.EgitimSeans">
+              <MappingFragment StoreEntitySet="EgitimSeans">
+                <ScalarProperty Name="EgitimSeansId" ColumnName="EgitimSeansId" />
+                <ScalarProperty Name="DersId" ColumnName="DersId" />
+                <ScalarProperty Name="Katilimcilar" ColumnName="Katilimcilar" />
+                <ScalarProperty Name="FKEgitmenId" ColumnName="FKEgitmenId" />
+                <ScalarProperty Name="HedefTarihi" ColumnName="HedefTarihi" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Egitmen">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Egitmen">
+              <MappingFragment StoreEntitySet="Egitmen">
+                <ScalarProperty Name="EgitmenId" ColumnName="EgitmenId" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="DogumTarih" ColumnName="DogumTarih" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="DerslerId" ColumnName="DerslerId" />
+                <ScalarProperty Name="IlId" ColumnName="IlId" />
+                <ScalarProperty Name="UzmanlikAlani" ColumnName="UzmanlikAlani" />
+                <ScalarProperty Name="EgitmenAciklama" ColumnName="EgitmenAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Firma">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Firma">
+              <MappingFragment StoreEntitySet="Firma">
+                <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
+                <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+                <ScalarProperty Name="IlId" ColumnName="IlId" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Faks" ColumnName="Faks" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="FirmaImagePath" ColumnName="FirmaImagePath" />
+                <ScalarProperty Name="FirmaKodu" ColumnName="FirmaKodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FirmaBankaBilgileri">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.FirmaBankaBilgileri">
+              <MappingFragment StoreEntitySet="FirmaBankaBilgileri">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FKFirma" ColumnName="FKFirma" />
+                <ScalarProperty Name="BankaAdi" ColumnName="BankaAdi" />
+                <ScalarProperty Name="HesapNumarasi" ColumnName="HesapNumarasi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Il">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Il">
+              <MappingFragment StoreEntitySet="Il">
+                <ScalarProperty Name="IlId" ColumnName="IlId" />
+                <ScalarProperty Name="IlAdi" ColumnName="IlAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategoriler">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Kategoriler">
+              <MappingFragment StoreEntitySet="Kategoriler">
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Bolum" ColumnName="Bolum" />
+                <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+                <ScalarProperty Name="KategoriKodu" ColumnName="KategoriKodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kisi">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Kisi">
+              <MappingFragment StoreEntitySet="Kisi">
+                <ScalarProperty Name="KisiId" ColumnName="KisiId" />
+                <ScalarProperty Name="KisiKimlikNo" ColumnName="KisiKimlikNo" />
+                <ScalarProperty Name="KisiAdi" ColumnName="KisiAdi" />
+                <ScalarProperty Name="KisiSoyadi" ColumnName="KisiSoyadi" />
+                <ScalarProperty Name="KisiDogumTarihi" ColumnName="KisiDogumTarihi" />
+                <ScalarProperty Name="KisiCinsiyet" ColumnName="KisiCinsiyet" />
+                <ScalarProperty Name="KisiEgitimSeviyesi" ColumnName="KisiEgitimSeviyesi" />
+                <ScalarProperty Name="IlId" ColumnName="IlId" />
+                <ScalarProperty Name="FKFirma" ColumnName="FKFirma" />
+                <ScalarProperty Name="KisiImagePath" ColumnName="KisiImagePath" />
+                <ScalarProperty Name="EhliyetSinifi" ColumnName="EhliyetSinifi" />
+                <ScalarProperty Name="EngelDurumu" ColumnName="EngelDurumu" />
+                <ScalarProperty Name="TelefonNo" ColumnName="TelefonNo" />
+                <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KisiSeans">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.KisiSeans">
+              <MappingFragment StoreEntitySet="KisiSeans">
+                <ScalarProperty Name="KisiSeansId" ColumnName="KisiSeansId" />
+                <ScalarProperty Name="KisiId" ColumnName="KisiId" />
+                <ScalarProperty Name="EgitimSeansid" ColumnName="EgitimSeansid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modul">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Modul">
+              <MappingFragment StoreEntitySet="Modul">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OnlineDers">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.OnlineDers">
+              <MappingFragment StoreEntitySet="OnlineDers">
+                <ScalarProperty Name="OnlineId" ColumnName="OnlineId" />
+                <ScalarProperty Name="OgrenimHedefleri" ColumnName="OgrenimHedefleri" />
+                <ScalarProperty Name="Sure" ColumnName="Sure" />
+                <ScalarProperty Name="OrtamGereklilikleri" ColumnName="OrtamGereklilikleri" />
+                <ScalarProperty Name="Medya" ColumnName="Medya" />
+                <ScalarProperty Name="BasarimOlcutleri" ColumnName="BasarimOlcutleri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OnlineIcerik">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.OnlineIcerik">
+              <MappingFragment StoreEntitySet="OnlineIcerik">
+                <ScalarProperty Name="OnlineIcerikId" ColumnName="OnlineIcerikId" />
+                <ScalarProperty Name="OnlineId" ColumnName="OnlineId" />
+                <ScalarProperty Name="SoruSayisi" ColumnName="SoruSayisi" />
+                <ScalarProperty Name="CevapTipi" ColumnName="CevapTipi" />
+                <ScalarProperty Name="BasarimOlcutu" ColumnName="BasarimOlcutu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermissionKategori">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.PermissionKategori">
+              <MappingFragment StoreEntitySet="PermissionKategori">
+                <ScalarProperty Name="PermissionKategoriId" ColumnName="PermissionKategoriId" />
+                <ScalarProperty Name="PermissionKategoriAdi" ColumnName="PermissionKategoriAdi" />
+                <ScalarProperty Name="FkModul" ColumnName="FkModul" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinifIciDers">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.SinifIciDers">
+              <MappingFragment StoreEntitySet="SinifIciDers">
+                <ScalarProperty Name="SinifIciId" ColumnName="SinifIciId" />
+                <ScalarProperty Name="EgitimSorumlusu" ColumnName="EgitimSorumlusu" />
+                <ScalarProperty Name="HedefKitle" ColumnName="HedefKitle" />
+                <ScalarProperty Name="Seans" ColumnName="Seans" />
+                <ScalarProperty Name="SeansPeriyodu" ColumnName="SeansPeriyodu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinifIciIcerik">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.SinifIciIcerik">
+              <MappingFragment StoreEntitySet="SinifIciIcerik">
+                <ScalarProperty Name="SinifIciIcerikId" ColumnName="SinifIciIcerikId" />
+                <ScalarProperty Name="SinifIciId" ColumnName="SinifIciId" />
+                <ScalarProperty Name="OgrenimHedefleri" ColumnName="OgrenimHedefleri" />
+                <ScalarProperty Name="Sure" ColumnName="Sure" />
+                <ScalarProperty Name="OrtamGereklilikleri" ColumnName="OrtamGereklilikleri" />
+                <ScalarProperty Name="EgitmenMedya" ColumnName="EgitmenMedya" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sorular">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.Sorular">
+              <MappingFragment StoreEntitySet="Sorular">
+                <ScalarProperty Name="SoruId" ColumnName="SoruId" />
+                <ScalarProperty Name="OnlineIcerikId" ColumnName="OnlineIcerikId" />
+                <ScalarProperty Name="Sorular1" ColumnName="Sorular1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EgitimPlatformModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetRolePermissions" TypeName="EgitimPlatformModel.AspNetRolePermissions" StoreEntitySet="AspNetRolePermissions">
+            <EndProperty Name="AspNetPermissions">
+              <ScalarProperty Name="Id" ColumnName="PermissionId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="EgitimPlatformModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="EgitimPlatformModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="EgitimPlatformModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="EgitimPlatformModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="EgitimPlatformModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EgitimPlatformModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="EgitimPlatformModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EgitimPlatformModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EgitimPlatformModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="EgitimPlatformModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

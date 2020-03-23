@@ -233,3 +233,7 @@ C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\obj\Debug\EgitimPla
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\obj\Debug\EgitimPlatformu.csproj.CopyComplete
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\obj\Debug\EgitimPlatformu.dll
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\obj\Debug\EgitimPlatformu.pdb
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.dll
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.SqlServer.dll
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.xml
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.SqlServer.xml
