@@ -7,6 +7,7 @@
             'aTargets': ['nosort']
         }]
     });
+
     $('#data_table tbody').on( 'click', 'tr', function() {
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
