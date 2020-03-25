@@ -336,9 +336,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="~/Content/src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
@@ -351,6 +348,7 @@
     <script src="~/Content/plugins/summernote/dist/summernote-bs4.min.js"></script>
     <script src="~/Content/dist/js/theme.min.js"></script>
     <script src="~/Content/js/layouts.js"></script>
+    @RenderSection("scripts", required: false)
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
 

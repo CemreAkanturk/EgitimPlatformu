@@ -136,105 +136,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\AspNetPermissions.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\AspNetRoles.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\AspNetUserClaims.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\AspNetUserLogins.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\AspNetUsers.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Bolum.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\CoktanSecmeliSorular.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\C__MigrationHistory.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Dersler.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\DogruYanlisSorular.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\EgitimPlatformu.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EgitimPlatformu.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\EgitimPlatformu.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\EgitimPlatformu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EgitimPlatformu.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\EgitimSeans.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Egitmen.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Firma.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\FirmaBankaBilgileri.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Il.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Kategoriler.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Kisi.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\KisiSeans.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Modul.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\OnlineDers.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\OnlineIcerik.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\PermissionKategori.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\SinifIciDers.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\SinifIciIcerik.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\Sorular.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\sp_helpdiagrams_Result.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database\sysdiagrams.cs">
-      <DependentUpon>EgitimPlatformu.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -440,16 +341,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Database\EgitimPlatformu.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EgitimPlatformu.edmx</DependentUpon>
-      <LastGenOutput>EgitimPlatformu.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Database\EgitimPlatformu.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EgitimPlatformu.edmx</DependentUpon>
-      <LastGenOutput>EgitimPlatformu.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\dist\css\theme.css.map" />
@@ -511,13 +402,6 @@
     <Content Include="Content\src\scss\_widgets.scss" />
     <Content Include="Content\package-lock.json" />
     <Content Include="Content\package.json" />
-    <EntityDeploy Include="Models\Database\EgitimPlatformu.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EgitimPlatformu.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Database\EgitimPlatformu.edmx.diagram">
-      <DependentUpon>EgitimPlatformu.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -549,6 +433,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\DersOlustur\" />
   </ItemGroup>
   <ItemGroup>
