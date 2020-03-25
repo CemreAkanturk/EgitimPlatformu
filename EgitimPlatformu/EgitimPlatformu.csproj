@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DersOlusturController.cs" />
+    <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -543,6 +544,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Kategoriler\Index.cshtml" />
+    <Content Include="Views\FirmaDersler\Derslerim.cshtml" />
+    <Content Include="Views\FirmaDersler\DersBilgiler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

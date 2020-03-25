@@ -237,3 +237,7 @@ C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.SqlServer.dll
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.xml
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.SqlServer.xml
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.SqlServer.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.xml
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.SqlServer.xml
