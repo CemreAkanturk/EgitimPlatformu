@@ -12,7 +12,7 @@ namespace Entities
     {
         public Firma()
         {
-            this.Bolum = new HashSet<Bolum>();
+            
             this.FirmaBankaBilgileri = new HashSet<FirmaBanka>();
             this.Kisi = new HashSet<Kisi>();
         }
@@ -31,9 +31,8 @@ namespace Entities
         public string FirmaImagePath { get; set; }
         public string FirmaKodu { get; set; }
 
-      
-        public virtual ICollection<Bolum> Bolum { get; set; }
-       
+        public virtual ICollection<FirmaBolum> FirmaBolums { get; set; }
+
         public virtual ICollection<FirmaBanka> FirmaBankaBilgileri { get; set; }
       
         public virtual ICollection<Kisi> Kisi { get; set; }
