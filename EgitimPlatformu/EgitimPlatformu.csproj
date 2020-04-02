@@ -253,6 +253,11 @@
     <Content Include="Content\plugins\c3\c3.min.js" />
     <Content Include="Content\plugins\chartist\dist\chartist.min.css" />
     <Content Include="Content\plugins\chartist\dist\chartist.min.js" />
+    <Content Include="Content\plugins\chosen\css\bootstrap-chosen.css" />
+    <Content Include="Content\plugins\chosen\css\chosen-sprite%402x.png" />
+    <Content Include="Content\plugins\chosen\css\chosen-sprite.png" />
+    <Content Include="Content\plugins\chosen\css\chosen.css" />
+    <Content Include="Content\plugins\chosen\js\chosen.jquery.js" />
     <Content Include="Content\plugins\d3\dist\d3.js" />
     <Content Include="Content\plugins\d3\dist\d3.min.js" />
     <Content Include="Content\plugins\d3\dist\d3.node.js" />
@@ -448,6 +453,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{9532f826-3ba6-44b0-847d-a50cca62724c}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{a22e831a-8ed4-4e65-b96a-c392d3737cf7}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{f896af21-4fca-44c7-89e1-8bd2a9e9a5c2}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

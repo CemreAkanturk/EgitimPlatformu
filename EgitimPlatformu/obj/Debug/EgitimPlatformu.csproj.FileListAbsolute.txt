@@ -237,3 +237,11 @@ C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.xml
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\EntityFramework.SqlServer.xml
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\obj\Debug\EgitimPlatformu.csprojAssemblyReference.cache
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Business.dll
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\DataLayer.dll
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.dll
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Business.pdb
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\DataLayer.pdb
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\DataLayer.dll.config
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.pdb
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.dll.config

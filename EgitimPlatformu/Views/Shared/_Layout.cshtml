@@ -19,9 +19,10 @@
     <link rel="stylesheet" href="~/Content/plugins/icon-kit/dist/css/iconkit.min.css">
     <link rel="stylesheet" href="~/Content/plugins/perfect-scrollbar/css/perfect-scrollbar.css">
     <link rel="stylesheet" href="~/Content/dist/css/theme.min.css">
-   
+
     @RenderSection("Styles", required: false)
     <script src="~/Content/src/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="~/Content/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -87,8 +88,16 @@
                             <div class="nav-lavel">EGİTMEN</div>
 
                             <div class="nav-item">
-                                <a href="#"><i class="ik ik-package"></i><span>Derslerim</span></a>
+                                <a href="@Url.Action("Index","Kategoriler")"><i class="ik ik-package"></i><span>Kategoriler</span></a>
 
+                            </div>
+
+                            <div class="nav-item has-sub">
+                                <a href="javascript:void(0)"><i class="ik ik-package"></i><span>Derslerim</span></a>
+                                <div class="submenu-content">
+                                    <a href="" class="menu-item">Sınıf İçi Derslerim</a>
+                                    <a href="" class="menu-item">Online Derslerim</a>
+                                 </div>
                             </div>
 
                             <div class="nav-item has-sub">
@@ -336,10 +345,7 @@
     <script>window.jQuery || document.write('<script src="~/Content/src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-
-
+ 
     <script src="~/Content/plugins/popper.js/dist/umd/popper.min.js"></script>
     <script src="~/Content/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/Content/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>

@@ -130,9 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202003250027083_deneme.cs" />
-    <Compile Include="Migrations\202003250027083_deneme.designer.cs">
-      <DependentUpon>202003250027083_deneme.cs</DependentUpon>
+    <Compile Include="Migrations\202004021653025_cemre.cs" />
+    <Compile Include="Migrations\202004021653025_cemre.designer.cs">
+      <DependentUpon>202004021653025_cemre.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,8 +148,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003250027083_deneme.resx">
-      <DependentUpon>202003250027083_deneme.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004021653025_cemre.resx">
+      <DependentUpon>202004021653025_cemre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

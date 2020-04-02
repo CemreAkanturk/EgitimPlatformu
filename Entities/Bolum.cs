@@ -19,13 +19,12 @@ namespace Entities
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BolumId { get; set; }
         public string BolumAdi { get; set; }
-        [ForeignKey("Firma")]
-        public int FirmaId { get; set; }
+   
         public string BolumKodu { get; set; }
-        public byte[] BolumAcıklama { get; set; }
+        public string BolumAcıklama { get; set; }
 
-        public virtual Firma Firma { get; set; }
-       
+
+        public virtual ICollection<FirmaBolum> FirmaBolums { get; set; }
         public virtual ICollection<Kisi> Kisi { get; set; }
         public virtual ICollection<Kategoriler> Kategoriler { get; set; }
 

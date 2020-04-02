@@ -20,8 +20,7 @@ namespace Entities
         public string Soyad { get; set; }
         public System.DateTime DogumTarih { get; set; }
         public string Resim { get; set; }
-        [ForeignKey("Dersler")]
-        public int DerslerId { get; set; }
+       
         [ForeignKey("Il")]
         public int IlId { get; set; }
         public string UzmanlikAlani { get; set; }
