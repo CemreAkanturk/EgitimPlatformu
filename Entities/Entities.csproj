@@ -82,6 +82,7 @@
     <Compile Include="FirmaBanka.cs" />
     <Compile Include="FirmaBolum.cs" />
     <Compile Include="Il.cs" />
+    <Compile Include="InputModel\SinificiDersEkleIM.cs" />
     <Compile Include="Kategoriler.cs" />
     <Compile Include="Kisi.cs" />
     <Compile Include="KisiSeans.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="SinifIciDers.cs" />
     <Compile Include="SinifIciIcerik.cs" />
     <Compile Include="Sorular.cs" />
+    <Compile Include="ViewModel\Dersler\DersDuzenleVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriIndexVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriVM.cs" />
   </ItemGroup>
