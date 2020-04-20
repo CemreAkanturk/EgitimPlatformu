@@ -245,3 +245,5 @@ C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\DataLayer.pdb
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\DataLayer.dll.config
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.pdb
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.dll.config
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\AutoMapper.dll
+C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\AutoMapper.xml

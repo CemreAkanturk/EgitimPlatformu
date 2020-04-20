@@ -1,0 +1,90 @@
+﻿.zorunlu {
+    font-size: 15px;
+    color: #e57373;
+}
+
+
+.col_padding_sil {
+    padding-left: 0px !important;
+}
+
+
+.borderless {
+    border-radius: 0px !important;
+}
+
+
+.current {
+    color: #08874b;
+}
+
+.max {
+    color: red;
+}
+
+
+.baslik {
+    border-bottom: 1px solid #08874b;
+    color: #08874b;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.fotograf_alani {
+    border: 1px solid #BDBDBD;
+    border-radius: 10px;
+    height: 200px;
+    padding: 5px;
+    width: 200px;
+}
+
+    .fotograf_alani img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+.close {
+    color: red !important;
+    margin: 5px;
+    opacity: .5 !important;
+}
+
+.fileinput {
+    margin-top: 5px;
+}
+
+
+
+/*etki alanalri radio butonlar*/
+.radio-button input[type="radio"]:checked + a {
+    z-index: 2;
+    color: #fff;
+    background-color: #18a689;
+    border-color: #1ab394;
+    cursor: default;
+}
+
+.radio-button label {
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.radio-button .pagination {
+    margin: 0px !important;
+}
+
+    .radio-button .pagination > li > a {
+        padding: 0px;
+        border-radius: 0px !important;
+        border: 0px !important;
+    }
+
+.radio-button input[type="radio"] {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    color: transparent;
+    visibility: hidden;
+}

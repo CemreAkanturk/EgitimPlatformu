@@ -25,7 +25,9 @@ namespace Entities
         public string Aciklama { get; set; }
         public int EgitimTuru { get; set; }
         [ForeignKey("Egitmen")]
-        public int EgitmenId { get; set; }
+        public int? EgitmenId { get; set; }
+
+        public string DersAfis { get; set; }
 
         public virtual Kategoriler Kategoriler { get; set; }
       

@@ -14,7 +14,7 @@ namespace Entities
         {
             this.SinifIciIcerik = new HashSet<SinifIciIcerik>();
         }
-        [Key, ForeignKey("Dersler"), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key,ForeignKey("Dersler")] 
         public int SinifIciId { get; set; }
         public string EgitimSorumlusu { get; set; }
         public string HedefKitle { get; set; }

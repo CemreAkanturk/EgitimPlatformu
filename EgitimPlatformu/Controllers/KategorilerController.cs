@@ -45,7 +45,14 @@ namespace EgitimPlatformu.Controllers
             if (ModelState.IsValid)
             {
                 db.Kategoriler.Remove(SilinecekKategori);
-                db.Dersler.RemoveRange(db.Dersler.Where(x => x.KategoriId == kategoriId));
+                var derslerlist = db.Dersler.Where(x => x.KategoriId == kategoriId).ToList();
+                db.Dersler.RemoveRange(derslerlist);
+             
+                foreach(var ders in derslerlist)
+                {
+                    var Ders = db.SinifIciDers.Find(ders.DersId);
+                    db.SinifIciDers.Remove(Ders);
+                }
                 db.SaveChanges();
             }
             return RedirectToAction("Index");

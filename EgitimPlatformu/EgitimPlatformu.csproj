@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -133,6 +136,7 @@
     <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
+    <Compile Include="Controllers\SinificiDersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +149,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\browserconfig.xml" />
     <Content Include="Content\crossdomain.xml" />
+    <Content Include="Content\dist\css\SinificiDers\wizardlar.css" />
     <Content Include="Content\dist\css\theme.css" />
     <Content Include="Content\dist\css\theme.min.css" />
     <Content Include="Content\dist\img\.gitignore" />
@@ -208,6 +213,8 @@
     <Content Include="Content\js\chart-knob.js" />
     <Content Include="Content\js\charts.js" />
     <Content Include="Content\js\datatables.js" />
+    <Content Include="Content\js\SinificiDers\DersDuzenle.js" />
+    <Content Include="Content\js\SinificiDers\sinificidersekleme.js" />
     <Content Include="Content\js\form-advanced.js" />
     <Content Include="Content\js\form-components.js" />
     <Content Include="Content\js\form-picker.js" />
@@ -222,6 +229,7 @@
     <Content Include="Content\js\widget-data.js" />
     <Content Include="Content\js\widget-statistic.js" />
     <Content Include="Content\js\widgets.js" />
+    <Content Include="Content\no-image.png" />
     <Content Include="Content\plugins\amcharts\amcharts.js" />
     <Content Include="Content\plugins\amcharts\animate.min.js" />
     <Content Include="Content\plugins\amcharts\funnel.js" />
@@ -244,6 +252,7 @@
     <Content Include="Content\plugins\ammap3\ammap\ammap.js" />
     <Content Include="Content\plugins\ammap3\ammap\ammap_amcharts_extension.js" />
     <Content Include="Content\plugins\ammap3\ammap\maps\js\usaLow.js" />
+    <Content Include="Content\plugins\AwesomeCheckBox\css\awesomecheckbox.css" />
     <Content Include="Content\plugins\bootstrap-slider\dist\bootstrap-slider.min.js" />
     <Content Include="Content\plugins\bootstrap-slider\dist\css\bootstrap-slider.min.css" />
     <Content Include="Content\plugins\bootstrap-tagsinput\dist\bootstrap-tagsinput.css" />
@@ -273,6 +282,7 @@
     <Content Include="Content\plugins\datatable\datatables.min.js" />
     <Content Include="Content\plugins\datedropper\datedropper.min.css" />
     <Content Include="Content\plugins\datedropper\datedropper.min.js" />
+    <Content Include="Content\plugins\DerslerimAccordion\accordion.css" />
     <Content Include="Content\plugins\flot-charts\curvedLines.js" />
     <Content Include="Content\plugins\flot-charts\jquery.flot.categories.js" />
     <Content Include="Content\plugins\flot-charts\jquery.flot.js" />
@@ -330,6 +340,13 @@
     <Content Include="Content\plugins\tempusdominus-bootstrap-4\build\js\tempusdominus-bootstrap-4.min.js" />
     <Content Include="Content\plugins\weather-icons\css\weather-icons.min.css" />
     <Content Include="Content\plugins\weather-icons\font\weathericons-regular-webfont.svg" />
+    <Content Include="Content\plugins\WizardSteps\css\jasny.css" />
+    <Content Include="Content\plugins\WizardSteps\css\toastry.css" />
+    <Content Include="Content\plugins\WizardSteps\css\wizard.css" />
+    <Content Include="Content\plugins\WizardSteps\js\jasny.js" />
+    <Content Include="Content\plugins\WizardSteps\js\steps.js" />
+    <Content Include="Content\plugins\WizardSteps\js\toastry.js" />
+    <Content Include="Content\plugins\WizardSteps\js\validate.js" />
     <Content Include="Content\src\img\.gitignore" />
     <Content Include="Content\src\img\brand-white.svg" />
     <Content Include="Content\src\img\brand.svg" />
@@ -435,9 +452,14 @@
     <Content Include="Views\Kategoriler\Index.cshtml" />
     <Content Include="Views\FirmaDersler\Derslerim.cshtml" />
     <Content Include="Views\FirmaDersler\DersBilgiler.cshtml" />
+    <Content Include="Views\SinificiDers\Index.cshtml" />
+    <Content Include="Views\SinificiDers\DersEkle.cshtml" />
+    <Content Include="Views\SinificiDers\SinificiDersEkle.cshtml" />
+    <Content Include="Views\SinificiDers\Duzenle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\DersAfisleri\" />
     <Folder Include="Models\" />
     <Folder Include="Views\DersOlustur\" />
   </ItemGroup>
