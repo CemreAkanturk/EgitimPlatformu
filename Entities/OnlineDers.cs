@@ -15,7 +15,7 @@ namespace Entities
         {
             this.OnlineIcerik = new HashSet<OnlineIcerik>();
         }
-        [Key, ForeignKey("Dersler"),DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, ForeignKey("Dersler")]
         public int OnlineId { get; set; }
         public string OgrenimHedefleri { get; set; }
         public int Sure { get; set; }

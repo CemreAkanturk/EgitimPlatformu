@@ -136,6 +136,7 @@
     <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
+    <Compile Include="Controllers\OnlineDersController.cs" />
     <Compile Include="Controllers\SinificiDersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -454,8 +455,10 @@
     <Content Include="Views\FirmaDersler\DersBilgiler.cshtml" />
     <Content Include="Views\SinificiDers\Index.cshtml" />
     <Content Include="Views\SinificiDers\DersEkle.cshtml" />
-    <Content Include="Views\SinificiDers\SinificiDersEkle.cshtml" />
     <Content Include="Views\SinificiDers\Duzenle.cshtml" />
+    <Content Include="Views\OnlineDers\Index.cshtml" />
+    <Content Include="Views\OnlineDers\DersEkle.cshtml" />
+    <Content Include="Views\OnlineDers\Duzenle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

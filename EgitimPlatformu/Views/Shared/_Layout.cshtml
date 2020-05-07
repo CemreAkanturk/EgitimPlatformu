@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Egitim Platformu Cınım </title>
+    <title>Egitim Platformu </title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,14 +33,7 @@
                 <div class="d-flex justify-content-between">
                     <div class="top-menu d-flex align-items-center">
                         <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
-                        <div class="header-search">
-                            <div class="input-group">
-                                <span class="input-group-addon search-close"><i class="ik ik-x"></i></span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
-                            </div>
-                        </div>
-                        <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
+                         <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
                     </div>
                     <div class="top-menu d-flex align-items-center">
                         <div class="dropdown">
@@ -95,7 +88,7 @@
                                 <a href="javascript:void(0)"><i class="ik ik-package"></i><span>Derslerim</span></a>
                                 <div class="submenu-content">
                                     <a href="@Url.Action("Index","SinificiDers")" class="menu-item">Sınıf İçi Derslerim</a>
-                                    <a href="" class="menu-item">Online Derslerim</a>
+                                    <a href="@Url.Action("Index","OnlineDers")" class="menu-item">Online Derslerim</a>
                                 </div>
                             </div>
 
@@ -236,32 +229,86 @@
     </div>
 
 
-    <div class="modal fade edit-layout-modal" id="editLayoutItem" tabindex="-1" role="dialog" aria-labelledby="editLayoutItemLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editLayoutItemLabel">Sed id mi non quam iaculis pulvinar.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <p class="lead">Nullam elementum aliquam porta.</p>
-                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus fermentum imperdiet ligula, et mollis quam sagittis ac. In quis interdum sem. Vivamus blandit fringilla hendrerit. Suspendisse vulputate sapien vitae mi convallis dictum. Sed blandit felis ut quam accumsan, at condimentum nibh varius. Mauris ornare ultricies ipsum.</p>
-                    <div class="row">
-                        <div class="col-md-6"><img src="~/Content/img/portfolio-1.jpg" class="img-fluid" alt=""></div>
-                        <div class="col-md-6"><img src="~/Content/img/portfolio-8.jpg" class="img-fluid" alt=""></div>
+    <div class="chat-panel" hidden>
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <a href="javascript:void(0);"><i class="ik ik-message-square text-success"></i></a>
+                <span class="user-name">John Doe</span>
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="card-body">
+                <div class="widget-chat-activity flex-1">
+                    <div class="messages">
+                        <div class="message media reply">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/3.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>Epic Cheeseburgers come in all kind of styles.</p>
+                            </div>
+                        </div>
+                        <div class="message media">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>Cheeseburgers make your knees weak.</p>
+                            </div>
+                        </div>
+                        <div class="message media reply">
+                            <figure class="user--offline">
+                                <a href="#">
+                                    <img src="~/Content/img/users/5.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>Cheeseburgers will never let you down.</p>
+                                <p>They'll also never run around or desert you.</p>
+                            </div>
+                        </div>
+                        <div class="message media">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>A great cheeseburger is a gastronomical event.</p>
+                            </div>
+                        </div>
+                        <div class="message media reply">
+                            <figure class="user--busy">
+                                <a href="#">
+                                    <img src="~/Content/img/users/5.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>There's a cheesy incarnation waiting for you no matter what you palete preferences are.</p>
+                            </div>
+                        </div>
+                        <div class="message media">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>If you are a vegan, we are sorry for you loss.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="jumbotron pt-30 pb-30 mt-30">
-                        <h2 class="mt-0">Hello, world!</h2>
-                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    </div>
-                    <p>Praesent eleifend ac felis dignissim mattis. Suspendisse eget congue enim, ac fermentum risus. Donec eget risus lacus. Nullam nec lectus quis tortor ultrices consectetur. Etiam dui erat, tristique vel quam a, maximus porttitor enim. Ut molestie turpis in est iaculis, ut congue massa porta.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="layout-edit-item.html" class="btn btn-primary">Edit</a>
-                    <button type="button" class="btn btn-danger list-delete">Delete</button>
                 </div>
             </div>
+            <form action="javascript:void(0)" class="card-footer" method="post">
+                <div class="d-flex justify-content-end">
+                    <textarea class="border-0 flex-1" rows="1" placeholder="Type your message here"></textarea>
+                    <button class="btn btn-icon" type="submit"><i class="ik ik-arrow-right text-success"></i></button>
+                </div>
+            </form>
         </div>
     </div>
 

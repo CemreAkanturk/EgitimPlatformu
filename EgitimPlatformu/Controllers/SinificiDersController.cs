@@ -20,14 +20,14 @@ namespace EgitimPlatformu.Controllers
         public ActionResult Index()
         {
            
-            var Derslerim = db.Dersler.ToList();
-            return View(Derslerim);
+            var sinificiDerslerim = db.Dersler.Where(x => x.EgitimTuru == 0).ToList();
+            return View(sinificiDerslerim);
         }
 
         [HttpPost]
         public JsonResult Search(string arananstring)
         {
-            var Derslerim = db.Dersler.Where(x => x.DersAdi.Contains(arananstring)/*|| x.DersKodu.Contains(arananstring) || x.Kategoriler.KategoriAdi.Contains(arananstring)*/).ToList();
+            var Derslerim = db.Dersler.Where(x => x.DersAdi.Contains(arananstring)&&x.EgitimTuru == 0).ToList();
 
             List<SelectListItem> model = new List<SelectListItem>();
 
@@ -80,7 +80,7 @@ namespace EgitimPlatformu.Controllers
                     DersKodu = yeniDers.DersKodu,
                     KategoriId =yeniDers.KategoriId,
                     Aciklama = yeniDers.Aciklama,
-                    EgitimTuru = yeniDers.EgitimTuru,
+                    EgitimTuru = 0,
                     EgitmenId = 2,
                     DersAfis = yeniDers.DersAfis,
                     SinifIciDers = new SinifIciDers

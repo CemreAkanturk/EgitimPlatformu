@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "SinificiDersEkle";
+    ViewBag.Title = "DersEkle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,8 +9,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wrapper-content">
-                @using (Html.BeginForm("DersEkle", "SinificiDers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("DersEkle", "OnlineDers", FormMethod.Post, htmlAttributes: new { id = "form", role = "form", @class = "form-horizontal", enctype = "multipart/form-data" }))
                 {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", htmlAttributes: new { @class = "text-danger" })
+
                     <h1><span>Genel Bilgiler</span></h1>
                     <fieldset>
                         <div class="col-md-12 row">
@@ -19,7 +22,9 @@
                                 <div>
 
                                     <div hidden><input name="DersId" value="" /></div>
-                                    <div hidden><input name="SinifIciId" value="" /></div>
+                                    <div hidden>
+                                        <input name="OnlineId" value="" />
+                                    </div>
 
                                     <div class="fotograf_alani" style="margin-top:15%;">
                                         <a href="@Url.Content("~/Content/no-image.png")" id="lightBoxGallery_href" data-gallery="">
@@ -52,7 +57,7 @@
                                         <span>Egitim Turu</span>
                                     </label>
                                     <div class="col-md-8">
-                                        <input style="background-color:white" type="text" id="EgitimTuru" class="form-control" name="EgitimTuru" value="0" disabled />
+                                        <input style="background-color:white" type="text" id="EgitimTuru" class="form-control" name="EgitimTuru" value="Online" disabled />
                                     </div>
                                 </div>
 
@@ -104,52 +109,62 @@
                             <div class="col-md-10">
                                 <div class="form-group row">
                                     <label class="col-md-2 control-label">
-                                        <span>Egitim Sorumlusu</span>
+                                        <span>Ogrenim Hedefleri</span>
                                         <span class="zorunlu">*</span>:
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control" name="EgitimSorumlusu" id="EgitimSorumlusu" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">
-                                        <span>Hedef Kitle</span>
-                                        <span class="zorunlu">*</span>:
-                                    </label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" name="HedefKitle" id="HedefKitle" type="text" required />
+                                        <input class="form-control" name="OgrenimHedefleri" id="OgrenimHedefleri" type="text" required />
                                     </div>
                                 </div>
 
-                                <div class="form-group row" id="CokluSeansPeriyod">
+                                <div class="form-group row">
                                     <label class="col-md-2 control-label">
-                                        <span>Ders Periyodu</span>
-                                        <span class="zorunlu">*</span> :
+                                        <span>OrtamGereklilikleri</span>
+                                        <span class="zorunlu">*</span>:
                                     </label>
-                                    <div class="col-md-4">
-                                        <input class="form-control" id="SeansPeriyodInput" type="number" required />
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="OrtamGereklilikleri" id="OrtamGereklilikleri" type="text" required />
                                     </div>
-                                    <div class="col-md-4">
-                                        <select id="SeansPeriyodSelect" class="form-control">
-                                            <option value="0">Gün</option>
-                                            <option value="1">Hafta</option>
-                                            <option value="2">Ay</option>
-                                            <option value="3">Yıl</option>
-                                        </select>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Sure</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="Sure" id="Sure" type="number" required />
                                     </div>
-                                    <div hidden>
-                                        <input class="form-control" id="SeansPeriyodu" name="SeansPeriyod" />
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Medya(Link)</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="Medya" id="Medya" type="text" required />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 control-label">
-                                        <span>Acıklama</span>
+                                        <span>Basarim Olcut</span>
                                         <span class="zorunlu">*</span>:
                                     </label>
                                     <div class="col-md-8">
-                                        <input type="text" id="Acıklama" class="form-control" name="Aciklama" required />
+                                        <input type="number" id="BasarimOlcutleri" class="form-control" name="BasarımOlcutleri" required />
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Aciklama</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="Aciklama" id="Aciklama" type="text" required />
+                                    </div>
+                                </div>
+
                             </div>
 
 
@@ -176,99 +191,8 @@
     <link href="~/Content/plugins/WizardSteps/css/jasny.css" rel="stylesheet" />
     <link href="~/Content/plugins/chosen/css/bootstrap-chosen.css" rel="stylesheet" />
     <link href="~/Content/plugins/WizardSteps/css/toastry.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/SinificiDers/wizardlar.css" rel="stylesheet" />
 
-    <style>
-        .zorunlu {
-            font-size: 15px;
-            color: #e57373;
-        }
-
-
-        .col_padding_sil {
-            padding-left: 0px !important;
-        }
-
-
-        .borderless {
-            border-radius: 0px !important;
-        }
-
-
-        .current {
-            color: #08874b;
-        }
-
-        .max {
-            color: red;
-        }
-
-
-        .baslik {
-            border-bottom: 1px solid #08874b;
-            color: #08874b;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .fotograf_alani {
-            border: 1px solid #BDBDBD;
-            border-radius: 10px;
-            height: 200px;
-            padding: 5px;
-            width: 200px;
-        }
-
-            .fotograf_alani img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto
-            }
-
-        .close {
-            color: red !important;
-            margin: 5px;
-            opacity: .5 !important;
-        }
-
-        .fileinput {
-            margin-top: 5px;
-        }
-
-
-
-        /*etki alanalri radio butonlar*/
-        .radio-button input[type="radio"]:checked + a {
-            z-index: 2;
-            color: #fff;
-            background-color: #18a689;
-            border-color: #1ab394;
-            cursor: default;
-        }
-
-        .radio-button label {
-            padding: 6px 12px;
-            margin-bottom: 0px;
-            cursor: pointer;
-        }
-
-        .radio-button .pagination {
-            margin: 0px !important;
-        }
-
-            .radio-button .pagination > li > a {
-                padding: 0px;
-                border-radius: 0px !important;
-                border: 0px !important;
-            }
-
-        .radio-button input[type="radio"] {
-            width: 0px;
-            height: 0px;
-            position: absolute;
-            color: transparent;
-            visibility: hidden;
-        }
-    </style>
 }
 
 
@@ -282,7 +206,7 @@
     <script src="~/Content/plugins/WizardSteps/js/validate.js"></script>
     <script src="~/Content/plugins/WizardSteps/js/toastry.js"></script>
 
-    <script src="~/Content/js/DersEkleme/sinificidersekleme.js"></script>
+    <script src="~/Content/js/SinificiDers/sinificidersekleme.js"></script>
 
     <script type="text/javascript">
 
