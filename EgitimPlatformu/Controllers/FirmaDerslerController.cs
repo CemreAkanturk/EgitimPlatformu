@@ -17,6 +17,13 @@ namespace EgitimPlatformu.Controllers
         {
             return View();
         }
-
+        public ActionResult SatilanDersler()
+        {
+            return View();
+        }
+        public ActionResult KatilimciPlanlama()
+        {
+            return View();
+        }
     }
 }

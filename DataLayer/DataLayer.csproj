@@ -130,9 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202004022036507_yagmur.cs" />
-    <Compile Include="Migrations\202004022036507_yagmur.designer.cs">
-      <DependentUpon>202004022036507_yagmur.cs</DependentUpon>
+    <Compile Include="Migrations\202004201129491_yagmur.cs" />
+    <Compile Include="Migrations\202004201129491_yagmur.designer.cs">
+      <DependentUpon>202004201129491_yagmur.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,8 +148,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004022036507_yagmur.resx">
-      <DependentUpon>202004022036507_yagmur.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004201129491_yagmur.resx">
+      <DependentUpon>202004201129491_yagmur.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

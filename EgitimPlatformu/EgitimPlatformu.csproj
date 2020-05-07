@@ -456,6 +456,8 @@
     <Content Include="Views\SinificiDers\DersEkle.cshtml" />
     <Content Include="Views\SinificiDers\SinificiDersEkle.cshtml" />
     <Content Include="Views\SinificiDers\Duzenle.cshtml" />
+    <Content Include="Views\FirmaDersler\SatilanDersler.cshtml" />
+    <Content Include="Views\FirmaDersler\KatilimciPlanlama.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
