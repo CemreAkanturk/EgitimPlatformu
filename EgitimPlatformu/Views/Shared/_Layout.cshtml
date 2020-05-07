@@ -1,42 +1,355 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Egitim Platformu </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/ionicons/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/icon-kit/dist/css/iconkit.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/Content/dist/css/theme.min.css">
+    <script src="~/Content/src/js/vendor/modernizr-2.8.3.min.js"></script>
+    @RenderSection("Styles", required: false)
+    <script src="~/Content/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+
+    <div class="wrapper">
+        <header class="header-top" header-theme="light">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between">
+                    <div class="top-menu d-flex align-items-center">
+                        <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
+                         <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
+                    </div>
+                    <div class="top-menu d-flex align-items-center">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="notiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ik ik-bell"></i><span class="badge bg-danger">0</span></a>
+                            <div class="dropdown-menu dropdown-menu-right notification-dropdown" aria-labelledby="notiDropdown">
+                                <h4 class="header" id="Bildirimler">Bildirimler</h4>
+
+                                <div class="footer"><a href="javascript:void(0);">Tümünü gör</a></div>
+                            </div>
+                        </div>
+                        <button type="button" class="nav-link ml-10" id="apps_modal_btn" data-toggle="modal" data-target="#appsModal"><i class="ik ik-grid"></i></button>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="avatar" src="~/Content/img/user.jpg" alt=""></a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i> Profilim</a>
+                                <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i> Ayarlar</a>
+                                <a class="dropdown-item" href="#"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="ik ik-mail dropdown-icon"></i> Gelen Kutusu</a>
+                                <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i> Mesaj</a>
+                                <a class="dropdown-item" href="login.html"><i class="ik ik-power dropdown-icon"></i> Cıkıs</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+        </header>
+
+        <div class="page-wrap">
+            <div class="app-sidebar colored">
+                <div class="sidebar-header">
+                    <a class="header-brand" href="../index.html">
+                        <div class="logo-img">
+                            <img src="~/Content/src/img/brand-white.svg" class="header-brand-img" alt="lavalite">
+                        </div>
+                        <span class="text">CemreYagmur</span>
+                    </a>
+                    <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
+                    <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+                </div>
+
+                <div class="sidebar-content">
+                    <div class="nav-container">
+                        <nav id="main-menu-navigation" class="navigation-main">
+                            <div class="nav-lavel">EGİTMEN</div>
+
+                            <div class="nav-item">
+                                <a href="@Url.Action("Index","Kategoriler")"><i class="ik ik-package"></i><span>Kategoriler</span></a>
+
+                            </div>
+
+                            <div class="nav-item has-sub">
+                                <a href="javascript:void(0)"><i class="ik ik-package"></i><span>Derslerim</span></a>
+                                <div class="submenu-content">
+                                    <a href="@Url.Action("Index","SinificiDers")" class="menu-item">Sınıf İçi Derslerim</a>
+                                    <a href="@Url.Action("Index","OnlineDers")" class="menu-item">Online Derslerim</a>
+                                </div>
+                            </div>
+
+                            <div class="nav-item">
+                                <a href="#"><i class="ik ik-package"></i><span>Ders Programlarım</span></a>
+
+                            </div>
+
+                            <div class="nav-item has-sub">
+                                <a href="javascript:void(0)"><i class="ik ik-layers"></i><span> Olustur</span> </a>
+                                <div class="submenu-content">
+                                    <a href="" class="menu-item">Egitim Kategorisi Olustur</a>
+                                    <a href="" class="menu-item">Egitim Olustur</a>
+                                    <a href="" class="menu-item">Egitim Seans Olustur</a>
+                                    <a href="" class="menu-item">Basarım Ölcütü Olustur</a>
+                                </div>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-box"></i><span>Duzenle</span></a>
+                                <div class="submenu-content">
+                                    <a href="ui/alerts.html" class="menu-item">Egitim Kategorisi Düzenle</a>
+                                    <a href="ui/alerts.html" class="menu-item">Egitim Düzenle</a>
+                                    <a href="ui/alerts.html" class="menu-item">Egitim Seansı Düzenle</a>
+                                    <a href="ui/badges.html" class="menu-item">Başarım Ölçütü Düzenle</a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="nav-item ">
+                                <a href="#"><i class="ik ik-gitlab"></i><span>Online Eğitim Katılım Kontrol</span></a>
+                            </div>
+
+
+                            <div class="nav-lavel">Firma</div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-edit"></i><span>Dersler</span></a>
+                                <div class="submenu-content">
+                                    <a href="form-components.html" class="menu-item">Tüm Dersler</a>
+                                    <a href="form-advance.html" class="menu-item">Sahip Oldugum Dersler</a>
+                                </div>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-edit"></i><span>Planlama</span></a>
+                                <div class="submenu-content">
+                                    <a href="form-components.html" class="menu-item">Ders Tarihi Planlama</a>
+                                    <a href="form-advance.html" class="menu-item">Katılımcı Planlama</a>
+                                </div>
+                            </div>
+                            <div class="nav-item has-sub">
+                                <a href="#"><i class="ik ik-edit"></i><span>Rapor</span></a>
+                                <div class="submenu-content">
+                                    <a href="form-components.html" class="menu-item">RaporTipi1</a>
+                                    <a href="form-advance.html" class="menu-item">RaporTipi2</a>
+                                    <a href="form-advance.html" class="menu-item">RaporTipi3</a>
+                                </div>
+                            </div>
+
+                            <div class="nav-lavel">Calısan</div>
+                            <div class="nav-item">
+                                <a href="table-bootstrap.html"><i class="ik ik-credit-card"></i><span>Derslerim</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="table-datatable.html"><i class="ik ik-inbox"></i><span>E-Sınav</span></a>
+                            </div>
+
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content" style="background-color:white">
+                @RenderBody()
+
+
+            </div>
+            
+
+
+        </div>
+    </div>
+
+
+    <div class="chat-panel" hidden>
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <a href="javascript:void(0);"><i class="ik ik-message-square text-success"></i></a>
+                <span class="user-name">John Doe</span>
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="card-body">
+                <div class="widget-chat-activity flex-1">
+                    <div class="messages">
+                        <div class="message media reply">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/3.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>Epic Cheeseburgers come in all kind of styles.</p>
+                            </div>
+                        </div>
+                        <div class="message media">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>Cheeseburgers make your knees weak.</p>
+                            </div>
+                        </div>
+                        <div class="message media reply">
+                            <figure class="user--offline">
+                                <a href="#">
+                                    <img src="~/Content/img/users/5.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>Cheeseburgers will never let you down.</p>
+                                <p>They'll also never run around or desert you.</p>
+                            </div>
+                        </div>
+                        <div class="message media">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>A great cheeseburger is a gastronomical event.</p>
+                            </div>
+                        </div>
+                        <div class="message media reply">
+                            <figure class="user--busy">
+                                <a href="#">
+                                    <img src="~/Content/img/users/5.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>There's a cheesy incarnation waiting for you no matter what you palete preferences are.</p>
+                            </div>
+                        </div>
+                        <div class="message media">
+                            <figure class="user--online">
+                                <a href="#">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </a>
+                            </figure>
+                            <div class="message-body media-body">
+                                <p>If you are a vegan, we are sorry for you loss.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="javascript:void(0)" class="card-footer" method="post">
+                <div class="d-flex justify-content-end">
+                    <textarea class="border-0 flex-1" rows="1" placeholder="Type your message here"></textarea>
+                    <button class="btn btn-icon" type="submit"><i class="ik ik-arrow-right text-success"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade apps-modal" id="appsModal" tabindex="-1" role="dialog" aria-labelledby="appsModalLabel" aria-hidden="true" data-backdrop="false">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ik ik-x-circle"></i></button>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="quick-search">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 ml-auto mr-auto">
+                                <div class="input-wrap">
+                                    <input type="text" id="quick-search" class="form-control" placeholder="Search..." />
+                                    <i class="ik ik-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="container">
+                        <div class="apps-wrap">
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-mail"></i><span>Message</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-users"></i><span>Accounts</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-shopping-cart"></i><span>Sales</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-briefcase"></i><span>Purchase</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-server"></i><span>Menus</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-clipboard"></i><span>Pages</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-message-square"></i><span>Chats</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-map-pin"></i><span>Contacts</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-box"></i><span>Blocks</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-calendar"></i><span>Events</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-bell"></i><span>Notifications</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-pie-chart"></i><span>Reports</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-layers"></i><span>Tasks</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-edit"></i><span>Blogs</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-settings"></i><span>Settings</span></a>
+                            </div>
+                            <div class="app-item">
+                                <a href="#"><i class="ik ik-more-horizontal"></i><span>More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="~/Content/src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+
+
+
+    <script src="~/Content/plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/plugins/screenfull/dist/screenfull.js"></script>
+    <script src="~/Content/plugins/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Content/plugins/summernote/dist/summernote-bs4.min.js"></script>
+    <script src="~/Content/dist/js/theme.min.js"></script>
+    <script src="~/Content/js/layouts.js"></script>
     @RenderSection("scripts", required: false)
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+
 </body>
 </html>

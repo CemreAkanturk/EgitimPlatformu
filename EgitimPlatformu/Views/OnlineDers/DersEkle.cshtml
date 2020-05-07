@@ -1,0 +1,262 @@
+﻿
+@{
+    ViewBag.Title = "DersEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="wrapper wrapper-content animated">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrapper-content">
+                @using (Html.BeginForm("DersEkle", "OnlineDers", FormMethod.Post, htmlAttributes: new { id = "form", role = "form", @class = "form-horizontal", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", htmlAttributes: new { @class = "text-danger" })
+
+                    <h1><span>Genel Bilgiler</span></h1>
+                    <fieldset>
+                        <div class="col-md-12 row">
+
+                            <div class="col-md-4">
+                                <div>
+
+                                    <div hidden><input name="DersId" value="" /></div>
+                                    <div hidden>
+                                        <input name="OnlineId" value="" />
+                                    </div>
+
+                                    <div class="fotograf_alani" style="margin-top:15%;">
+                                        <a href="@Url.Content("~/Content/no-image.png")" id="lightBoxGallery_href" data-gallery="">
+                                            <img src="@Url.Content("~/Content/no-image.png")" id="fotograf" class="img-preview" />
+                                        </a>
+                                    </div>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput" style="margin-left:20%">
+                                        <span class="btn btn-outline btn-primary btn-file">
+                                            <span class="fileinput-new">Afiş Ekle</span>
+                                            <span class="fileinput-exists">Değiştir</span>
+                                            <input id="FirmaImage" class="btn btn-outline btn-primary" type="file" name="DersAfis" accept="image/x-png,image/gif,image/jpeg,image/jpg" />
+                                        </span>
+                                        <a href="#" id="fotograf_sil" class="close fileinput-exists fa-2x" data-dismiss="fileinput" style="float: none">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group row">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-8">
+                                        <p class="text-warning">
+                                            <span>*Zorunlu Alanlar</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Egitim Turu</span>
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input style="background-color:white" type="text" id="EgitimTuru" class="form-control" name="EgitimTuru" value="Online" disabled />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Kategori</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <select id="KategoriSelect" name="KategoriId" class="form-control" required>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Ders Adı</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" id="DersAdi" class="form-control" name="DersAdi" required />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Ders Kodu</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <div class="form-group" id="DersKodu">
+                                            <input class="form-control regex_validation" name="DersKodu" value="" type="text" data-type="text" required maxlength="4" id="DersKoduInput" />
+                                            <div class="input-group-addon" style="width:574px;">
+                                                <span class="current" style="margin-left:32%">0</span> / <span class="max"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <h1><span>Ders Bilgileri</span></h1>
+                    <fieldset>
+                        <div class="col-md-12 row">
+
+
+
+                            <div class="col-md-10">
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Ogrenim Hedefleri</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="OgrenimHedefleri" id="OgrenimHedefleri" type="text" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>OrtamGereklilikleri</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="OrtamGereklilikleri" id="OrtamGereklilikleri" type="text" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Sure</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="Sure" id="Sure" type="number" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Medya(Link)</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="Medya" id="Medya" type="text" required />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Basarim Olcut</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="number" id="BasarimOlcutleri" class="form-control" name="BasarımOlcutleri" required />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">
+                                        <span>Aciklama</span>
+                                        <span class="zorunlu">*</span>:
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" name="Aciklama" id="Aciklama" type="text" required />
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+
+
+
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Styles
+{
+
+    <link href="~/Content/plugins/WizardSteps/css/wizard.css" rel="stylesheet" />
+
+    <link href="~/Content/plugins/WizardSteps/css/jasny.css" rel="stylesheet" />
+    <link href="~/Content/plugins/chosen/css/bootstrap-chosen.css" rel="stylesheet" />
+    <link href="~/Content/plugins/WizardSteps/css/toastry.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/SinificiDers/wizardlar.css" rel="stylesheet" />
+
+}
+
+
+@section Scripts
+{
+
+
+    <script src="~/Content/plugins/chosen/js/chosen.jquery.js"></script>
+    <script src="~/Content/plugins/WizardSteps/js/jasny.js"></script>
+    <script src="~/Content/plugins/WizardSteps/js/steps.js"></script>
+    <script src="~/Content/plugins/WizardSteps/js/validate.js"></script>
+    <script src="~/Content/plugins/WizardSteps/js/toastry.js"></script>
+
+    <script src="~/Content/js/SinificiDers/sinificidersekleme.js"></script>
+
+    <script type="text/javascript">
+
+         var firmaImagePath = '@Url.Content("~/Content/no-image.png")';
+         var ajax_kategori_getir_url = '@Url.Action("KategoriGetir","SinificiDers")';
+
+        $(document).ready(function () {
+
+
+
+                  $.ajax({
+                    type: "GET",
+                    url:ajax_kategori_getir_url,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (kategoriler) {
+
+                          $("#KategoriSelect").append(`<option value="bos" selected>Seciniz..</option>`);
+                        for (var i = 0; i < kategoriler.length; i++) {
+
+                            $("#KategoriSelect").append(`<option value="${kategoriler[i].Value}">${kategoriler[i].Text}</option>`);
+                        }
+                    },
+                    error: function () {
+                        alert("Hata");
+                    },
+                });
+
+
+
+            $('.chosen-select').chosen({ width: "100%" });
+
+            $('[name="check"]').on('change', function () {
+                var value = parseInt($(this).val());
+
+                if (value === 0) {
+                    $("#DersKoduInput").prop('readonly', true);
+
+                }
+                else {
+                    $('#DersKoduInput').prop('readonly', false);
+                }
+
+
+            });
+
+});
+
+
+
+    </script>
+
+}

@@ -1,0 +1,325 @@
+﻿@model List<Entities.Dersler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Derslerim</h5>
+                    <span>Sınıf içi Derslerim</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#"> Derslerim</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Sınıf içi Derslerim</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-2 clearfix">
+
+                <div class="collapse d-md-block display-options" id="displayOptions">
+                    <span class="mr-3 d-inline-block float-md-left dispaly-option-buttons">
+
+                        <a href="#" class="mr-1 view-thumb ">
+                            <i class="ik ik-list view-icon"></i>
+                        </a>
+                        <a href="#" class="mr-1 view-grid">
+                            <i class="ik ik-grid view-icon"></i>
+                        </a>
+                    </span>
+                    <div class="d-block d-md-inline-block">
+
+                        <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top col-md-5">
+
+                            <input type="text" name="ara" id="ara" class="form-control" placeholder="Search.." onkeyup="degisim(value)">
+
+                        </div>
+                    </div>
+                    <div class="float-md-right">
+                        <a id="DersEkle" href="@Url.Action("DersEkle","SinificiDers")" class="btn btn-outline-success olusturbtn">
+                            <i class="ik ik-plus-circle" style="font-size:15px"></i>
+                            <span>Sınıf İçi Ders Olustur</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="separator mb-20"></div>
+
+<div class="row layout-wrap search" id="layout-wrap">
+    @foreach (var item in Model)
+    {
+        <div class="col-12 list-item">
+            <div class="card d-flex flex-row mb-3">
+                <a class="d-flex card-img" href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem">
+                    <img src="@item.DersAfis" class="list-thumbnail responsive border-0">
+
+                </a>
+                <div class="d-flex flex-grow-1 min-width-zero card-content">
+                    <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                        <a class="list-item-heading mb-1 truncate w-15 w-xs-100" href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem">
+                            @item.DersAdi
+                        </a>
+                        <p class="mb-1 text-muted text-small category w-15 w-xs-100">@item.DersKodu</p>
+                        <p class="mb-1 text-muted text-small date w-15 w-xs-100">@item.Kategoriler.KategoriAdi Kategorisi</p>
+                        <div class="w-15 w-xs-100" style="margin-right:60px;">
+                            <a class="btn btn-danger denk" href="#">
+                                <i class="ik ik-info" style="margin-left:-10px;"></i>
+                                Seans Bilgileri
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-actions">
+                        <a  href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem"><i class="ik ik-eye"></i></a>
+                        <a  href="@Url.Action("Duzenle", new { id = item.DersId })"><i class="ik ik-edit-2"></i></a>
+                        <a class="butonlar" href="#DersSilModal" data-toggle="modal" data-target="#DersSilModal" data-Ders-id="@item.DersId" data-Ders-Adi="@item.DersAdi">
+                            <i class="ik ik-trash-2"></i>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<div class="ekle"></div>
+
+
+
+<div class="modal inmodal" id="DersSilModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content  ">
+            <div class="modal-header row">
+                <div class="col-md-12">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <i class="ik ik-delete ik-3x" style="font-size:40px;margin-left:2%"></i>
+                <h4 class="modal-title ortala" style="margin-right:37%">Sil</h4>
+            </div>
+            <div class="modal-body">
+                <p id="AA"></p>
+            </div>
+            @using (Html.BeginForm("Sil", "SinificiDers", FormMethod.Post))
+            {
+                <div>
+                    <input name="DersId" value="0" id="SilinenDersId" hidden />
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default btn-outline">
+                        <i class="ik ion-ios-undo"></i>
+
+                    </button>
+                    <button type="submit" class="btn btn-danger btn-outline" id="Sil">
+                        <i class="	ik ik-trash"></i>
+                        <span>Sil</span>
+                    </button>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@*---------------- bundan sonrası -------------*@
+
+
+
+
+@* acordion burda
+        <div class="container-fluid" style="margin-top:30px;">
+
+        <div class="row">
+
+
+            <div class="col-md-12 col-md-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="heading-@i">
+                                <h4 class="panel-title">
+
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-@i" aria-expanded="true" aria-controls="collapse-@i">
+                                        <img src="~/Content/img/users/2.jpg" class="list-thumbnail responsive border-0" style="width:25px;">
+                                        Ders Adi-@i
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse-@i" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-@i">
+                                <div class="panel-body" style="background-color:#F0F0DF">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et facilisis mi. Nunc vitae pretium est, aliquet sagittis enim. Duis fringilla ipsum at velit gravida, ac luctus lorem euismod. Vivamus placerat dolor mi, vel feugiat dui egestas a. Fusce congue. </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+
+
+
+
+
+@section Styles{
+    <link href="~/Content/plugins/DerslerimAccordion/accordion.css" rel="stylesheet" />
+
+    <style>
+
+          .ortala {
+            margin: auto;
+            width: 50%;
+        }
+
+          .denk{
+             width:115px;
+             text-align:center;
+          }
+    </style>
+
+}
+
+@section Scripts
+{
+    <script>
+
+        function degisim(ish) {
+
+            $("#ara").val(ish);
+
+            var aranan = $("#ara").val();
+
+            var ara = {
+                arananstring: aranan
+                }
+
+            if (aranan != "") {
+                $(".search").hide();
+                $(".ekle").show();
+                  $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Search", "SinificiDers")",
+                        data: JSON.stringify(ara),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (dersler) {
+                            $(".ekle").empty();
+                            if (dersler.length == 0) {
+                            $(".ekle").append(`<div class="alert alert-warning" role="alert">
+                                          Aradığınız Kriterlere Uygun Ders Bulunmamaktadır!
+                                        </div>`);
+                            } else {
+                                for (var i = 0; i < dersler.length; i++) {
+                                    $(".ekle").append(`   <div class="row layout-wrap" id="layout-wrap">
+                <div class="col-12 list-item">
+                <div class="card d-flex flex-row mb-3">
+                    <a class="d-flex card-img" href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem">
+                        <img src="~/Content/img/portfolio-1.jpg" alt="Donec sit amet est at sem iaculis aliquam." class="list-thumbnail responsive border-0">
+                        <span class="badge badge-pill badge-primary position-absolute badge-top-left">New</span>
+                        <span class="badge badge-pill badge-secondary position-absolute badge-top-left-2">Trending</span>
+                    </a>
+                    <div class="d-flex flex-grow-1 min-width-zero card-content">
+                        <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                            <a class="list-item-heading mb-1 truncate w-40 w-xs-100" href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem">
+                               ${dersler[i].Text}
+                            </a>
+                            <p class="mb-1 text-muted text-small category w-15 w-xs-100">Art</p>
+                            <p class="mb-1 text-muted text-small date w-15 w-xs-100">02.04.2018</p>
+                            <div class="w-15 w-xs-100">
+                                <span class="badge badge-pill badge-secondary">On Hold</span>
+                            </div>
+                        </div>
+                        <div class="list-actions">
+                            <a href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem"><i class="ik ik-eye"></i></a>
+                            <a href="layout-edit-item.html"><i class="ik ik-edit-2"></i></a>
+                            <a href="#" class="list-delete"><i class="ik ik-trash-2"></i></a>
+                        </div>
+                        <div class="custom-control custom-checkbox pl-1 align-self-center">
+                            <label class="custom-control custom-checkbox mb-0">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label"></span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div></div>`);
+                                }
+                        }
+                        },
+                        error: function () {
+                            alert("Hata");
+                        },
+                    });
+
+
+            }
+            else {
+
+                $(".ekle").hide();
+                $(".search").show();
+
+            }
+
+
+        }
+
+        $(document).ready(function () {
+
+                $(".butonlar").on("click", function () {
+
+
+                var silinenid = $(this).attr("data-Ders-id");
+                var silinenAd = $(this).attr("data-Ders-Adi");
+
+                    $("#SilinenDersId").val(silinenid);
+
+                  
+
+                document.getElementById("AA").innerHTML = "Secmis oldugunuz " + silinenAd + " dersini silmek istediginize emin misiniz?";
+
+            });
+
+        });
+
+    </script>
+
+}
