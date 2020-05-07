@@ -1,0 +1,277 @@
+﻿
+@{
+    ViewBag.Title = "SatilanDersler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles
+{
+    <link rel="stylesheet" href="~/Content/plugins/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/owl.carousel/dist/assets/owl.theme.default.min.css">
+}
+    <header class="header-top" header-theme="light">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between">
+                <div class="top-menu d-flex align-items-center">
+                    <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
+                    <div class="header-search">
+                        <div class="input-group">
+                            <span class="input-group-addon search-close"><i class="ik ik-x"></i></span>
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
+                        </div>
+                    </div>
+                    <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
+                </div>
+                <div class="top-menu d-flex align-items-center">
+              
+                    <button type="button" class="nav-link ml-10" id="apps_modal_btn" data-toggle="modal" data-target="#appsModal"><i class="ik ik-grid"></i></button>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="avatar" src="~/Content/img/user.jpg" alt=""></a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i> Profilim</a>
+                            <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i> Ayarlar</a>
+                            <a class="dropdown-item" href="#"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="ik ik-mail dropdown-icon"></i> Gelen Kutusu</a>
+                            <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i> Mesaj</a>
+                            <a class="dropdown-item" href="login.html"><i class="ik ik-power dropdown-icon"></i> Cıkıs</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4" style="text-align:center;">Eğitimlerimiz</h1>
+        <div class="row">
+            <div class="col-md-12 mb-4 pl-0 pr-0">
+                <div class="owl-container">
+                    <div class="owl-carousel basic">
+
+
+
+                        <div class="card flex-row">
+                            <div class="w-50 position-relative">
+                                <img class="card-img-left" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                                <span class="badge badge-pill badge-primary position-absolute badge-top-left">Yeni</span>
+                            </div>
+                            <div class="w-50">
+                                <div class="card-body">
+                                    <h6 class="mb-4">Muhasebe</h6>
+                                    <span>
+                                        lorem adsasdasdasd asdasd asdasdas fasdasdasa dasdas dasdas
+                                    </span>
+                                    <div style="padding-top:30px; text-align:center;">
+                                        <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="card flex-row">
+                            <div class="w-50 position-relative">
+                                <img class="card-img-left" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                                <span class="badge badge-pill badge-primary position-absolute badge-top-left">Yeni</span>
+                            </div>
+                            <div class="w-50">
+                                <div class="card-body">
+                                    <h6 class="mb-4">Muhasebe</h6>
+                                    <span>
+                                        lorem adsasdasdasd asdasd asdasdas fasdasdasa dasdas dasdas
+                                    </span>
+                                    <div style="padding-top:30px; text-align:center;">
+                                        <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                            <span class="badge badge-pill badge-primary position-absolute badge-top-left">Yeni</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h6 class="mb-4">Muhasebe</h6>
+                                <span>
+                                    lorem adsasdasdasd asdasd asdasdas fasdasdasa dasdas dasdas
+                                </span>
+                                <div style="padding-top:30px; text-align:center;">
+                                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><div class="card flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                            <span class="badge badge-pill badge-primary position-absolute badge-top-left">Yeni</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h6 class="mb-4">Muhasebe</h6>
+                                <span>
+                                    lorem adsasdasdasd asdasd asdasdas fasdasdasa dasdas dasdas
+                                </span>
+                                <div style="padding-top:30px; text-align:center;">
+                                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><div class="card flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                            <span class="badge badge-pill badge-primary position-absolute badge-top-left">Yeni</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h6 class="mb-4">Muhasebe</h6>
+                                <span>
+                                    lorem adsasdasdasd asdasd asdasdas fasdasdasa dasdas dasdas
+                                </span>
+                                <div style="padding-top:30px; text-align:center;">
+                                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterLabel">Ürün Adı</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>Kazanımlar</h5>
+
+                                    <p class="mt-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                    <h5 class="mt-30">Eğitim İçerik</h5>
+                                    <hr>
+                                    <div class="col-lg-12 col-md-6 col-sm-12">
+                                        <div class="widget bg-primary">
+                                            <div class="widget-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="state">
+                                                        <h6>Video</h6>
+                                                        <h2>30</h2>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="ik ik-film"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget bg-success">
+                                            <div class="widget-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="state">
+                                                        <h6> Soru</h6>
+                                                        <h2>35</h2>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="ik ik-edit-1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget bg-warning">
+                                            <div class="widget-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="state">
+                                                        <h6> Sınıf İçi Etkinlik</h6>
+                                                        <h2>3</h2>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="ik ik-award"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    <button type="button" class="btn btn-primary">Satın Al</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav text-center">
+                        <a href="#" class="left-arrow owl-prev">
+                            <i class="ik ik-chevron-left"></i>
+                        </a>
+                        <div class="slider-dot-container"></div>
+                        <a href="#" class="right-arrow owl-next">
+                            <i class="ik ik-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class=" col-xl-3 col-md-6 col-xs-6 card" style="width: 10rem;">
+                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                </div>
+            </div>
+
+
+            <div class="col-xl-3 col-md-6 col-xs-6 card" style="width: 10rem;">
+                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                </div>
+            </div>
+
+
+            <div class="col-xl-3 col-md-6 col-xs-6 card" style="width: 10rem;">
+                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Hijyen</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-xs-6 card" style="width: 10rem;">
+                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/zzMQbjOXdLfc3g-sW_rq1CB5SrpfcNUDV3dRcvwt7gxpd5pS0ETOx1zzBqda8Ostfb3whlyEN_yE-o4Y6YtpcsqF-mKfIbUVxOg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Matematik</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+
+    <script src="~/Content/js/carousel.js"></script>
+    <script src="~/Content/plugins/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+                function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+    </script>
+}

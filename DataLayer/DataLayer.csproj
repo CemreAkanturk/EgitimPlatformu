@@ -130,9 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202004192051590_cemre2.cs" />
-    <Compile Include="Migrations\202004192051590_cemre2.designer.cs">
-      <DependentUpon>202004192051590_cemre2.cs</DependentUpon>
+    <Compile Include="Migrations\202004201129491_yagmur.cs" />
+    <Compile Include="Migrations\202004201129491_yagmur.designer.cs">
+      <DependentUpon>202004201129491_yagmur.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202005040148491_onlineders.cs" />
     <Compile Include="Migrations\202005040148491_onlineders.designer.cs">
@@ -152,8 +152,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004192051590_cemre2.resx">
-      <DependentUpon>202004192051590_cemre2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004201129491_yagmur.resx">
+      <DependentUpon>202004201129491_yagmur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005040148491_onlineders.resx">
       <DependentUpon>202005040148491_onlineders.cs</DependentUpon>

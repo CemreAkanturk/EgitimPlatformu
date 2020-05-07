@@ -247,3 +247,17 @@ C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.pdb
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\Entities.dll.config
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\AutoMapper.dll
 C:\Users\Cemre\Source\Repos\EgitimPlatformu3\EgitimPlatformu\bin\AutoMapper.xml
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\AutoMapper.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\Business.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\DataLayer.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\Entities.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.SqlServer.dll
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\Business.pdb
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\DataLayer.pdb
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\DataLayer.dll.config
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\Entities.pdb
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\Entities.dll.config
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\AutoMapper.xml
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.xml
+C:\Users\HP\Source\Repos\CemreAkanturk\EgitimPlatformu\EgitimPlatformu\bin\EntityFramework.SqlServer.xml
