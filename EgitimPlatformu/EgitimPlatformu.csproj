@@ -132,6 +132,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CalisanController.cs" />
     <Compile Include="Controllers\DersOlusturController.cs" />
     <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -466,6 +467,10 @@
     <Content Include="obj\Debug\EgitimPlatformu.csprojAssemblyReference.cache" />
     <Content Include="obj\Release\EgitimPlatformu.csprojAssemblyReference.cache" />
     <Content Include="Content\Pdf\StajCv.pdf" />
+    <Content Include=".vs\config\applicationhost.config" />
+    <Content Include=".vs\ProjectSettings.json" />
+    <Content Include=".vs\slnx.sqlite" />
+    <Content Include=".vs\VSWorkspaceState.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -507,8 +512,14 @@
     <Content Include="Views\SinificiDers\SeansBilgileri.cshtml" />
     <Content Include="Views\OnlineSinav\Index.cshtml" />
     <Content Include="Views\OnlineSinav\sorular.cshtml" />
+    <Content Include="Views\Calisan\CalisanDersler.cshtml" />
+    <Content Include="Views\Calisan\DersBilgileri.cshtml" />
+    <Content Include="Views\FirmaDersler\dersCalisanEkle.cshtml" />
+    <Content Include="Views\FirmaDersler\dersTarihiPlanlama.cshtml" />
+    <Content Include="Views\FirmaDersler\katilimciList.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".vs\EgitimPlatformu\v15\" />
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Content\img\DersAfisleri\" />
