@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "dersTarihiPlanlama";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{    
+    <link rel="stylesheet" href="~/Content/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" href="~/Content/plugins/datedropper/datedropper.min.css">
+}
+
+<div class="row">
+    <div class="col-xl-4 col-md-6">
+        <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong">
+            <div class="card analytic-card card-yellow">
+                <div class="card-body">
+                    <div class="row align-items-center mb-30">
+                        <div class="col-auto">
+                            <i class="fas fa-users text-warning f-18 analytic-icon"></i>
+                        </div>
+                        <div class="col text-right">
+                            <h3 class="mb-5 text-white">Ders Adı </h3>
+                            <h6 class="mb-0 text-white">Eğitmen Adı</h6>
+                        </div>
+                    </div>
+                    <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
+                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-4 col-md-6">
+        <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong">
+            <div class="card analytic-card card-yellow">
+                <div class="card-body">
+                    <div class="row align-items-center mb-30">
+                        <div class="col-auto">
+                            <i class="fas fa-users text-warning f-18 analytic-icon"></i>
+                        </div>
+                        <div class="col text-right">
+                            <h3 class="mb-5 text-white">Ders Adı </h3>
+                            <h6 class="mb-0 text-white">Eğitmen Adı</h6>
+                        </div>
+                    </div>
+                    <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
+                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
+
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-4 col-md-6">
+        <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong">
+            <div class="card analytic-card card-yellow">
+                <div class="card-body">
+                    <div class="row align-items-center mb-30">
+                        <div class="col-auto">
+                            <i class="fas fa-users text-warning f-18 analytic-icon"></i>
+                        </div>
+                        <div class="col text-right">
+                            <h3 class="mb-5 text-white">Ders Adı </h3>
+                            <h6 class="mb-0 text-white">Eğitmen Adı</h6>
+                        </div>
+                    </div>
+                    <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
+                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongLabel">Seanslar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Seans Numarası</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option disabled>2</option>
+                                <option disabled>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Tarih</label>
+                            <input type="text" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Saat</label>
+                            <select class="form-control" id="exampleFormControlSelect2">
+                                <option>09:00</option>
+                                <option>13:00</option>
+                                <option>16:00</option>
+                                <option disabled>20:00</option>
+                                
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/Content/plugins/moment/moment.js"></script>
+    <script src="~/Content/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="~/Content/plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="~/Content/plugins/datedropper/datedropper.min.js"></script>
+    <script src="~/Content/dist/js/theme.min.js"></script>
+    <script src="~/Content/js/form-picker.js"></script>
+}
