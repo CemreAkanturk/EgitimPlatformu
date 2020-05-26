@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "dersCalisanEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="card">
+            <div class="card-header" style="margin-top:-30px;">
+                <div class="col-xl-12 col-md-6" style="margin-bottom:-10px;">
+                    <div class="card analytic-card card-blue">
+                        <div class="card-body">
+                            <div class="row align-items-center mb-30">
+                                <div class="col">
+                                    <i class="fas fa-users text-blue f-18 analytic-icon"></i>
+                                </div>
+                                <div class="col text-center">
+                                    <h1 class=" mb-0 fw-700 text-white" style=" font-size: 2.5em"> DERS ADI</h1>
+                                </div>
+                                <div class="col text-right">
+                                    <h3 class="mb-5 text-white">Eğitmen Adı</h3>
+                                    <h6 class="mb-0 text-white">Dersin oluşturulma tarihi</h6>
+                                </div>
+                            </div>
+                            <p class="mb-0 text-white d-inline-block">Katılımcı Sayısı : </p>
+                            <h5 class="text-white d-inline-block mb-0">51</h5>
+                            <h6 class="mb-0 d-inline-block text-white float-right">Ders Kodu:12516</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <h3 class=" mb-0 fw-700 text-black" style=" font-size: 2.5em"> Çalışan Listesi</h3>
+                </div>
+
+            </div>
+
+            <div class="card-body">
+                <table id="data_table" class="table">
+                    <thead>
+                        <tr>
+                            <th class="nosort">Fotoğraf</th>
+                            <th>Ad Soyad</th>
+                            <th>Departman</th>
+                            <th class="nosort">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="../img/users/1.jpg" class="table-user-thumb" alt=""></td>
+                            <td>Erich Heaney</td>
+                            <td>erich@example.com</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-plus"></i></button>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../img/users/2.jpg" class="table-user-thumb" alt=""></td>
+                            <td>Abraham Douglas</td>
+                            <td>jgraham@example.com</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-plus"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../img/users/3.jpg" class="table-user-thumb" alt=""></td>
+                            <td>Roderick Simonis</td>
+                            <td>grant.simonis@example.com</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-plus"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../img/users/4.jpg" class="table-user-thumb" alt=""></td>
+                            <td>Christopher Henry</td>
+                            <td>henry.chris@example.com</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-plus"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../img/users/5.jpg" class="table-user-thumb" alt=""></td>
+                            <td>Sonia Wilkinson</td>
+                            <td>boyle.aglea@example.com</td>
+                            <td>
+                                <div class="table-actions">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-plus"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterLabel">"Çalışanadı" derse eklensin mi?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                     
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">İptal</button>
+                            <button type="button" class="btn btn-success">Ekle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <script src="~/Content/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/js/datatables.js"></script>
+
+}
+
+

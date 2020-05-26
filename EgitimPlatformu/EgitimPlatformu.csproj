@@ -132,6 +132,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CalisanController.cs" />
     <Compile Include="Controllers\DersOlusturController.cs" />
     <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -141,6 +142,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -364,6 +368,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\EgitimPlatformu.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\EgitimPlatformu.dll" />
+    <Content Include="obj\Debug\EgitimPlatformu.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\dist\css\theme.css.map" />
@@ -425,6 +432,15 @@
     <Content Include="Content\src\scss\_widgets.scss" />
     <Content Include="Content\package-lock.json" />
     <Content Include="Content\package.json" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Database\EgitimPlatformu.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Database\EgitimPlatformu.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Database\EgitimPlatformu.ssdl" />
+    <Content Include="obj\Debug\EgitimPlatformu.csproj.CopyComplete" />
+    <Content Include="obj\Debug\EgitimPlatformu.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\EgitimPlatformu.csprojAssemblyReference.cache" />
+    <Content Include="obj\Release\EgitimPlatformu.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\EgitimPlatformu.csprojAssemblyReference.cache" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -459,11 +475,19 @@
     <Content Include="Views\OnlineDers\Index.cshtml" />
     <Content Include="Views\OnlineDers\DersEkle.cshtml" />
     <Content Include="Views\OnlineDers\Duzenle.cshtml" />
+    <Content Include="Views\FirmaDersler\KatilimciPlanlama.cshtml" />
+    <Content Include="Views\FirmaDersler\SatilanDersler.cshtml" />
+    <Content Include="Views\FirmaDersler\katilimciList.cshtml" />
+    <Content Include="Views\FirmaDersler\dersCalisanEkle.cshtml" />
+    <Content Include="Views\FirmaDersler\dersTarihiPlanlama.cshtml" />
+    <Content Include="Views\Calisan\CalisanDersler.cshtml" />
+    <Content Include="Views\Calisan\DersBilgileri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\DersAfisleri\" />
     <Folder Include="Models\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\DersOlustur\" />
   </ItemGroup>
   <ItemGroup>
