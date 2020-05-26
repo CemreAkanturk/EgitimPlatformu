@@ -130,13 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202004192051590_cemre2.cs" />
-    <Compile Include="Migrations\202004192051590_cemre2.designer.cs">
-      <DependentUpon>202004192051590_cemre2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005040148491_onlineders.cs" />
-    <Compile Include="Migrations\202005040148491_onlineders.designer.cs">
-      <DependentUpon>202005040148491_onlineders.cs</DependentUpon>
+    <Compile Include="Migrations\202005200211397_seansaciklama.cs" />
+    <Compile Include="Migrations\202005200211397_seansaciklama.designer.cs">
+      <DependentUpon>202005200211397_seansaciklama.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,11 +148,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004192051590_cemre2.resx">
-      <DependentUpon>202004192051590_cemre2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005040148491_onlineders.resx">
-      <DependentUpon>202005040148491_onlineders.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005200211397_seansaciklama.resx">
+      <DependentUpon>202005200211397_seansaciklama.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

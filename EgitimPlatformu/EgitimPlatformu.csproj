@@ -137,6 +137,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
     <Compile Include="Controllers\OnlineDersController.cs" />
+    <Compile Include="Controllers\OnlineSinavController.cs" />
     <Compile Include="Controllers\SinificiDersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,12 +145,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\AutoMapper.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\browserconfig.xml" />
     <Content Include="Content\crossdomain.xml" />
+    <Content Include="Content\dist\css\build.css" />
     <Content Include="Content\dist\css\SinificiDers\wizardlar.css" />
     <Content Include="Content\dist\css\theme.css" />
     <Content Include="Content\dist\css\theme.min.css" />
@@ -295,10 +312,16 @@
     <Content Include="Content\plugins\fontawesome-free\webfonts\fa-solid-900.svg" />
     <Content Include="Content\plugins\fullcalendar\dist\fullcalendar.min.css" />
     <Content Include="Content\plugins\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="Content\plugins\iCheck\custom.css" />
+    <Content Include="Content\plugins\iCheck\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\green.png" />
+    <Content Include="Content\plugins\iCheck\icheck.min.js" />
     <Content Include="Content\plugins\icon-kit\dist\css\iconkit.min.css" />
     <Content Include="Content\plugins\icon-kit\dist\fonts\iconkit.svg" />
     <Content Include="Content\plugins\ionicons\dist\css\ionicons.min.css" />
     <Content Include="Content\plugins\ionicons\dist\fonts\ionicons.svg" />
+    <Content Include="Content\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="Content\plugins\jasny\jasny-bootstrap.min.js" />
     <Content Include="Content\plugins\jquery-bar-rating\dist\jquery.barrating.min.js" />
     <Content Include="Content\plugins\jquery-bar-rating\dist\themes\bars-1to10.css" />
     <Content Include="Content\plugins\jquery-bar-rating\dist\themes\bars-horizontal.css" />
@@ -336,6 +359,7 @@
     <Content Include="Content\plugins\select2\dist\js\select2.min.js" />
     <Content Include="Content\plugins\summernote\dist\summernote-bs4.css" />
     <Content Include="Content\plugins\summernote\dist\summernote-bs4.min.js" />
+    <Content Include="Content\plugins\sweetalert\css\sweetalert.css" />
     <Content Include="Content\plugins\sweetalert\dist\sweetalert.min.js" />
     <Content Include="Content\plugins\tempusdominus-bootstrap-4\build\css\tempusdominus-bootstrap-4.min.css" />
     <Content Include="Content\plugins\tempusdominus-bootstrap-4\build\js\tempusdominus-bootstrap-4.min.js" />
@@ -364,6 +388,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\EgitimPlatformu.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\Models.Database.EgitimPlatformu.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Database.EgitimPlatformu.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Database.EgitimPlatformu.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\dist\css\theme.css.map" />
@@ -425,6 +456,16 @@
     <Content Include="Content\src\scss\_widgets.scss" />
     <Content Include="Content\package-lock.json" />
     <Content Include="Content\package.json" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Database\EgitimPlatformu.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Database\EgitimPlatformu.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Database\EgitimPlatformu.ssdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.csdl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.msl" />
+    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\Model1.ssdl" />
+    <Content Include="obj\Debug\EgitimPlatformu.csprojAssemblyReference.cache" />
+    <Content Include="obj\Release\EgitimPlatformu.csprojAssemblyReference.cache" />
+    <Content Include="Content\Pdf\StajCv.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -459,9 +500,17 @@
     <Content Include="Views\OnlineDers\Index.cshtml" />
     <Content Include="Views\OnlineDers\DersEkle.cshtml" />
     <Content Include="Views\OnlineDers\Duzenle.cshtml" />
+    <Content Include="Views\FirmaDersler\KatilimciPlanlama.cshtml" />
+    <Content Include="Views\FirmaDersler\SatilanDersler.cshtml" />
+    <Content Include="Views\OnlineDers\SeansBilgileri.cshtml" />
+    <Content Include="Views\OnlineDers\SeansEkleEski.cshtml" />
+    <Content Include="Views\SinificiDers\SeansBilgileri.cshtml" />
+    <Content Include="Views\OnlineSinav\Index.cshtml" />
+    <Content Include="Views\OnlineSinav\sorular.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\roslyn\" />
     <Folder Include="Content\img\DersAfisleri\" />
     <Folder Include="Models\" />
     <Folder Include="Views\DersOlustur\" />

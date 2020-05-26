@@ -150,6 +150,62 @@ namespace EgitimPlatformu.Controllers
             return View(model);
         }
 
+        public ActionResult SeansBilgileri(int id)
+        {
+
+            var gelen = db.SinifIciIcerik.Where(x => x.SinifIciId == id).ToList(); ;
+
+
+            SinificiSeansBilgileri model = new SinificiSeansBilgileri();
+            model.SinificiİcerikId = id;
+            model.sinificiicerik = gelen;
+           
+
+        for(int i = 0; i < model.sinificiicerik.Count(); i++)
+            {
+                model.sinificiicerik[i].EgitmenMedya = model.sinificiicerik[i].EgitmenMedya.Substring(13);
+
+
+
+            }
+            return View(model);
+        
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SeansOlustur(SinifIciIcerik yeniSeans, HttpPostedFileBase EgitmenMedya)
+        {
+
+            string path = "/Content/Pdf/";
+
+
+            if (EgitmenMedya != null)
+            {
+
+
+                string fileName = Path.GetFileName(EgitmenMedya.FileName);
+                var combinedName = Path.Combine(path, fileName);
+                if (!Directory.Exists(Server.MapPath(path)))
+                {
+                    Directory.CreateDirectory(Server.MapPath(path));
+                }
+                EgitmenMedya.SaveAs(Server.MapPath(path + fileName));
+                yeniSeans.EgitmenMedya = combinedName;
+            }
+
+            if (ModelState.IsValid)
+            {
+                db.SinifIciIcerik.Add(yeniSeans);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index", "SinificiDers");
+
+
+        }
+
+     
 
     }
 }

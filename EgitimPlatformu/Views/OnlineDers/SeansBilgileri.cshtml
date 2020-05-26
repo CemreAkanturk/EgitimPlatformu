@@ -1,0 +1,351 @@
+﻿@using Entities.ViewModel
+@model OnlineSeansEkle
+@{
+    ViewBag.Title = "SeansBilgileri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int sayac = 1;
+    string deneme = "";
+
+}
+
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Seans Bilgileri</h5>
+                    <span>Seanslar</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Online Derslerim</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Seans Bilgilerim</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="col-md-10">
+            <ul class="nav nav-pills custom-pills" id="pills-tab" role="tablist">
+
+                @foreach (var item in Model.onlineicerik)
+                {
+
+                    <li class="nav-item">
+                        <a class="nav-link @deneme  " id="@item.OnlineIcerikId-tab" data-toggle="pill" href="#Seans-@item.OnlineIcerikId" role="tab" aria-controls="pills-timeline" aria-selected="false">Seans @sayac </a>
+                    </li>
+                    sayac++;
+                }
+
+
+            </ul>
+        </div>
+
+        <div class="float-md-right col-md-2" style="margin-top:10px;margin-left:-10px;">
+            <a id="DersEkle" data-toggle="modal" data-target="#SeansEkleModal" class="btn btn-outline-success olusturbtn" data-ders-id="@Model.OnlineIcerikId">
+                <i class="ik ik-plus-circle" style="font-size:15px"></i>
+                <span>Yeni Seans Olustur</span>
+            </a>
+        </div>
+    </div>
+    <div class="tab-content" id="pills-tabContent">
+        @foreach (var item in Model.onlineicerik)
+        {
+
+            <div class="tab-pane fade" id="Seans-@item.OnlineIcerikId" role="tabpanel" aria-labelledby="@item.OnlineIcerikId-tab">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 col-6">
+                            <strong>Seans Açıklama</strong>
+                            <br>
+                            <p class="text-muted">@item.SeansAciklama</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-6">
+                            <strong>Soru Sayisi</strong>
+                            <br>
+                            <p class="text-muted">@item.SoruSayisi</p>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <strong>Soru Cevap Tipi</strong>
+                            <br>
+                            <p class="text-muted">@item.CevapTipi</p>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <strong>Basarim Olcut Orani(%)</strong>
+                            <br>
+                            <p class="text-muted">@item.BasarimOlcutOrani</p>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-30">Medya</h4>
+                    <hr>
+                    <iframe style="margin-left:250px;" width="560" height="315" src="@item.Medya" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4 class="mt-30">Başarı Ölçütleri</h4>
+                    <hr>
+
+                    <div class="card">
+                        <div class="card-header row">
+
+                            <div class="col col-sm-9">
+                                <div class="card-search with-adv-search dropdown">
+
+                                    <input type="text" class="form-control" placeholder="Search.." required="">
+                                    <button type="submit" class="btn btn-icon"><i class="ik ik-search"></i></button>
+                                    <button type="button" id="adv_wrap_toggler" class="adv-btn ik ik-chevron-down dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+                                </div>
+                            </div>
+                            <div class="col col-sm-3">
+                                <div class="card-options text-right">
+                                    <span class="mr-5">1 - 50 of 2,500</span>
+                                    <a href="#"><i class="ik ik-chevron-left"></i></a>
+                                    <a href="#"><i class="ik ik-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="list-item-wrap">
+                                <div class="list-item">
+                                    <div class="item-inner">
+
+                                        <div class="list-title"><a href="javascript:void(0)">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry.</a></div>
+                                        <div class="list-actions">
+                                            <a href="#"><i class="ik ik-eye"></i></a>
+                                            <a href="#"><i class="ik ik-edit-2"></i></a>
+                                            <a href="#"><i class="ik ik-trash-2"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="qickview-wrap">
+                                        <div class="desc">
+                                            <p>Fusce suscipit turpis a dolor posuere ornare at a ante. Quisque nec libero facilisis, egestas tortor eget, mattis dui. Curabitur viverra laoreet ligula at hendrerit. Nullam sollicitudin maximus leo, vel pulvinar orci semper id. Donec vehicula tempus enim a facilisis. Proin dignissim porttitor sem, sed pulvinar tortor gravida vitae.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="SeansEkleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+
+
+            <div class="col-md-12">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+
+
+            <div class="modal-body">
+
+                <div>
+                    @using (Html.BeginForm("SeansOlustur", "OnlineDers", FormMethod.Post, htmlAttributes: new { id = "form", role = "form", @class = "form-horizontal", enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", htmlAttributes: new { @class = "text-danger" })
+
+                        <div class="col-md-12 " style="height:390px;">
+
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <div class="card-header" style="height:50px;">
+                                        <h5>Yeni Seans Bilgileri</h5>
+                                    </div>
+
+
+                                    <div class="wrapper wrapper-content animated card-body"  style="background-color:#f3f3f4;">
+
+                                        <div class="row">
+
+                                            <div class="col-md-12" style="background-color:#f3f3f4;padding:10px 15px 15px 15px;height:290px;">
+
+
+                                                <div hidden>
+                                                    <input name="OnlineIcerikId" value="0" />
+                                                </div>
+                                                <div hidden>
+                                                    <input id="OnlineId" name="OnlineId" value="" />
+                                                </div>
+                                                <div hidden>
+                                                    <input name="SoruSayisi" value=0 />
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label class="col-md-4 control-label">
+                                                        <span>Seans Açıklama</span>
+
+                                                    </label>
+                                                    <div class="col-md-8" style="margin-bottom:20px;">
+                                                        <input class="form-control is-valid" name="SeansAciklama" id="SeansAciklama" type="text" />
+                                                    </div>
+
+                                                    <label class="col-md-4 control-label">
+                                                        <span>Başarım Ölçütü Oranı(%)</span>
+
+                                                    </label>
+                                                    <div class="col-md-8" style="margin-bottom:20px;">
+                                                        <input class="form-control is-valid" name="BasarimOlcutOrani" id="BasarimOlcutleri" type="text" />
+                                                    </div>
+
+                                                </div>
+
+
+
+                                                <div class="form-group row" style="margin-bottom:20px;">
+                                                    <label class="col-md-4 control-label">
+                                                        <span>Medya</span>
+
+                                                    </label>
+                                                    <div class="col-md-8" style="margin-bottom:20px;">
+                                                        <div class="form-group">
+                                                             <input type="file" name="Medya" class="file-upload-default">
+                                                            <div class="input-group col-xs-12">
+                                                                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Video">
+                                                                <span class="input-group-append">
+                                                                    <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <label class="col-md-4 control-label">
+                                                        <span>Başarım Ölçütü Cevap Tipi</span>
+
+                                                    </label>
+
+
+                                                    <div class="form-radio col-md-8">
+
+
+                                                        <div class="form-radio mb-30">
+                                                            <form>
+
+                                                                <div class="radio radiofill radio-success radio-inline">
+                                                                    <label>
+                                                                        <input type="radio" id="Coklu" value="Coklu" name="CevapTipi" onclick="kontrol(1)" checked="checked">
+                                                                        <i class="helper"></i>Çoktan Seçmeli
+                                                                    </label>
+                                                                </div>
+                                                                <div class="radio radiofill radio-success radio-inline">
+                                                                    <label>
+                                                                        <input type="radio" id="DY" value="DY" name="CevapTipi" onclick="kontrol(1)" checked="checked">
+                                                                        <i class="helper"></i>Doğru Yanlış
+                                                                    </label>
+                                                                </div>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+                                                    <div class="col-md-9">
+
+                                                    </div>
+
+                                                    <div class="col-md-3 card" style="margin-top:5px;margin-right:-10px;">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <button type="submit" id="Kaydet" style="position:absolute;right:7px;width:150px;" class="btn btn-warning">
+                                                                    <i class="ik ik-save"> </i><span> Kaydet</span>
+                                                                </button>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Styles
+{
+
+}
+
+
+@section Scripts
+{
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#DersEkle").on("click", function () {
+
+
+                var dersid = $(this).attr("data-ders-id");
+
+
+                $("#OnlineId").val(dersid);
+
+            });
+
+
+
+        });
+
+    </script>
+}

@@ -95,8 +95,11 @@
     <Compile Include="Sorular.cs" />
     <Compile Include="ViewModel\Dersler\DersDuzenleVM.cs" />
     <Compile Include="ViewModel\Dersler\OnlineDersDuzenle.cs" />
+    <Compile Include="ViewModel\Dersler\OnlineSeansEkle.cs" />
+    <Compile Include="ViewModel\Dersler\SinificiSeansBilgileri.cs" />
     <Compile Include="ViewModel\Kategori\KategoriIndexVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriVM.cs" />
+    <Compile Include="ViewModel\OnlineSinav\Sinavindex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

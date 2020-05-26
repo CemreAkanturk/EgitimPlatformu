@@ -1,0 +1,109 @@
+﻿@model List<Entities.OnlineDers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ 
+}
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Online Sınavlar</h5>
+                    <span>Başarı Ölçütleri</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Online Sınavlarım</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-4 col-md-6">
+            <div class="card latest-update-card">
+                <div class="card-header">
+                    <h3>@item.Dersler.DersAdi</h3>
+                    <div class="card-header-right">
+                        <ul class="list-unstyled card-option">
+                            <li><i class="ik ik-chevron-left action-toggle"></i></li>
+                            <li><i class="ik ik-minus minimize-card"></i></li>
+                            <li><i class="ik ik-x close-card"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <div class="scroll-widget">
+                        <div class="latest-update-box" id="div_@item.OnlineId" >
+                           <input hidden value="0" id="input_@item.OnlineId"/>
+                       
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+@section Scripts
+{
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+          
+
+                  $.ajax({
+                    type: "GET",
+                    url:'@Url.Action("SeanslarGetir", "OnlineSinav")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                      success: function (seanslar) {
+                          for (var i = 0; i < seanslar.length; i++) {
+                              var id = 0;
+                              var string = "#div_" + seanslar[i].Value
+                              var kontrolstring = "#input_" + seanslar[i].Value
+                              var sayi = parseInt($(kontrolstring).val());
+                              sayi = sayi + 1;
+                              $(kontrolstring).val(sayi);
+                              var url = '"@@Url.Action("Sorular","OnlineSinav",new{id='+seanslar[i].Text+'})"';
+
+                              $(string).append(`    <div class="row pt-20 pb-30">
+                                <div class="col-auto text-right update-meta pr-0">
+                                    <i class="b-primary update-icon ring"></i>
+                                </div>
+                                <div class="col pl-5">
+                                    <a href="#!"><h6>Devlopment &amp; Update</h6></a>
+                                    <p class="text-muted mb-0">Seans ${sayi}, <a href=${url} class="text-blue"> Gör!</a></p>
+                                </div>
+                            </div>`);
+                        }
+                    },
+                    error: function () {
+                        alert("Hata");
+                    },
+                });
+
+
+
+});
+
+
+
+    </script>
+
+}

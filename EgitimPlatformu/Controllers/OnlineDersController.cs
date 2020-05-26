@@ -88,8 +88,6 @@ namespace EgitimPlatformu.Controllers
                     OnlineId = yeniDers.OnlineId,
                     OgrenimHedefleri = yeniDers.OgrenimHedefleri,
                     OrtamGereklilikleri = yeniDers.OrtamGereklilikleri,
-                    Medya = yeniDers.Medya,
-                    BasarimOlcutleri = yeniDers.BasarımOlcutleri,
                     Sure=yeniDers.Sure,
                 },
             };
@@ -132,6 +130,35 @@ namespace EgitimPlatformu.Controllers
 
             return View(model);
         }
+
+        public ActionResult SeansBilgileri(int id)
+        {
+            var gelen = db.OnlineIcerik.Where(x => x.OnlineId == id).ToList(); ;
+
+            OnlineSeansEkle model = new OnlineSeansEkle();
+            model.OnlineIcerikId = id;
+            model.onlineicerik = gelen;
+
+            return View(model);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SeansOlustur(OnlineIcerik yeniSeans)
+        {
+            if (ModelState.IsValid) { 
+                db.OnlineIcerik.Add(yeniSeans);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index","OnlineDers");
+
+
+        }
+
+
+
+
 
     }
 }

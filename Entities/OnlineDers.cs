@@ -20,9 +20,7 @@ namespace Entities
         public string OgrenimHedefleri { get; set; }
         public int Sure { get; set; }
         public string OrtamGereklilikleri { get; set; }
-        public string Medya { get; set; }
-        public Nullable<int> BasarimOlcutleri { get; set; }
-
+      
         public virtual Dersler Dersler { get; set; }
      
         public virtual ICollection<OnlineIcerik> OnlineIcerik { get; set; }

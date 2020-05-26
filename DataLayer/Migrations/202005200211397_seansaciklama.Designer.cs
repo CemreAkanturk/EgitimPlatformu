@@ -7,13 +7,13 @@ namespace DataLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class onlineders : IMigrationMetadata
+    public sealed partial class seansaciklama : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(onlineders));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(seansaciklama));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005040148491_onlineders"; }
+            get { return "202005200211397_seansaciklama"; }
         }
         
         string IMigrationMetadata.Source

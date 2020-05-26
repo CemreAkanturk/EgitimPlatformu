@@ -67,7 +67,7 @@
                                         <span class="zorunlu">*</span>:
                                     </label>
                                     <div class="col-md-8">
-                                        <select id="KategoriSelect" name="KategoriId" class="form-control" required>
+                                        <select id="KategoriSelect" name="KategoriId" class="form-control select2" required>
                                         </select>
                                     </div>
                                 </div>
@@ -137,24 +137,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">
-                                        <span>Medya(Link)</span>
-                                        <span class="zorunlu">*</span>:
-                                    </label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" name="Medya" id="Medya" type="text" required />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">
-                                        <span>Basarim Olcut</span>
-                                        <span class="zorunlu">*</span>:
-                                    </label>
-                                    <div class="col-md-8">
-                                        <input type="number" id="BasarimOlcutleri" class="form-control" name="BasarımOlcutleri" required />
-                                    </div>
-                                </div>
+                             
                                 <div class="form-group row">
                                     <label class="col-md-2 control-label">
                                         <span>Aciklama</span>
@@ -185,7 +168,7 @@
 
 @section Styles
 {
-
+    <link href="~/Content/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
     <link href="~/Content/plugins/WizardSteps/css/wizard.css" rel="stylesheet" />
 
     <link href="~/Content/plugins/WizardSteps/css/jasny.css" rel="stylesheet" />
@@ -207,11 +190,12 @@
     <script src="~/Content/plugins/WizardSteps/js/toastry.js"></script>
 
     <script src="~/Content/js/SinificiDers/sinificidersekleme.js"></script>
-
+    <script src="~/Content/plugins/select2/dist/js/select2.min.js"></script>
     <script type="text/javascript">
 
          var firmaImagePath = '@Url.Content("~/Content/no-image.png")';
-         var ajax_kategori_getir_url = '@Url.Action("KategoriGetir","SinificiDers")';
+        var ajax_kategori_getir_url = '@Url.Action("KategoriGetir","SinificiDers")';
+
 
         $(document).ready(function () {
 

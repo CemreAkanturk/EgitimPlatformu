@@ -94,7 +94,7 @@
                         <p class="mb-1 text-muted text-small category w-15 w-xs-100">@item.DersKodu</p>
                         <p class="mb-1 text-muted text-small date w-15 w-xs-100">@item.Kategoriler.KategoriAdi Kategorisi</p>
                         <div class="w-15 w-xs-100" style="margin-right:60px;">
-                            <a class="btn btn-danger denk" href="#">
+                            <a class="btn btn-danger denk" href="@Url.Action("SeansBilgileri", new { id = item.DersId })">
                                 <i class="ik ik-info" style="margin-left:-10px;"></i>
                                 Seans Bilgileri
                             </a>
