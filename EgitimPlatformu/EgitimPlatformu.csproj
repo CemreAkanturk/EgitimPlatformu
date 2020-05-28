@@ -517,6 +517,7 @@
     <Content Include="Views\FirmaDersler\dersCalisanEkle.cshtml" />
     <Content Include="Views\FirmaDersler\dersTarihiPlanlama.cshtml" />
     <Content Include="Views\FirmaDersler\katilimciList.cshtml" />
+    <Content Include="Views\FirmaDersler\Odeme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\EgitimPlatformu\v15\" />

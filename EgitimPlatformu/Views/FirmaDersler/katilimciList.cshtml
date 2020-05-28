@@ -1,17 +1,9 @@
-﻿
+﻿@model List<Entities.Kisi>
 @{
     ViewBag.Title = "katilimciList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section Styles{
-    @*<link rel="stylesheet" href="~/Content/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="~/Content/plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="~/Content/plugins/datatable/datatables.min.css">
-    <link rel="stylesheet" href="~/Content/plugins/datatable/">*@
-
-
-}
 
 <div class="row">
     <div class="col-md-12 ">
@@ -56,56 +48,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="../img/users/1.jpg" class="table-user-thumb" alt=""></td>
-                            <td>Erich Heaney</td>
-                            <td>erich@example.com</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/users/2.jpg" class="table-user-thumb" alt=""></td>
-                            <td>Abraham Douglas</td>
-                            <td>jgraham@example.com</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/users/3.jpg" class="table-user-thumb" alt=""></td>
-                            <td>Roderick Simonis</td>
-                            <td>grant.simonis@example.com</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/users/4.jpg" class="table-user-thumb" alt=""></td>
-                            <td>Christopher Henry</td>
-                            <td>henry.chris@example.com</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../img/users/5.jpg" class="table-user-thumb" alt=""></td>
-                            <td>Sonia Wilkinson</td>
-                            <td>boyle.aglea@example.com</td>
-                            <td>
-                                <div class="table-actions">
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><img src="../img/users/1.jpg" class="table-user-thumb" alt=""></td>
+                                <td>@item.KisiAdi @item.KisiSoyadi</td>
+                                <td>@item.Bolum.BolumAdi</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button type="button" class="btn btn-danger silBtn " data-Kisi-KisiId="@item.KisiId" data-Kisi-KisiAdi="@item.KisiAdi" data-Kisi-KisiSoyadi="@item.KisiSoyadi" data-toggle="modal" data-target="#exampleModalCenter"><i class="ik ik-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
                     </tbody>
                 </table>
             </div>
@@ -113,15 +69,22 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterLabel">"Çalışanadı" dersten silinsin mi?</h5>
+                            <p id="AA"></p>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
+                        @using (Html.BeginForm("Sil", "FirmaDersler", FormMethod.Post))
+                        {
+                            <div>
+                                <input name="KisiId" value="" id="SilinenKisiId" hidden />
+                            </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">İptal</button>
-                            <button type="button" class="btn btn-success">Sil</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">İptal</button>
+                                <button type="submit" id="Sil" class="btn btn-success">Sil</button>
+                            </div>
+                        }
                     </div>
+
                 </div>
             </div>
         </div>
@@ -134,5 +97,28 @@
     <script src="~/Content/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Content/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/Content/js/datatables.js"></script>
-    
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+      
+
+        $(".silBtn").on("click", function () {
+          
+           
+            var silinenid = $(this).attr("data-Kisi-KisiId");
+            var silinenAd = $(this).attr("data-Kisi-KisiAdi");
+            var silinenSoyad = $(this).attr("data-Kisi-KisiSoyadi");
+
+            
+
+            $("#SilinenKisiId").val(silinenid);
+
+            document.getElementById("AA").innerHTML = "Seçmiş olduğunuz " + silinenAd + silinenSoyad + " kişi dersten silinsin mi ?";
+
+        });
+    });
+
+</script>
 }
