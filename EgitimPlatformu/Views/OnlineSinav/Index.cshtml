@@ -1,8 +1,9 @@
-﻿@model List<Entities.OnlineDers>
+﻿@using Entities.ViewModel.OnlineSinav
+@model List<Sinavindex>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
- 
+    var sayac = 1;
 }
 
 <div class="page-header">
@@ -31,10 +32,11 @@
 <div class="row">
     @foreach (var item in Model)
     {
+        sayac = 1;
         <div class="col-xl-4 col-md-6">
             <div class="card latest-update-card">
                 <div class="card-header">
-                    <h3>@item.Dersler.DersAdi</h3>
+                    <h3>@item.Dersİsim</h3>
                     <div class="card-header-right">
                         <ul class="list-unstyled card-option">
                             <li><i class="ik ik-chevron-left action-toggle"></i></li>
@@ -45,9 +47,36 @@
                 </div>
                 <div class="card-block">
                     <div class="scroll-widget">
-                        <div class="latest-update-box" id="div_@item.OnlineId" >
-                           <input hidden value="0" id="input_@item.OnlineId"/>
-                       
+                        <div class="latest-update-box">
+
+                            @foreach (var seans in item.seanslar)
+                            {
+                                if (seans.Seansid == 0)
+                                {
+                                    <div class="row pb-30">
+                                        <div class="col-auto text-right update-meta pr-0">
+                                            <i class="b-primary update-icon ring"></i>
+                                        </div>
+                                        <div class="col pl-5">
+                                            <a href="#!"><h6>Seans Bilgisi Bulunmamaktadır!</h6></a>
+                                        </div>
+                                    </div>
+
+                                }
+                                else { 
+                                <div class="row pb-30">
+                                    <div class="col-auto text-right update-meta pr-0">
+                                        <i class="b-primary update-icon ring"></i>
+                                    </div>
+                                    <div class="col pl-5">
+                                        <a href="#!"><h6>Seans @sayac</h6></a>
+                                        <p class="text-muted mb-0">@seans.SeansAdi <a href="@Url.Action("Sorular",new {id=seans.Seansid})" class="text-blue">Soruları Gör!</a></p>
+                                    </div>
+                                </div>
+                                    sayac++;
+                                }
+                            }
+
 
                         </div>
                     </div>
@@ -66,37 +95,6 @@
         $(document).ready(function () {
 
           
-
-                  $.ajax({
-                    type: "GET",
-                    url:'@Url.Action("SeanslarGetir", "OnlineSinav")',
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                      success: function (seanslar) {
-                          for (var i = 0; i < seanslar.length; i++) {
-                              var id = 0;
-                              var string = "#div_" + seanslar[i].Value
-                              var kontrolstring = "#input_" + seanslar[i].Value
-                              var sayi = parseInt($(kontrolstring).val());
-                              sayi = sayi + 1;
-                              $(kontrolstring).val(sayi);
-                              var url = '"@@Url.Action("Sorular","OnlineSinav",new{id='+seanslar[i].Text+'})"';
-
-                              $(string).append(`    <div class="row pt-20 pb-30">
-                                <div class="col-auto text-right update-meta pr-0">
-                                    <i class="b-primary update-icon ring"></i>
-                                </div>
-                                <div class="col pl-5">
-                                    <a href="#!"><h6>Devlopment &amp; Update</h6></a>
-                                    <p class="text-muted mb-0">Seans ${sayi}, <a href=${url} class="text-blue"> Gör!</a></p>
-                                </div>
-                            </div>`);
-                        }
-                    },
-                    error: function () {
-                        alert("Hata");
-                    },
-                });
 
 
 

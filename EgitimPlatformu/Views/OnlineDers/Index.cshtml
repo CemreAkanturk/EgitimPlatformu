@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="list-actions">
-                        <a href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem" data-Ders-id="@item.DersId" data-Ders-Adi="@item.DersAdi" ><i class="ik ik-eye"></i></a>
+                        <a href="#editLayoutItem" data-toggle="modal" data-target="#editLayoutItem" data-Ders-id="@item.DersId" data-Ders-Adi="@item.DersAdi"><i class="ik ik-eye"></i></a>
                         <a href="@Url.Action("Duzenle", new { id = item.DersId })"><i class="ik ik-edit-2"></i></a>
                         <a class="butonlar" href="#DersSilModal" data-toggle="modal" data-target="#DersSilModal" data-Ders-id="@item.DersId" data-Ders-Adi="@item.DersAdi">
                             <i class="ik ik-trash-2"></i>
@@ -198,39 +198,77 @@
 
 
 
-@* acordion burda
-        <div class="container-fluid" style="margin-top:30px;">
+<div class="panel panel-default">
+    <div class="panel-heading" style="background-color:##f3f3f4;">
+        <h4 class="panel-title">
+            <a class="buton ${arti}" data-toggle="collapse" href="#collapse${sorusayisi}"> </a>
+            <a style="margin-left:20px">Soru ${sorusayisi}</a>
+            <a style="margin-left:1310px" class="kapat btn btn-xs" data-veri-varmi="0" data-grup-value="collapse${sorusayisi}">
+                <i class="ik ik-trash" style="color: #f44336"></i>
+                <span>Sil</span>
+            </a>
+    </div>
+    <div id="collapse${sorusayisi}" class="panel-collapse collapse ${collapse}">
+        <div class="panel-body">
+            <div class="form-group row">
 
-        <div class="row">
-
-
-            <div class="col-md-12 col-md-12">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    @for (int i = 0; i < 5; i++)
-                    {
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="heading-@i">
-                                <h4 class="panel-title">
-
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-@i" aria-expanded="true" aria-controls="collapse-@i">
-                                        <img src="~/Content/img/users/2.jpg" class="list-thumbnail responsive border-0" style="width:25px;">
-                                        Ders Adi-@i
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse-@i" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-@i">
-                                <div class="panel-body" style="background-color:#F0F0DF">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et facilisis mi. Nunc vitae pretium est, aliquet sagittis enim. Duis fringilla ipsum at velit gravida, ac luctus lorem euismod. Vivamus placerat dolor mi, vel feugiat dui egestas a. Fusce congue. </p>
-                                </div>
-                            </div>
-                        </div>
-                    }
+                <div hidden>
+                    <input name="OnlineSorularId" value="">
+                    <input name="OnlineIcerikId" value="">
+                    <input name="DogruYanlisSorularId" value="">
                 </div>
+
+
+                <label class="col-md-1 control-label">
+                    <span>Soru Metni:</span>
+
+                </label>
+                <div class="col-md-8">
+                    <textarea class="form-control" name="Soru" id="SoruMetni" type="text" style=" font-weight: bold;"></textarea>
+                </div>
+                <div class="3" style="width:250px; background:#f3f3f4; border:1px; float:right;margin-right:100px;">
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                        <span class="fileinput-filename"></span>
+                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="col-md-1">
+                        <label class=" control-label">
+                            <span>Cevap:</span>
+
+                        </label>
+                    </div>
+
+
+
+                    <div class="col-md-1">
+                        <div class="radio radio-success row">
+                            <input type="radio" class="Dy" value="0" name="DogruYanlis${sorusayisi} DogruSecenek" data-Soru-Sayi="${sorusayisi}">
+                            <label disabled>Dogru</label>
+                        </div> </br>
+                    </div>
+
+                    <div class="col-md-1">
+                        <div class="radio radio-success row">
+                            <input type="radio" class="Dy" value="1" name="DogruYanlis${sorusayisi} DogruSecenek" data-Soru-Sayi="${sorusayisi}">
+                            <label disabled>Yanlis</label>
+                        </div> </br>
+
+                    </div>
+                </div>
+
             </div>
 
-        </div>
-    </div>*@
 
+        </div>
+
+    </div>
+</div>
 
 
 

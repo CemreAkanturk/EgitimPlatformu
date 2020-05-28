@@ -34,7 +34,9 @@ namespace Entities
         public virtual ICollection<FirmaBolum> FirmaBolums { get; set; }
 
         public virtual ICollection<FirmaBanka> FirmaBankaBilgileri { get; set; }
-      
+
+        public virtual ICollection<Dersler> dersler { get; set; }
+
         public virtual ICollection<Kisi> Kisi { get; set; }
         public virtual Il Il { get; set; }
 

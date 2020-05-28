@@ -1,8 +1,614 @@
-﻿
+﻿@using Entities.ViewModel.OnlineSinav
+    @model List<CoktanSecmeliSoruVM>
 @{
     ViewBag.Title = "sorular";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var renk = "#aaff80";
+    var tur = "Coklu";
 }
 
-<h2>sorular</h2>
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Seans Soruları</h5>
+                    <span>Seans Başarı Ölçütleri</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Sorular</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-12 col-md-6">
+    <div class="card table-card">
+        <div class="card-header">
+            <h3>Sorular</h3>
+            <div class="card-header-right">
+                @if (Model[0].Secenek3 == "Yok") { tur = "DY"; } else { tur = "Coklu"; }
+                <a id="SoruEkle" href="@Url.Action(tur,new {id=@Model[0].OnlineIcerikID })" class="btn btn-outline-success olusturbtn">
+                    <i class="ik ik-plus-circle" style="font-size:15px"></i>
+                    <span>Yeni Soru Olustur</span>
+                </a>
+            </div>
+        </div>
+        <div class="card-block">
+
+
+
+
+            <div class="container-fluid" style="margin-top:30px;">
+
+                <div class="row">
+
+
+                    <div class="col-md-12 col-md-12">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            @for (int i = 1; i < Model.Count; i++)
+                            {
+                                if (Model[i].soruMetin == "Cevapsız")
+                                {
+
+                                }
+                                else
+                                {
+
+                                    if (Model[i].Secenek3 != "Yok")
+                                    {
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="heading-@i">
+                                                <h4 class="panel-title">
+
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-@i" aria-expanded="true" aria-controls="collapse-@i">
+                                                        @i . Soru
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse-@i" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-@i">
+                                                <div class="panel-body" style="background-color:#F0F0DF">
+
+                                                    <div class="form-group row">
+
+                                                        <label class="col-md-1 control-label">
+                                                            <span>Soru Metni:</span>
+
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            <textarea class="form-control" name="Sorular1" id="GosterSoruMetni" type="text" style="font-weight: bold;background-color:white" placeholder="@Model[i].soruMetin" disabled></textarea>
+                                                        </div>
+                                                        <div class="col-md-2" style="width:250px; background:#f3f3f4; border:1px; float:right;margin-right:10px;">
+                                                            <img />
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="form-group row">
+                                                        <label class="col-md-12 control-label" style="margin-top:5px;">
+                                                            <span style="margin-right:17px;">Cevap Secenekleri:</span>
+                                                        </label>
+
+                                                        <div class="col-md-12" style="margin-top:2px">
+                                                            @if (@Model[i].Cevap != 1) { renk = "white"; } else { renk = "#aaff80"; };
+                                                            <label class="Sıklar">
+                                                                A:
+                                                            </label>
+                                                            <input class="sıklar" name="Secenek1" id="GosterSoru-@i-Secenek0" value="@Model[i].Secenek1" disabled style="background-color:@renk">
+
+                                                            @if (@Model[i].Cevap != 2) { renk = "white"; } else { renk = "#aaff80"; };
+                                                            <label class="Sıklar">
+                                                                B:
+                                                            </label>
+                                                            <input class="sıklar " name="Secenek2" id="GosterSoru-@i-Secenek1" value="@Model[i].Secenek2" disabled style="background-color:@renk">
+
+                                                            @if (@Model[i].Cevap != 3) { renk = "white"; } else { renk = "#aaff80"; };
+                                                            <label class="Sıklar">C:</label>
+                                                            <input class="sıklar" name="Secenek3" id="GosterSoru-@i-Secenek2" value="@Model[i].Secenek3" disabled style="background-color:@renk">
+
+
+                                                            @if (@Model[i].Cevap != 4) { renk = "white"; } else { renk = "#aaff80"; };
+                                                            <label class="Sıklar"> D:</label>
+                                                            <input class="sıklar" name="Secenek4" id="GosterSoru-@i-Secenek3" value="@Model[i].Secenek4" disabled style="background-color:@renk">
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    else
+                                    {
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="heading-@i">
+                                                <h4 class="panel-title">
+
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-@i" aria-expanded="true" aria-controls="collapse-@i">
+                                                        @i . Soru
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse-@i" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-@i">
+                                                <div class="panel-body" style="background-color:#F0F0DF">
+
+                                                    <div class="form-group row">
+
+                                                        <label class="col-md-1 control-label">
+                                                            <span>Soru Metni:</span>
+
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            <textarea class="form-control" name="Sorular1" id="SoruMetni" type="text" style=" font-weight: bold;" placeholder="@Model[i].soruMetin"></textarea>
+                                                        </div>
+                                                        <div class="col-md-2" style="width:250px; background:#f3f3f4; border:1px; float:right;margin-right:10px;">
+                                                            <img />
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-md-12 row">
+                                                            <div class="col-md-1">
+                                                                <label class=" control-label">
+                                                                    <span>Cevap:</span>
+
+                                                                </label>
+                                                            </div>
+
+                                                            <label name="Cevap" id="Dy-Cevap" disabled style="margin-left:19px;">@Model[i].Secenek1</label>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    }
+                                }
+                            }
+                        </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Styles
+{
+
+    <link href="~/Content/plugins/sweetalert/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/Content/plugins/AwesomeCheckBox/css/awesomecheckbox.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/build.css" rel="stylesheet" />
+    <link href="~/Content/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/DerslerimAccordion/accordion.css" rel="stylesheet" />
+
+    <style>
+
+        .ortala {
+            margin: auto;
+            width: 50%;
+        }
+
+        .denk {
+            width: 115px;
+            text-align: center;
+        }
+
+        .secenekler {
+            width: 50px;
+            height: 22px;
+        }
+
+        .Sıklar {
+            margin-top: -15px;
+            margin-left: 85px;
+        }
+
+        .sıklar {
+            height: 30px;
+            width: 850px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .spanstil {
+            margin-left: 1170px;
+            font-size: x-small;
+            font-style: italic;
+        }
+    </style>
+
+
+
+}
+
+@section Scripts {
+
+
+    <script src="~/Content/plugins/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Content/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/Content/plugins/jasny/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        var degisimsayisi = 0;
+        var radiobuton = 0;
+        var sorusayisi = 0;
+        var soneklenen = 1;
+
+        function kontrol(sonuc) {
+
+            if (sonuc == 1) {
+                radiobuton = document.querySelector('input[name="CevapTipi"]:checked').value;
+            }
+
+        }
+
+        function changeState(el) {
+            if (el.readOnly) el.checked = el.readOnly = false;
+            else if (!el.checked) el.readOnly = el.indeterminate = true;
+        }
+
+        $(document).ready(function () {
+
+
+            $('#insert_form').on('submit', function (event) {
+                event.preventDefault();
+
+
+                var form_data = $(this).serializeArray();
+
+                alert(form_data[0]);
+
+            });
+
+
+
+
+
+
+
+            $('.custom-file-input').on('change', function () {
+                let fileName = $(this).val().split('\\').pop();
+                $(this).next('.custom-file-label').addClass("selected").html(fileName);
+            });
+
+            $("#Sorular").hide();
+
+
+            //#region SoruEkle Butonu tık
+            $(document).on('click', "#SoruEkle", function (e) {
+
+
+
+
+                if (sorusayisi == 0) {
+                    sorusayisi = 1;
+
+                }
+
+                if (radiobuton == 0) {
+                    swal({
+                        title: "Opss..",
+                        text: "Soru Eklemek İçin Cevap Tipi Seçiniz!",
+                        icon: "error",
+                        button: "Kapat!",
+                    });
+                    sorusayisi = 0;
+                }
+                else {
+
+                    $("#Sorular").show();
+
+
+
+                    if (sorusayisi != 1) {
+                        var collapse = "";
+                        var arti = "ik ik-plus-circle";
+                    }
+                    else {
+                        collapse = "in";
+                        arti = "ik ik-minus-circle";
+                    }
+
+                    if (radiobuton == "Coklu") {
+                        $("#accordion").prepend(`<div class="panel panel-default">
+                                                                                                                  <div class="panel-heading" style="background-color:#f3f3f4;height:52px;">
+                                                                                                                    <h4 class="panel-title">
+                                                                                                                      <a class="buton ${arti}" data-toggle="collapse" href="#collapse${sorusayisi}"  > </a>
+                                                                                                                      <a style="margin-left:20px">Soru ${sorusayisi}</a>
+                                                                                                                      <a style="margin-left:1270px;"   class="kapat btn btn-xs"  data-veri-varmi="0" data-grup-value="collapse${sorusayisi}">
+                                                                                                                                                                <i class="ik ik-trash" style="color: #f44336"></i>
+                                                                                                                                                                <span >Sil</span>
+                                                                                                                                                            </a>
+                                                                                                                  </div>
+                                                                                                                  <div id="collapse${sorusayisi}" class="panel-collapse collapse ${collapse}">
+                                                                                                                    <div class="panel-body" style="padding:5px 5px 5px 5px;"><div class="form-group row" >
+                                                                                                                 <div hidden>
+                                                                                                                     <input name="OnlineSorularId" value="">
+                                                                                                                     <input name="OnlineIcerikId" value="">
+                                                                                                                     <input name="OnlineIcerikId" value="">
+                                                                                                                </div>
+
+                                                                                                               <label class="col-md-1 control-label">
+                                                                                                                    <span>Soru Metni:</span>
+
+                                                                                                                </label>
+                                                                                                                <div class="col-md-8">
+                                                                                                                    <textarea class="form-control" name="Sorular" id="SoruMetni" type="text" style=" font-weight: bold;"></textarea>
+                                                                                                                </div>
+                                                                                                                <div class="3" style="width:150px; background:#f3f3f4; border:1px; float:right;margin-right:100px;">
+                                                                                                                    <label for="file-upload" class="custom-file-upload" style="margin-left:30px;">
+                                                                                                                        Resim Ekle(istege baglı)
+                                                                                                                    </label>
+                                                                                                                    <input id="file-upload" type="file" name="soruimg" />
+                                                                                                                </div>
+
+                                                                                                            </div>
+                                                                                                            <div class="form-group row">
+                                                                                                                <label class="col-md-12 control-label">
+                                                                                                                    <span style="margin-right:1317px;">Cevap Secenekleri:</span>
+                                                                                                                </label> <span class="spanstil"  >(Dogru Cevabı Soldan İsaretleyiniz.)</span>
+
+                                                                                                                <div class="col-md-12" style="margin-top:9px">
+
+
+                                                                                                                    <div class="radio radio-success ">
+                                                                                                                        <input type="radio" id="radio-1-${sorusayisi}" class="secenekler" value="0" name="DogruSecenek${sorusayisi}" data-Soru-Sayi="${sorusayisi}">
+                                                                                                                        <label for="radio-1-${sorusayisi}" class="Sıklar">A:
+                                                                                                                        <input class="SıkInput${sorusayisi} sıklar" name="Secenek1" id="Soru${sorusayisi}Secenek0" style="background-color:white" > </label>
+                                                                                                                    </div> </br>
+
+
+                                                                                                                    <div class="radio radio-success">
+                                                                                                                       <input type="radio" id="radio-2-${sorusayisi}" class="secenekler" value="1" name="DogruSecenek${sorusayisi}" data-Soru-Sayi="${sorusayisi}">
+                                                                                                                       <label for="radio-2-${sorusayisi}" class="Sıklar">B:  <input class="SıkInput${sorusayisi} sıklar "  name="Secenek2" id="Soru${sorusayisi}Secenek1" ></label>
+
+                                                                                                                    </div> </br>
+
+
+                                                                                                                    <div class="radio radio-success">
+                                                                                                                        <input type="radio" id="radio-3-${sorusayisi}" class="secenekler" value="2" name="DogruSecenek${sorusayisi}" data-Soru-Sayi="${sorusayisi}">
+                                                                                                                        <label for="radio-3-${sorusayisi}" class="Sıklar">C:<input class="SıkInput${sorusayisi} sıklar"  name="Secenek3" id="Soru${sorusayisi}Secenek2" ></label>
+
+                                                                                                                    </div> </br>
+
+
+                                                                                                                    <div class="radio radio-success">
+                                                                                                                      <input type="radio" id="radio-4-${sorusayisi}" class="secenekler" value="3" name="DogruSecenek${sorusayisi}" data-Soru-Sayi="${sorusayisi}">
+                                                                                                                      <label for="radio-4-${sorusayisi}" class="Sıklar"> D:<input class="SıkInput${sorusayisi} sıklar"  name="Secenek4" id="Soru${sorusayisi}Secenek3"></label>
+                                                                                                                    </div> </br>
+
+                                                                                                                </div>
+                                                                                                            </div>
+
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                </div>
+
+
+                                                                                                                                            </div>
+
+                                                                                                                                            </div>
+                                                                                                                  </div>
+                                                                                                                </div> `);
+
+
+                    }
+
+                    else {
+
+                        $("#accordion").prepend(`<div class="panel panel-default">
+                                                                                                                  <div class="panel-heading" style="background-color:##f3f3f4;">
+                                                                                                                    <h4 class="panel-title">
+                                                                                                                      <a class="buton ${arti}" data-toggle="collapse" href="#collapse${sorusayisi}"  > </a>
+                                                                                                                      <a style="margin-left:20px">Soru ${sorusayisi}</a>
+                                                                                                                      <a style="margin-left:1310px"   class="kapat btn btn-xs"  data-veri-varmi="0" data-grup-value="collapse${sorusayisi}">
+                                                                                                                                                                <i class="ik ik-trash" style="color: #f44336"></i>
+                                                                                                                                                                <span >Sil</span>
+                                                                                                                                                            </a>
+                                                                                                                  </div>
+                                                                                                                  <div id="collapse${sorusayisi}" class="panel-collapse collapse ${collapse}">
+                                                                                                                    <div class="panel-body"><div class="form-group row" >
+
+                                                                                                                <div hidden>
+                                                                                                                     <input name="OnlineSorularId" value="">
+                                                                                                                     <input name="OnlineIcerikId" value="">
+                                                                                                                     <input name="DogruYanlisSorularId" value="">
+                                                                                                                </div>
+
+
+                                                                                                                <label class="col-md-1 control-label">
+                                                                                                                    <span>Soru Metni:</span>
+
+                                                                                                                </label>
+                                                                                                                <div class="col-md-8">
+                                                                                                                    <textarea class="form-control" name="Soru" id="SoruMetni" type="text" style=" font-weight: bold;"></textarea>
+                                                                                                                </div>
+                                                                                                                <div class="3" style="width:250px; background:#f3f3f4; border:1px; float:right;margin-right:100px;">
+                                                                                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                                                                                    <span class="fileinput-filename"></span>
+                                                                                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                                                                                </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+                                                                             <div class="form-group row">
+                                                                                                <div class="col-md-12">
+                                                                                                               <div class="col-md-1"> <label class=" control-label">
+                                                                                                                    <span>Cevap:</span>
+
+                                                                                                                </label>
+                                                                                                                </div>
+
+
+
+                                                                                                              <div class="col-md-1">      <div class="radio radio-success row">
+                                                                                                                         <input type="radio" class="Dy" value="0" name="DogruYanlis${sorusayisi} DogruSecenek" data-Soru-Sayi="${sorusayisi}">
+                                                                                                                          <label  disabled>Dogru</label>
+                                                                                                                    </div> </br>
+</div>
+
+                                                                                                                 <div class="col-md-1">   <div class="radio radio-success row">
+                                                                                                                       <input type="radio" class="Dy" value="1" name="DogruYanlis${sorusayisi} DogruSecenek" data-Soru-Sayi="${sorusayisi}">
+                                                                                                                       <label  disabled>Yanlis</label>
+                                                                                                                    </div> </br>
+
+</div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+
+
+                                                                                                                                            </div>
+
+                                                                                                                                            </div>
+                                                                                                                  </div>
+                                                                                                                </div> `);
+
+
+
+
+                    }
+
+
+                    sorusayisi += 1;
+                    soneklenen = sorusayisi;
+                }
+            });
+            //#endregion
+
+            //#region CevapTipine Göre Değişim
+            $(document).on('change', 'input[name="CevapTipi"]', function (e) {
+
+                if (degisimsayisi != 0) {
+
+
+                    if (sorusayisi != 0) {
+
+                        swal({
+                            title: "Emin misiniz?",
+                            text: "Cevap tipini değistirirseniz eklediğiniz sorular kaldırılacakır!",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Evet",
+                            cancelButtonText: "Hayır",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+
+                        },
+                            function (isConfirm) {
+
+                                if (isConfirm) {
+                                    swal("Değiştirildi!", "Sorularınız kaldırılmıştır", "success");
+
+                                    $("#accordion").empty();
+                                    sorusayisi = 0;
+                                } else {
+                                    swal("", "Cevap Tipi Değiştirilmedi!", "error");
+                                    var degistirmebutonu = document.querySelector('input[name="CevapTipi"]:checked').value;
+                                    if (degistirmebutonu == "DY") {
+
+                                        document.getElementById("Coklu").checked = true;
+                                        radiobuton = "Coklu";
+                                    };
+
+                                    if (degistirmebutonu == "Coklu") {
+
+
+                                        document.getElementById("DY").checked = true;
+                                        radiobuton = "DY";
+                                    };
+
+
+                                }
+                            }
+                        );
+
+                    };
+
+                }
+
+                degisimsayisi = 1;
+
+            });
+
+            //#endregion
+
+            //#region + - butonu
+            $(document).on("click", ".buton", function () {
+                if ($(this).attr('class') == "buton ik ik-plus-circle") {
+                    $(this).removeClass();
+                    $(this).addClass("buton ik ik-minus-circle");
+                }
+
+                else {
+                    $(this).removeClass();
+                    $(this).addClass("buton ik ik-plus-circle");
+                }
+            });
+            //#endregion
+
+            $(document).on("click", ".secenekler", function () {
+
+
+
+                var sayi = $(this).attr('data-Soru-Sayi');
+
+                var aaa = 'input[name="DogruSecenek-' + sayi + '"]:checked';
+                var classSık = ".SıkInput-" + sayi;
+                $(classSık).css({ background: '#ffffff' }, 1000);
+                var id = document.querySelector(aaa).value;
+
+
+                var SecenekId = "#Soru-" + sayi + "-Secenek" + id;
+
+                $(SecenekId).css({ background: '#aaff80', }, 1000);
+
+
+            });
+
+            $(document).on("click", ".kapat", function () {
+                var silinecek = this.parentElement.parentElement.parentElement;
+                silinecek.remove();
+
+                sorusayisi -= 1;
+
+            });
+
+        });
+    </script>
+
+}
+
+
 

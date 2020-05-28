@@ -29,9 +29,12 @@ namespace Entities
 
         public string DersAfis { get; set; }
 
+        public int? Ucret { get; set; }
+
         public virtual Kategoriler Kategoriler { get; set; }
       
         public virtual ICollection<EgitimSeans> EgitimSeans { get; set; }
+        public virtual ICollection<Firma> firmalar { get; set; }
         public virtual OnlineDers OnlineDers { get; set; }
         public virtual SinifIciDers SinifIciDers { get; set; }
         public virtual Egitmen Egitmen { get; set; }

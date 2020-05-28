@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "DY";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Soru Oluştur</h5>
+                    <span>Dogru Yanlış Soru oluşturma</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Soru Olustur</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h3>Soru Bilgileri</h3></div>
+            <div class="card-body">
+                @using (Html.BeginForm("DYEkle", "OnlineSinav", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", htmlAttributes: new { @class = "text-danger" })
+
+                <div class="form-group row">
+
+                    <div hidden><input name="SoruId" value="" /></div>
+                    <div hidden><input name="DogruYanlisSorularId" value="" /></div>
+                    <div hidden><input name="OnlineIcerikId" value="@ViewData["seansid"]" /></div>
+
+
+                    <label class="col-md-1 control-label">
+                        <span>Soru Metni:</span>
+
+                    </label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" name="Sorular1" id="SoruMetni" type="text" style=" font-weight: bold;" placeholder="Sorunuzu Giriniz.."></textarea>
+                    </div>
+
+                </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12 row">
+                            <div class="col-md-1">
+                                <label class=" control-label">
+                                    <span>Cevap:</span>
+
+                                </label>
+                            </div>
+
+                            <div class="col-md-10" style="margin-left:3px;">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="DogruSecenek" value="1" aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" value="Dogru" disabled class="form-control" aria-label="Text input with dropdown button">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10" style="margin-left:90px;">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="DogruSecenek" value="2" aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" value="Yanlis" disabled class="form-control" aria-label="Text input with dropdown button">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <button type="submit" id="Kaydet" style="position:absolute;right:37px;width:150px;left:890px;" class="btn btn-outline-success">
+                                    <i class="ik ik-save"> </i><span> Olustur</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+                </div>
+
+          
+
+        </div>
+        </div>
+  </div>

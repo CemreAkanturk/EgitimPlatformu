@@ -507,6 +507,13 @@
     <Content Include="Views\SinificiDers\SeansBilgileri.cshtml" />
     <Content Include="Views\OnlineSinav\Index.cshtml" />
     <Content Include="Views\OnlineSinav\sorular.cshtml" />
+    <Content Include="Views\Calisan\CalisanDersler.cshtml" />
+    <Content Include="Views\Calisan\DersBilgileri.cshtml" />
+    <Content Include="Views\FirmaDersler\dersCalisanEkle.cshtml" />
+    <Content Include="Views\FirmaDersler\dersTarihiPlanlama.cshtml" />
+    <Content Include="Views\FirmaDersler\katilimciList.cshtml" />
+    <Content Include="Views\OnlineSinav\Coklu.cshtml" />
+    <Content Include="Views\OnlineSinav\DY.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

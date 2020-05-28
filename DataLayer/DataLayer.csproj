@@ -130,9 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202005200211397_seansaciklama.cs" />
-    <Compile Include="Migrations\202005200211397_seansaciklama.designer.cs">
-      <DependentUpon>202005200211397_seansaciklama.cs</DependentUpon>
+    <Compile Include="Migrations\202005282306553_son.cs" />
+    <Compile Include="Migrations\202005282306553_son.designer.cs">
+      <DependentUpon>202005282306553_son.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,8 +148,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005200211397_seansaciklama.resx">
-      <DependentUpon>202005200211397_seansaciklama.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005282306553_son.resx">
+      <DependentUpon>202005282306553_son.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

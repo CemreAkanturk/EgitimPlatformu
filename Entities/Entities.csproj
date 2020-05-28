@@ -99,6 +99,9 @@
     <Compile Include="ViewModel\Dersler\SinificiSeansBilgileri.cs" />
     <Compile Include="ViewModel\Kategori\KategoriIndexVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriVM.cs" />
+    <Compile Include="ViewModel\OnlineSinav\CokluSoruEkle.cs" />
+    <Compile Include="ViewModel\OnlineSinav\CoktanSecmeliSoruVM.cs" />
+    <Compile Include="ViewModel\OnlineSinav\DySoruEkle.cs" />
     <Compile Include="ViewModel\OnlineSinav\Sinavindex.cs" />
   </ItemGroup>
   <ItemGroup>

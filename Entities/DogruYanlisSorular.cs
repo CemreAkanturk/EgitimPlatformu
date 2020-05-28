@@ -10,9 +10,9 @@ namespace Entities
 {
   public class DogruYanlisSorular
     {
-        [Key, ForeignKey("Sorular"), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, ForeignKey("Sorular")]
         public int DogruYanlisSorularId { get; set; }
-        public bool DogruSecenek { get; set; }
+        public int DogruSecenek { get; set; }
 
         public virtual Sorular Sorular { get; set; }
     }

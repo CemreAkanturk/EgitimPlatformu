@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace Entities.ViewModel.OnlineSinav
 {
-    public  class CoktanSecmeliSorular
+   public class CokluSoruEkle
     {
-        [Key, ForeignKey("Sorular")]
+
+        public int SoruId { get; set; }
+
         public int CoktanSecmeliSorularId { get; set; }
+
+        public int OnlineIcerikId { get; set; }
+
+        public string Sorular1 { get; set; }
+
         public string Secenek1 { get; set; }
+
         public string Secenek2 { get; set; }
         public string Secenek3 { get; set; }
         public string Secenek4 { get; set; }
-        public int Cevap { get; set; }
 
-        public virtual Sorular Sorular { get; set; }
+        public int Cevap { get; set; }
     }
 }

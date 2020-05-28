@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = "Coklu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .Sıklar {
+        margin-right: 10px;
+        font-family: Times New Roman;
+        font-style: italic;
+        font-weight: bold;
+      
+    }
+    .input{
+
+        width:770px;
+    }
+
+    
+</style>
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Soru Oluştur</h5>
+                    <span>Çoklu Soru oluşturma</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Soru Olustur</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h3>Soru Bilgileri</h3></div>
+            <div class="card-body">
+                @using (Html.BeginForm("CokluEkle", "OnlineSinav", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", htmlAttributes: new { @class = "text-danger" })
+
+                    <div class="form-group row">
+
+                        <div hidden><input name="SoruId" value="" /></div>
+                        <div hidden><input name="CoktanSecmeliSorularId" value="" /></div>
+                        <div hidden><input name="OnlineIcerikId" value="@ViewData["seansid"]" /></div>
+
+
+                        <label class="col-md-1 control-label">
+                            <span>Soru Metni:</span>
+
+                        </label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="Sorular1" id="SoruMetni" type="text" style=" font-weight: bold;" placeholder="Sorunuzu Giriniz.."></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12 row">
+                            <div class="col-md-12">
+                                <label class=" control-label">
+                                    <span>Cevap:</span>
+
+                                </label>
+                            </div>
+
+                            <div class="col-md-10" style="margin-left:90px;width:800px;">
+                                <div class="input-group">
+                                    <label class="Sıklar">A:</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" class="secenekler"  name="Cevap" value="1" aria-label="Radio button for following text input" data-Soru-Sayi="1">
+                                        </div>
+                                    </div>
+                                    <input type="text"  class="input" name="Secenek1"  id="Secenek1"  class="form-control" aria-label="Text input with dropdown button">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10" style="margin-left:90px;">
+                                <div class="input-group">
+                                    <label class="Sıklar ">B:</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input class="secenekler" type="radio"  name="Cevap" value="2" aria-label="Radio button for following text input" data-Soru-Sayi="2">
+                                        </div>
+                                    </div>
+                                    <input type="text"  class="input" name="Secenek2"   id="Secenek2" class="form-control" aria-label="Text input with dropdown button">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10" style="margin-left:90px;">
+                                <div class="input-group">
+                                    <label class="Sıklar ">C:</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input class="secenekler" type="radio"    name="Cevap" value="3" aria-label="Radio button for following text input" data-Soru-Sayi="3">
+                                        </div>
+                                    </div>
+                                    <input type="text"  class="input" name="Secenek3"  id="Secenek3" class="form-control" aria-label="Text input with dropdown button">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10" style="margin-left:90px;">
+                                <div class="input-group">
+                                    <label class="Sıklar">D:</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input class="secenekler" type="radio"   name="Cevap" value="4" aria-label="Radio button for following text input" data-Soru-Sayi="4">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="input" name="Secenek4"   id="Secenek4" class="form-control" aria-label="Text input with dropdown button">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <button type="submit" id="Kaydet" style="position:absolute;right:37px;width:150px;left:890px;" class="btn btn-outline-success">
+                                    <i class="ik ik-save"> </i><span> Olustur</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+    $(document).on("click", ".secenekler", function () {
+
+
+
+    var sayi = $(this).attr('data-Soru-Sayi');
+
+    var aaa = 'input[name="Cevap"]:checked';
+   
+    $(".input").css({ background: '#ffffff' }, 1000);
+    var id = document.querySelector(aaa).value;
+
+
+    var SecenekId = "#Secenek" + sayi;
+
+    $(SecenekId).css({ background: '#aaff80', }, 1000);
+
+
+    });
+
+    </script>
+}

@@ -18,8 +18,9 @@
     <link rel="stylesheet" href="~/Content/plugins/icon-kit/dist/css/iconkit.min.css">
     <link rel="stylesheet" href="~/Content/plugins/perfect-scrollbar/css/perfect-scrollbar.css">
     <link rel="stylesheet" href="~/Content/dist/css/theme.min.css">
-    <script src="~/Content/src/js/vendor/modernizr-2.8.3.min.js"></script>
+
     @RenderSection("Styles", required: false)
+    <script src="~/Content/src/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="~/Content/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
@@ -125,8 +126,9 @@
                             <div class="nav-item has-sub">
                                 <a href="#"><i class="ik ik-edit"></i><span>Rapor</span></a>
                                 <div class="submenu-content">
-                                    <a href="form-components.html" class="menu-item">Ders Rapor</a>
-                                    <a href="form-advance.html" class="menu-item">Çalışan Rapor</a>
+                                    <a href="form-components.html" class="menu-item">RaporTipi1</a>
+                                    <a href="form-advance.html" class="menu-item">RaporTipi2</a>
+                                    <a href="form-advance.html" class="menu-item">RaporTipi3</a>
                                 </div>
                             </div>
 
@@ -143,14 +145,71 @@
                     </div>
                 </div>
             </div>
-            <div class="main-content" style="background-color:white">
+            <div class="main-content">
                 @RenderBody()
 
 
             </div>
-            
+            <aside class="right-sidebar">
+                <div class="sidebar-chat" data-plugin="chat-sidebar">
+                    <div class="sidebar-chat-info">
+                        <h6>Chat List</h6>
+                        <form class="mr-t-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search for friends ...">
+                                <i class="ik ik-search"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="chat-list">
+                        <div class="list-group row">
+                            <a href="javascript:void(0)" class="list-group-item" data-chat-user="Gene Newman">
+                                <figure class="user--online">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Gene Newman</span>  <span class="username"></span> </span>
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item" data-chat-user="Billy Black">
+                                <figure class="user--online">
+                                    <img src="~/Content/img/users/2.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Billy Black</span>  <span class="username"></span> </span>
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item" data-chat-user="Herbert Diaz">
+                                <figure class="user--online">
+                                    <img src="~/Content/img/users/3.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Herbert Diaz</span>  <span class="username"></span> </span>
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item" data-chat-user="Sylvia Harvey">
+                                <figure class="user--busy">
+                                    <img src="~/Content/img/users/4.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Sylvia Harvey</span>  <span class="username"></span> </span>
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item active" data-chat-user="Marsha Hoffman">
+                                <figure class="user--busy">
+                                    <img src="~/Content/img/users/5.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Marsha Hoffman</span>  <span class="username"></span> </span>
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item" data-chat-user="Mason Grant">
+                                <figure class="user--offline">
+                                    <img src="~/Content/img/users/1.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Mason Grant</span>  <span class="username"></span> </span>
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item" data-chat-user="Shelly Sullivan">
+                                <figure class="user--offline">
+                                    <img src="~/Content/img/users/2.jpg" class="rounded-circle" alt="">
+                                </figure><span><span class="name">Shelly Sullivan</span>  <span class="username"></span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
 
 
+            <footer class="footer">
+                <div class="w-100 clearfix">
+                    <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights Reserved.</span>
+                    <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite</a></span>
+                </div>
+            </footer>
         </div>
     </div>
 
@@ -318,7 +377,7 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="~/Content/src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 
 

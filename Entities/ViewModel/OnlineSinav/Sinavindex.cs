@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,19 +7,26 @@ using System.Threading.Tasks;
 
 namespace Entities.ViewModel.OnlineSinav
 {
-   public class Sinavindex
+   public class Sinavindex : IEnumerable
     {
-       
-        public List<string> Dersİsimleri { get; set; }
+
+        public IEnumerator Enumerator { get; set; }
+
+        public IEnumerator GetEnumerator()
+        {
+            return Enumerator;
+        }
+
+        public string Dersİsim { get; set; }
 
         public List<Seanslar> seanslar { get; set; }
 
+     
     }
 
     public class Seanslar
     {
-        public string DersAdi { get; set; }
-
+   
         public string SeansAdi { get; set; }
 
         public int Seansid { get; set; }
