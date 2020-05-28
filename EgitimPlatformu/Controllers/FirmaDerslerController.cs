@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace EgitimPlatformu.Controllers
 {
     public class FirmaDerslerController : Controller
     {
+        DataContext db = new DataContext();
+         
         // GET: FirmaDersler
         public ActionResult Derslerim()
         {
@@ -19,21 +22,40 @@ namespace EgitimPlatformu.Controllers
         }
         public ActionResult SatilanDersler()
         {
-            return View();
+            var SatilanDersler = db.Dersler.ToList();
+
+            return View(SatilanDersler);
         }
         public ActionResult KatilimciPlanlama()
         {
-            return View();
+            var KatılımcıPlanlama = db.Dersler.ToList(); 
+
+            return View(KatılımcıPlanlama);
         }
-        public ActionResult katilimciList()
+        public ActionResult katilimciList(int id)
         {
-            return View();
+            var gelenid = id;
+            var katilimcilist = db.Kisi.ToList();
+            return View(katilimcilist);
         }
         public ActionResult dersCalisanEkle()
         {
             return View();
         }
         public ActionResult dersTarihiPlanlama()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Sil(string kisiId)
+        {
+            var silinecek = db.Kisi.Find(kisiId);
+            db.Kisi.Remove(silinecek);
+            db.SaveChanges();
+            return RedirectToAction("katilimciList");
+
+        }
+        public ActionResult Odeme()
         {
             return View();
         }
