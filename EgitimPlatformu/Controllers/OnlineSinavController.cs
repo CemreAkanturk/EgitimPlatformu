@@ -95,7 +95,7 @@ namespace EgitimPlatformu.Controllers
 
                 var soruid = gelenSorular[i].SoruId;
 
-                if (gelenSeans.CevapTipi == "DogruYanlıs")
+                if (gelenSeans.CevapTipi == "DY")
                 {
                     var cevapp = "";
                     var cevap = db.DogruYanlisSorular.Find(soruid);
