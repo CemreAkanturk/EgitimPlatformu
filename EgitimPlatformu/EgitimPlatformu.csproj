@@ -134,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CalisanController.cs" />
     <Compile Include="Controllers\DersOlusturController.cs" />
+    <Compile Include="Controllers\EgitmenProgramController.cs" />
     <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
@@ -515,6 +516,7 @@
     <Content Include="Views\FirmaDersler\katilimciList.cshtml" />
     <Content Include="Views\OnlineSinav\Coklu.cshtml" />
     <Content Include="Views\OnlineSinav\DY.cshtml" />
+    <Content Include="Views\EgitmenProgram\Index.cshtml" />
     <Content Include="Views\FirmaDersler\Odeme.cshtml" />
   </ItemGroup>
   <ItemGroup>
