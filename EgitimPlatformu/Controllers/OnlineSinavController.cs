@@ -71,7 +71,7 @@ namespace EgitimPlatformu.Controllers
         {
             var gelenSeans = db.OnlineIcerik.Find(id);
             var gelenSorular = db.Sorular.Where(x => x.OnlineIcerikId == id).ToList();
-
+            var gelenSeansTuru = gelenSeans.CevapTipi;
             List<CoktanSecmeliSoruVM> model = new List<CoktanSecmeliSoruVM>();
             if (gelenSorular.Count() == 0) {
 
@@ -81,7 +81,7 @@ namespace EgitimPlatformu.Controllers
                     soruMetin = "Sorusuz",
                     Secenek1 = "Yok",
                     Secenek2 = "Yok",
-                    Secenek3 = "Yok",
+                    Secenek3 = gelenSeansTuru,
                     Secenek4 = "Yok",
                     Cevap = 0,
                 });
@@ -95,7 +95,7 @@ namespace EgitimPlatformu.Controllers
 
                 var soruid = gelenSorular[i].SoruId;
 
-                if (gelenSeans.CevapTipi == "DogruYanlıs")
+                if (gelenSeans.CevapTipi == "DY")
                 {
                     var cevapp = "";
                     var cevap = db.DogruYanlisSorular.Find(soruid);
@@ -113,7 +113,7 @@ namespace EgitimPlatformu.Controllers
                             soruMetin = gelenSorular[i].Sorular1,
                             Secenek1 = cevapp,
                             Secenek2 = "Yok",
-                            Secenek3 = "Yok",
+                            Secenek3 = gelenSeansTuru,
                             Secenek4 = "Yok",
                             Cevap = cevap.DogruSecenek,
                         });;
