@@ -17,5 +17,13 @@ namespace EgitimPlatformu.Controllers
         {
             return View();
         }
+        public ActionResult OnlineDers()
+        {
+            return View();
+        }
+        public ActionResult SınıfIcıDers()
+        {
+            return View();
+        }
     }
 }

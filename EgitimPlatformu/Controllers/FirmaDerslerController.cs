@@ -59,5 +59,6 @@ namespace EgitimPlatformu.Controllers
         {
             return View();
         }
+    
     }
 }
