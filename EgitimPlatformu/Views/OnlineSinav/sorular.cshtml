@@ -103,24 +103,24 @@
                                             </label>
 
                                             <div class="col-md-12" style="margin-top:2px">
-                                                @if (@Model[i - 1].Cevap != 1) { renk = "white"; } else { renk = "#aaff80"; };
+                                                @if (@Model[i - 1].Cevap != 1) { renk = "white"; } else { renk = "#aaff80"; }
                                                 <label class="Sıklar">
                                                     A:
                                                 </label>
                                                 <input class="sıklar" name="Secenek1" id="GosterSoru-@i-Secenek0" value="@Model[i-1].Secenek1" disabled style="background-color:@renk">
 
-                                                @if (@Model[i - 1].Cevap != 2) { renk = "white"; } else { renk = "#aaff80"; };
+                                                @if (@Model[i - 1].Cevap != 2) { renk = "white"; } else { renk = "#aaff80"; }
                                                 <label class="Sıklar">
                                                     B:
                                                 </label>
                                                 <input class="sıklar " name="Secenek2" id="GosterSoru-@i-Secenek1" value="@Model[i-1].Secenek2" disabled style="background-color:@renk">
 
-                                                @if (@Model[i - 1].Cevap != 3) { renk = "white"; } else { renk = "#aaff80"; };
+                                                @if (@Model[i - 1].Cevap != 3) { renk = "white"; } else { renk = "#aaff80"; }
                                                 <label class="Sıklar">C:</label>
                                                 <input class="sıklar" name="Secenek3" id="GosterSoru-@i-Secenek2" value="@Model[i-1].Secenek3" disabled style="background-color:@renk">
 
 
-                                                @if (@Model[i - 1].Cevap != 4) { renk = "white"; } else { renk = "#aaff80"; };
+                                                @if (@Model[i - 1].Cevap != 4) { renk = "white"; } else { renk = "#aaff80"; }
                                                 <label class="Sıklar"> D:</label>
                                                 <input class="sıklar" name="Secenek4" id="GosterSoru-@i-Secenek3" value="@Model[i-1].Secenek4" disabled style="background-color:@renk">
 
