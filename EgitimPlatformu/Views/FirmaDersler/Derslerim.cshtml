@@ -1,69 +1,64 @@
-﻿
+﻿@using Entities.ViewModel.Firma
+@model List<DerslerimVM>
 @{
     ViewBag.Title = "TumDersler";
-    Layout = "~/Views/Shared/firmaLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var tur = "";
+    var renk = "blue";
+    int sayac = 0;
 }
 
+    <div class="page-header">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <i class="ik ik-book bg-blue"></i>
+                    <div class="d-inline">
+                        <h5>Derslerim</h5>
+                        <span>Sahip Oldugum Dersler</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <nav class="breadcrumb-container" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="../index.html"><i class="ik ik-book"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Derslerim</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
 <div class="row">
-    <div class="col-xl-4 col-md-6">
-        <a href="~/FirmaDersler/DersBilgiler">
-            <div class="card analytic-card card-blue">
+   
+    @foreach (var item in Model)
+    {
+        sayac++;
+        <div class="col-xl-4 col-md-6">
+        <a href="@Url.Action("DersBilgiler", new { id=item.DersId})">
+            @if (sayac % 2 == 0) { renk = "green"; } else if (sayac%3==0){ renk = "red"; } else { renk = "blue"; }
+            <div class="card analytic-card card-@renk">
                 <div class="card-body">
                     <div class="row align-items-center mb-30">
                         <div class="col-auto">
                             <i class="fas fa-book text-blue f-18 analytic-icon"></i>
                         </div>
                         <div class="col text-right">
-                            <h3 class="mb-5 text-white">Matematik</h3>
-                            <h6 class="mb-0 text-white">cemre akanturk</h6>
+                            <h3 class="mb-5 text-white">@item.DersAdi</h3>
+                            <h6 class="mb-0 text-white">Egitmen: @item.EgitmenAdi</h6>
                         </div>
                     </div>
-                    <p class="mb-0  text-white d-inline-block">Katılımcı Sayısı : </p>
-                    <h5 class=" text-white d-inline-block mb-0 ml-10">0</h5>
+                    <p class="mb-0  text-white d-inline-block">Egitim Turu : </p>
+                    @if(item.EgitimTur == 0) { tur = "Sınıf İçi Ders"; } else { tur = "Online Ders"; }
+                    <h5 class=" text-white d-inline-block mb-0 ml-10">@tur</h5>
 
                 </div>
             </div>
         </a>
     </div>
-    <div class="col-xl-4 col-md-6">
-        <a href="~/FirmaDersler/DersBilgiler">
-            <div class="card analytic-card card-blue">
-                <div class="card-body">
-                    <div class="row align-items-center mb-30">
-                        <div class="col-auto">
-                            <i class="fas fa-book text-blue f-18 analytic-icon"></i>
-                        </div>
-                        <div class="col text-right">
-                            <h3 class="mb-5 text-white">Teknik Resim</h3>
-                            <h6 class="mb-0 text-white">yagmur dapaklı</h6>
-                        </div>
-                    </div>
-                    <p class="mb-0  text-white d-inline-block">Katılımcı Sayısı : </p>
-                    <h5 class=" text-white d-inline-block mb-0 ml-10">5</h5>
-
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-4 col-md-6">
-        <a href="#">
-            <div class="card analytic-card card-blue">
-                <div class="card-body">
-                    <div class="row align-items-center mb-30">
-                        <div class="col-auto">
-                            <i class="fas fa-book text-blue f-18 analytic-icon"></i>
-                        </div>
-                        <div class="col text-right">
-                            <h3 class="mb-5 text-white">Klavye Eğitimi</h3>
-                            <h6 class="mb-0 text-white">cemre akanturk</h6>
-                        </div>
-                    </div>
-                    <p class="mb-0  text-white d-inline-block">Katılımcı Sayısı : </p>
-                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
-
-                </div>
-            </div>
-        </a>
-    </div>
+    }
+ 
 
 </div>

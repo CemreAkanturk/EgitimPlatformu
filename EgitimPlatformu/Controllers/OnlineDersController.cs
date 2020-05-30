@@ -81,8 +81,9 @@ namespace EgitimPlatformu.Controllers
                 KategoriId = yeniDers.KategoriId,
                 Aciklama = yeniDers.Aciklama,
                 EgitimTuru = 1,
-                EgitmenId = 1,
+                EgitmenId = 2,
                 DersAfis = yeniDers.DersAfis,
+                Ucret=yeniDers.Ucret,
                 OnlineDers = new OnlineDers
                 { 
                     OnlineId = yeniDers.OnlineId,
@@ -107,6 +108,18 @@ namespace EgitimPlatformu.Controllers
         {
             Dersler secilenDers = db.Dersler.Find(DersId);
             OnlineDers secilenOnlineiciDers = db.OnlineDers.Find(DersId);
+            var onlineicerik = db.OnlineIcerik.Where(x => x.OnlineId == DersId).ToList();
+            db.OnlineIcerik.RemoveRange(onlineicerik);
+
+            var sorulars = db.Sorular.Where(x => x.OnlineIcerik.OnlineId == DersId).ToList();
+            db.Sorular.RemoveRange(sorulars);
+
+            var soru = db.DogruYanlisSorular.Where(x => x.Sorular.OnlineIcerik.OnlineId == DersId).ToList();
+            db.DogruYanlisSorular.RemoveRange(soru);
+
+            var soru2 = db.CoktanSecmeliSorular.Where(x => x.Sorular.OnlineIcerik.OnlineId == DersId).ToList();
+            db.CoktanSecmeliSorular.RemoveRange(soru2);
+
             if (ModelState.IsValid)
             {
                 db.OnlineDers.Remove(secilenOnlineiciDers);

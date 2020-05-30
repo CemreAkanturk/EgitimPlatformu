@@ -135,6 +135,7 @@
     <Compile Include="Controllers\CalisanController.cs" />
     <Compile Include="Controllers\DersOlusturController.cs" />
     <Compile Include="Controllers\EgitmenProgramController.cs" />
+    <Compile Include="Controllers\FirmaController.cs" />
     <Compile Include="Controllers\FirmaDerslerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
@@ -527,6 +528,7 @@
     <Folder Include="bin\roslyn\" />
     <Folder Include="Content\img\DersAfisleri\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Firma\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

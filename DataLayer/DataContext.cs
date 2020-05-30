@@ -32,5 +32,7 @@ namespace DataLayer.EntityFramework
 
         public virtual DbSet<SinifIciDers> SinifIciDers { get; set; }
 
+      
+
     }
 }

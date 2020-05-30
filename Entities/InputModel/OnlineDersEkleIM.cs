@@ -16,7 +16,7 @@ namespace Entities.InputModel
         public string Aciklama { get; set; }
         public int EgitmenId { get; set; }
         public string DersAfis { get; set; }
-
+        public int Ucret { get; set; }
         public int OnlineId { get; set; }
         public string OgrenimHedefleri { get; set; }
         public string OrtamGereklilikleri { get; set; }
