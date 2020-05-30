@@ -1,4 +1,5 @@
 ﻿using DataLayer.EntityFramework;
+using Entities.ViewModel.Firma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,47 @@ namespace EgitimPlatformu.Controllers
         // GET: FirmaDersler
         public ActionResult Derslerim()
         {
-            return View();
+            var dersler= (
+            // instance from context
+            from a in db.Firma
+                // instance from navigation property
+            from b in a.dersler
+                //join to bring useful data
+            join c in db.Dersler on b.DersId equals c.DersId
+            where a.FirmaId == 1
+            select new DerslerimVM
+            {
+                DersId = c.DersId,
+                DersAdi = c.DersAdi,
+                EgitmenAdi=c.Egitmen.Ad,
+                EgitimTur=c.EgitimTuru,
+            }).ToList();
+
+            return View(dersler);
         }
-        public ActionResult DersBilgiler()
+        public ActionResult DersBilgiler(int id)
         {
-            return View();
+            var egitmen = db.Egitmen.Find(2);
+            var ders = db.Dersler.Find(id);
+            var katilimcilar = db.Kisi.ToList();
+           
+
+            DersBilgilerimVM model = new DersBilgilerimVM();
+
+            if (ders.EgitimTuru == 0)
+            {
+                model.SeansSayisi = db.SinifIciIcerik.Where(x => x.SinifIciDers.Dersler.DersId == id).Count();
+            }
+            else
+            {
+                model.SeansSayisi = db.OnlineIcerik.Where(x => x.OnlineDers.Dersler.DersId == id).Count();
+            }
+
+
+            model.ders = ders;
+            model.egitmen = egitmen;
+            model.katilimcilar = katilimcilar;
+            return View(model);
         }
         public ActionResult SatilanDersler()
         {

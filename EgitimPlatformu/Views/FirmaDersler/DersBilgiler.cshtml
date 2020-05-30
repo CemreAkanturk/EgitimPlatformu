@@ -1,196 +1,224 @@
-﻿
+﻿@using Entities.ViewModel.Firma
+@model DersBilgilerimVM
 @{
     ViewBag.Title = "DersBilgiler";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    var sayac = 1;
 
 }
 
 
-    <div class="page-header">
-        <div class="row align-items-end">
-            <div class="col-lg-8">
-                <div class="page-header-title">
-                    <i class="ik ik-file-text bg-blue"></i>
-                    <div class="d-inline">
-                        <h2>Ders Adı</h2>
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Ders Bilgileri</h5>
+                    <span>Ders Bilgileri</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Ders Bilgileri</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 col-md-5">
+        <div class="card">
+            <div class="card-header"><h5 >Egitmen</h5></div>
+            <div class="card-body">
+
+                
+                <div class="text-center">
+                    <img src="~/Content/img/users/5.jpg" class="rounded-circle" width="150">
+                    <h4 class="card-title mt-10">@Model.egitmen.Ad  @Model.egitmen.Soyad</h4>
+                    <p class="card-subtitle">@Model.egitmen.UzmanlikAlani</p>
+                    <div class="row text-center justify-content-md-center">
+                        <div class="col-4"><a href="javascript:void(0)" class="link"><i class="ik ik-user"></i> <font class="font-medium">@Model.egitmen.Dersler.Count() Ders</font></a></div>
+                    </div>
+                    <div class="row text-center justify-content-md-center">
+                        <div class="col-4"><a href="javascript:void(0)" class="link"> <font class="font-medium">@Model.egitmen.EgitmenAciklama</font></a></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="../index.html"><i class="ik ik-home"></i></a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#">Pages</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Profile</li>
-                    </ol>
-                </nav>
+            <hr class="mb-0">
+            <div class="card-body">
+                <small class="text-muted d-block">Email adres </small>
+                <h6>cemre.akanturk@hotmail.com</h6>
+                <small class="text-muted d-block pt-10">Telefon</small>
+                <h6>(534) 342 5641</h6>
+                <small class="text-muted d-block pt-10">Şehir</small>
+                <h6>@Model.egitmen.Il.IlAdi</h6>
+
+                <br>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-lg-4 col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="text-center">
-                        <img src="data:image/jpeg;base64,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" class="rounded-circle" width="150" />
-                        <a data-toggle="modal" href="#modelim" id="#myBtn"><h4 class="card-title mt-10">Eğitmenin Adı</h4></a>
-                        <p class="card-subtitle">Mesleği</p>
-                        <div class="row text-center justify-content-md-center">
-                            <div class="col-4"><i class="ik ik-image"></i> <font class="font-medium">toplam eğitim sayısı</font></a></div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="mb-0">
-            </div>
-        </div>
-        <div class="col-lg-8 col-md-7">
-            <div class="card">
-                <ul class="nav nav-pills custom-pills" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#last-month" role="tab" aria-controls="pills-profile" aria-selected="false">Ders Bilgileri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-setting-tab" data-toggle="pill" href="#previous-month" role="tab" aria-controls="pills-setting" aria-selected="false">Katılımcılar</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="last-month" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-3 col-6">
-                                    <strong>Ders Adı</strong>
+    <div class="col-lg-8 col-md-7">
+        <div class="card">
+            <ul class="nav nav-pills custom-pills" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#last-month" role="tab" aria-controls="pills-profile" aria-selected="false">Ders Bilgileri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-setting-tab" data-toggle="pill" href="#previous-month" role="tab" aria-controls="pills-setting" aria-selected="false">Katılımcılar</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="last-month" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="card-body">
+                        <div class="col-md-12 row">
+                            <div class="col-md-6"> 
+                            <img src="@Model.ders.DersAfis" style="width:100%;height:100%;padding:3%;"/>
+                            </div>
+                            <div class="col-md-6 row">
+                                <div class="col-md-12 col-6">
+                                    <strong>@Model.ders.DersAdi</strong>
                                     <br>
-                                    <p class="text-muted">Johnathan Deo</p>
                                 </div>
-                                <div class="col-md-3 col-6">
-                                    <strong>Eğitim Seans Kodu</strong>
+                                <div class="col-md-12 col-6">
+                                    <strong>Eğitim Kodu</strong>
                                     <br>
-                                    <p class="text-muted">15485252</p>
+                                    <p class="text-muted">@Model.ders.DersKodu</p>
                                 </div>
-                                <div class="col-md-3 col-6">
+                                <div class="col-md-12 col-6">
                                     <strong>Ders Kategorisi</strong>
                                     <br>
-                                    <p class="text-muted">Hijyen</p>
+                                    <p class="text-muted">@Model.ders.Kategoriler.KategoriAdi</p>
                                 </div>
 
-                            </div>
-                            <hr>
-                            <strong>Kazanımlar</strong>
-
-                            <p class="mt-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                            <h4 class="mt-30">Eğitim İçerik</h4>
-                            <hr>
-                            <div class="col-lg-12 col-md-6 col-sm-12">
-                                <div class="widget bg-primary">
-                                    <div class="widget-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="state">
-                                                <h6>Video</h6>
-                                                <h2>30</h2>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="ik ik-film"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="widget bg-success">
-                                    <div class="widget-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="state">
-                                                <h6> Soru</h6>
-                                                <h2>35</h2>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="ik ik-edit-1"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="widget bg-warning">
-                                    <div class="widget-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="state">
-                                                <h6> Sınıf İçi Etkinlik</h6>
-                                                <h2>3</h2>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="ik ik-award"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="previous-month" role="tabpanel" aria-labelledby="pills-setting-tab">
-                        <div class="col-sm-12">
-                            <div class="card>
-                                <div class="card-body">
-                                    <div class="dt-responsive">
-                                        <table id="simpletable"
-                                               class="table table-striped table-bordered nowrap">
-                                            <thead>
-                                                <tr>
-                                                    <th>Ad Soyad</th>
-                                                    <th>Bölüm</th>
-                                                    <th>Yaş</th>
-                                                    <th>Cinsiyet</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>22</td>
-                                                    <td>Erkek</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>22</td>
-                                                    <td>Kadın</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>22</td>
-                                                    <td>Erkek</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>22</td>
-                                                    <td>Kadın</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>22</td>
-                                                    <td>Erkek</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>22</td>
-                                                    <td>Kadın</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                        <hr>
+                        <strong>Kazanımlar</strong>
+
+                        <p class="mt-30">@Model.ders.Aciklama</p>
+                        <h4 class="mt-30">Eğitim İçerik</h4>
+                        <hr>
+                        <div class="col-lg-12 col-md-6 col-sm-12">
+                            <div class="widget bg-primary">
+                                <div class="widget-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="state">
+                                            <h6>Seans</h6>
+                                            <h2>@Model.SeansSayisi</h2>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ik ik-film"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget bg-success">
+                                <div class="widget-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="state">
+                                            <h6> Egitim Medyası</h6>
+                                            <h2>@Model.SeansSayisi</h2>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ik ik-edit-1"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="tab-pane fade" id="previous-month" role="tabpanel" aria-labelledby="pills-setting-tab">
+                    <div class="col-xl-12 col-md-6" style="padding:5%">
+                        <div class="card table-card">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0 without-header">
+                                        <tbody>
+                                          @foreach (var item in Model.katilimcilar)
+                                                  {
+                                                      var sayi = 0;
+                                                      sayi= sayac % 5;
+                                                     var metin = sayi + ".jpg";
+                                              <tr>
+                                                <td>
+                                                    <div class="d-inline-block align-items-center">
+                                                        <img src="~/Content/img/users/@metin" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="mb-0">@item.KisiAdi</h6>
+                                                            <p class="text-muted mb-0">@item.Bolum.BolumAdi , @item.TelefonNo</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                             
+                                            </tr>
+                                          }
+                                            <tr>
+                                                <td>
+                                                    <div class="d-inline-block align-middle">
+                                                        <img src="~/Content/img/users/2.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="mb-0">James Alexander</h6>
+                                                            <p class="text-muted mb-0">Sales executive , EL</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-inline-block align-middle">
+                                                        <img src="~/Content/img/users/3.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="mb-0">Shirley  Hoe</h6>
+                                                            <p class="text-muted mb-0">Sales executive , NY</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-inline-block align-middle">
+                                                        <img src="~/Content/img/users/4.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="mb-0">James Alexander</h6>
+                                                            <p class="text-muted mb-0">Sales executive , EL</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-inline-block align-middle">
+                                                        <img src="~/Content/img/users/5.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                                                        <div class="d-inline-block">
+                                                            <h6 class="mb-0">Shirley  Hoe</h6>
+                                                            <p class="text-muted mb-0">Sales executive , NY</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                           
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
 
 

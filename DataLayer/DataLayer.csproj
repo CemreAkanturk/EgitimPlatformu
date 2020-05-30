@@ -130,9 +130,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202005291639022_yagmur.cs" />
-    <Compile Include="Migrations\202005291639022_yagmur.designer.cs">
-      <DependentUpon>202005291639022_yagmur.cs</DependentUpon>
+    <Compile Include="Migrations\202005300055364_cemre.cs" />
+    <Compile Include="Migrations\202005300055364_cemre.designer.cs">
+      <DependentUpon>202005300055364_cemre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300239296_deneme.cs" />
+    <Compile Include="Migrations\202005300239296_deneme.designer.cs">
+      <DependentUpon>202005300239296_deneme.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,8 +152,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005291639022_yagmur.resx">
-      <DependentUpon>202005291639022_yagmur.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005300055364_cemre.resx">
+      <DependentUpon>202005300055364_cemre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300239296_deneme.resx">
+      <DependentUpon>202005300239296_deneme.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

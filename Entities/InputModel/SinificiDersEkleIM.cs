@@ -16,6 +16,7 @@ namespace Entities.InputModel
         public string EgitimSorumlusu { get; set; }
         public string HedefKitle { get; set; }
         public int Seans { get; set; }
+        public int Ucret { get; set; }
         public int SeansPeriyodu { get; set; }  
         public string DersAfis { get; set; }
         public int DersId { get; set; }

@@ -2,12 +2,37 @@
 @{
     ViewBag.Title = "SatilanDersler";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var tur = "";
 }
 @section Styles
 {
     <link rel="stylesheet" href="~/Content/plugins/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="~/Content/plugins/owl.carousel/dist/assets/owl.theme.default.min.css">
 }
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Egitimler</h5>
+                    <span>Egitimlerimiz</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Egitimler</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-12">
@@ -20,73 +45,27 @@
                     <img class="card-img-top" src="@item.DersAfis" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">@item.DersAdi</h5>
-                        <p class="card-text">@item.Kategoriler.KategoriAdi</p>
-                        <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success">Dersi İncele</button>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModal" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterLabel">@item.DersAdi</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                                <h5>Kazanımlar</h5>
-
-                                <p class="mt-30">@item.Aciklama</p>
-                                <h5 class="mt-30">Eğitim İçerik</h5>
-                                <hr>
-                                <div class="col-lg-12 col-md-6 col-sm-12">
-                                    <div class="widget bg-primary">
-                                        <div class="widget-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="state">
-                                                    <h6>Video</h6>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="ik ik-film"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="widget bg-success">
-                                        <div class="widget-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="state">
-                                                    <h6> Soru</h6>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="ik ik-edit-1"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="widget bg-warning">
-                                        <div class="widget-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="state">
-                                                    <h6> Sınıf İçi Etkinlik</h6>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="ik ik-award"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                                <a class="btn btn-primary" href="~/FirmaDersler/Odeme">
-                                   Satın Al
-                                </a>
-                            </div>
-                        </div>
+                        <p class="card-text">Kategorisi :  @item.Kategoriler.KategoriAdi</p>
+                        @if (item.EgitimTuru == 0) { tur = "Sınıf içi Ders"; } else { tur = "Online Ders"; }
+                        <p class="card-text">Turu :  @tur</p>
+                        <button type="button" data-toggle="modal" data-target="#demoModal" class="btn btn-outline-success Incele" data-Ders-id="@item.DersId">Dersi İncele</button>
                     </div>
                 </div>
             }
+
+
+
+         <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content" id="DersModal">
+                         
+
+
+                            
+                        </div>
+                    </div>
+           </div>
+        
             </div>
     </div>
 </div>
@@ -106,5 +85,112 @@
             r.parentNode.insertBefore(e, r)
         }(window, document, 'script', 'ga'));
         ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+
+
+        $(document).ready(function () {
+
+            $(".Incele").on('click', function () {
+
+                var dersId = $(this).attr("data-Ders-id");
+
+                var data = {
+                    id:dersId
+                }
+                   $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DersBilgileri", "Firma")",
+                        data: JSON.stringify(data),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                       success: function (ders) {
+                           $("#DersModal").empty();
+                           $("#DersModal").append(`   <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterLabel">${ders.DersAdi}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body" style="background-color:#F6F7FB">
+                                <h5>Açıklama</h5>
+
+                                <p class="mt-30" >${ders.Aciklma}</p>
+
+                                <h5>Ucret</h5>
+
+                                <p class="mt-30">${ders.Ucret} TL</p>
+
+                                <h5 class="mt-30">Eğitim İçerik</h5>
+                                <hr>
+                                <div class="col-lg-12 col-md-6 col-sm-12">
+                                    <div class="widget bg-primary">
+                                        <div class="widget-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="state">
+                                                    <h6>Seans</h6>
+                                                </div>
+                                                <h6>${ders.SeansSayisi}</h6>
+                                                <div class="icon">
+                                                    <i class="ik ik-film"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget bg-success">
+                                        <div class="widget-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="state">
+                                                    <h6> Soru</h6>
+                                                </div>
+                                                <h6>${ders.SorSayisi}</h6>
+                                                <div class="icon">
+                                                    <i class="ik ik-edit-1"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                          <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                <a class="btn btn-primary SatinAl" data-Ders-id="${ders.DersId}" href="@Url.Action("Odeme","FirmaDersler")">
+                                   Satın Al
+                                </a>
+                            </div>`);
+
+                        },
+                        error: function () {
+                            alert("Hata");
+                        },
+                    });
+
+            });
+
+
+            $(document).on("click", ".SatinAl", function () {
+
+                var dersId = $(this).attr("data-Ders-id");
+
+                var ekle = {
+                    id:dersId
+                }
+                   $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("DersSatinAl", "Firma")",
+                        data: JSON.stringify(ekle),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                       success: function () {
+                         
+                        },
+                        error: function () {
+                            alert("Hata");
+                        },
+                    });
+
+
+            });
+
+
+        });
+
     </script>
 }

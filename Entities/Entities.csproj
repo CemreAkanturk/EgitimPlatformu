@@ -97,6 +97,9 @@
     <Compile Include="ViewModel\Dersler\OnlineDersDuzenle.cs" />
     <Compile Include="ViewModel\Dersler\OnlineSeansEkle.cs" />
     <Compile Include="ViewModel\Dersler\SinificiSeansBilgileri.cs" />
+    <Compile Include="ViewModel\Firma\DersBilgilerimVM.cs" />
+    <Compile Include="ViewModel\Firma\DerslerimVM.cs" />
+    <Compile Include="ViewModel\Firma\SatilanDerslerVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriIndexVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriVM.cs" />
     <Compile Include="ViewModel\OnlineSinav\CokluSoruEkle.cs" />
