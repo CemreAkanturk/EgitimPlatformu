@@ -510,7 +510,6 @@
     <Content Include="Views\OnlineSinav\Index.cshtml" />
     <Content Include="Views\OnlineSinav\sorular.cshtml" />
     <Content Include="Views\Calisan\CalisanDersler.cshtml" />
-    <Content Include="Views\Calisan\DersBilgileri.cshtml" />
     <Content Include="Views\FirmaDersler\dersCalisanEkle.cshtml" />
     <Content Include="Views\FirmaDersler\dersTarihiPlanlama.cshtml" />
     <Content Include="Views\FirmaDersler\katilimciList.cshtml" />
@@ -518,13 +517,14 @@
     <Content Include="Views\OnlineSinav\DY.cshtml" />
     <Content Include="Views\EgitmenProgram\Index.cshtml" />
     <Content Include="Views\FirmaDersler\Odeme.cshtml" />
+    <Content Include="Views\Calisan\OnlineDers.cshtml" />
+    <Content Include="Views\Calisan\SınıfIcıDers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Content\img\DersAfisleri\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\DersOlustur\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

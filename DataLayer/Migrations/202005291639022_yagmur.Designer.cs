@@ -7,13 +7,13 @@ namespace DataLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class son : IMigrationMetadata
+    public sealed partial class yagmur : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(son));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(yagmur));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005282306553_son"; }
+            get { return "202005291639022_yagmur"; }
         }
         
         string IMigrationMetadata.Source
