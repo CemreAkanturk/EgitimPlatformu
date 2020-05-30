@@ -519,6 +519,8 @@
     <Content Include="Views\FirmaDersler\Odeme.cshtml" />
     <Content Include="Views\Calisan\OnlineDers.cshtml" />
     <Content Include="Views\Calisan\SınıfIcıDers.cshtml" />
+    <Content Include="Views\Shared\calisanLayout.cshtml" />
+    <Content Include="Views\Shared\firmaLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

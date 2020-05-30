@@ -1,4 +1,9 @@
-﻿<!doctype html>
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
@@ -77,36 +82,7 @@
                 <div class="sidebar-content">
                     <div class="nav-container">
                         <nav id="main-menu-navigation" class="navigation-main">
-                            <div class="nav-lavel">EGİTMEN</div>
-
-                            <div class="nav-item">
-                                <a href="@Url.Action("Index","Kategoriler")"><i class="ik ik-package"></i><span>Kategoriler</span></a>
-
-                            </div>
-
-                            <div class="nav-item has-sub">
-                                <a href="javascript:void(0)"><i class="ik ik-package"></i><span>Derslerim</span></a>
-                                <div class="submenu-content">
-                                    <a href="@Url.Action("Index","SinificiDers")" class="menu-item">Sınıf İçi Derslerim</a>
-                                    <a href="@Url.Action("Index","OnlineDers")" class="menu-item">Online Derslerim</a>
-                                </div>
-                            </div>
-
-                            <div class="nav-item">
-                                <a href="@Url.Action("Index","OnlineSinav")"><i class="ik ik-package"></i><span>Online Sınavlarım</span></a>
-
-                            </div>
-
-                            <div class="nav-item">
-                                <a href="#"><i class="ik ik-package"></i><span>Ders Programlarım</span></a>
-
-                            </div>
-
-
-                            <div class="nav-item ">
-                                <a href="#"><i class="ik ik-gitlab"></i><span>Online Eğitim Katılım Kontrol</span></a>
-                            </div>
-
+                          
 
                             <div class="nav-lavel">Firma</div>
                             <div class="nav-item has-sub">
@@ -132,11 +108,8 @@
                                 </div>
                             </div>
 
-                            <div class="nav-lavel">Calısan</div>
-                            <div class="nav-item">
-                                <a href="@Url.Action("CalisanDersler","Calisan")"><i class="ik ik-credit-card"></i><span>Derslerim</span></a>
-                            </div>
-                          
+                           
+
 
 
                         </nav>
@@ -202,7 +175,7 @@
             </aside>
 
 
-       
+
         </div>
     </div>
 
