@@ -7,13 +7,13 @@ namespace DataLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class cemre : IMigrationMetadata
+    public sealed partial class Yagmur : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cemre));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Yagmur));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005300055364_cemre"; }
+            get { return "202005301156158_Yagmur"; }
         }
         
         string IMigrationMetadata.Source

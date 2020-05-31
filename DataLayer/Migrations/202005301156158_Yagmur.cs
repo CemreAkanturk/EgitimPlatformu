@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class cemre : DbMigration
+    public partial class Yagmur : DbMigration
     {
         public override void Up()
         {

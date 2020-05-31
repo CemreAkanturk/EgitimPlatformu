@@ -137,6 +137,7 @@
     <Compile Include="Controllers\EgitmenProgramController.cs" />
     <Compile Include="Controllers\FirmaController.cs" />
     <Compile Include="Controllers\FirmaDerslerController.cs" />
+    <Compile Include="Controllers\FirmaRaporController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
     <Compile Include="Controllers\OnlineDersController.cs" />
@@ -522,6 +523,8 @@
     <Content Include="Views\Calisan\SınıfIcıDers.cshtml" />
     <Content Include="Views\Shared\calisanLayout.cshtml" />
     <Content Include="Views\Shared\firmaLayout.cshtml" />
+    <Content Include="Views\FirmaRapor\Dersler.cshtml" />
+    <Content Include="Views\FirmaRapor\Raporlama.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
