@@ -35,7 +35,7 @@ namespace EgitimPlatformu.Controllers
         }
         public ActionResult DersBilgiler(int id)
         {
-            var egitmen = db.Egitmen.Find(2);
+            var egitmen = db.Egitmen.Find(1);
             var ders = db.Dersler.Find(id);
             var katilimcilar = db.Kisi.ToList();
            

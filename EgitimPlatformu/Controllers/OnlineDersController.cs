@@ -81,7 +81,7 @@ namespace EgitimPlatformu.Controllers
                 KategoriId = yeniDers.KategoriId,
                 Aciklama = yeniDers.Aciklama,
                 EgitimTuru = 1,
-                EgitmenId = 2,
+                EgitmenId = 1,
                 DersAfis = yeniDers.DersAfis,
                 Ucret=yeniDers.Ucret,
                 OnlineDers = new OnlineDers
