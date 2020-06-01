@@ -1,120 +1,96 @@
-﻿
+﻿@using Entities.ViewModel.Firma
+@model List<TarihPlanlamaVM>
 @{
     ViewBag.Title = "dersTarihiPlanlama";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 0;
 }
 
 @section Styles
-{    
+{
     <link rel="stylesheet" href="~/Content/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="~/Content/plugins/jquery-minicolors/jquery.minicolors.css">
     <link rel="stylesheet" href="~/Content/plugins/datedropper/datedropper.min.css">
 }
 
 <div class="row">
-    <div class="col-xl-4 col-md-6">
-        <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong">
-            <div class="card analytic-card card-yellow">
-                <div class="card-body">
-                    <div class="row align-items-center mb-30">
-                        <div class="col-auto">
-                            <i class="fas fa-users text-warning f-18 analytic-icon"></i>
-                        </div>
-                        <div class="col text-right">
-                            <h3 class="mb-5 text-white">Ders Adı </h3>
-                            <h6 class="mb-0 text-white">Eğitmen Adı</h6>
-                        </div>
-                    </div>
-                    <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
-                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-4 col-md-6">
-        <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong">
-            <div class="card analytic-card card-yellow">
-                <div class="card-body">
-                    <div class="row align-items-center mb-30">
-                        <div class="col-auto">
-                            <i class="fas fa-users text-warning f-18 analytic-icon"></i>
-                        </div>
-                        <div class="col text-right">
-                            <h3 class="mb-5 text-white">Ders Adı </h3>
-                            <h6 class="mb-0 text-white">Eğitmen Adı</h6>
-                        </div>
-                    </div>
-                    <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
-                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
+    @foreach (var item in Model)
+    {
 
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-4 col-md-6">
-        <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong">
-            <div class="card analytic-card card-yellow">
-                <div class="card-body">
-                    <div class="row align-items-center mb-30">
-                        <div class="col-auto">
-                            <i class="fas fa-users text-warning f-18 analytic-icon"></i>
+        <div class="col-xl-4 col-md-6">
+            <a style="cursor: pointer;" data-toggle="modal" data-target="#exampleModalLong-@item.DersAdi">
+                <div class="card analytic-card card-yellow">
+                    <div class="card-body">
+                        <div class="row align-items-center mb-30">
+                            <div class="col-auto">
+                                <i class="fas fa-users text-warning f-18 analytic-icon"></i>
+                            </div>
+                            <div class="col text-right">
+                                <h3 class="mb-5 text-white">@item.DersAdi </h3>
+                                <h6 class="mb-0 text-white">@item.EgitmenAdi</h6>
+                            </div>
                         </div>
-                        <div class="col text-right">
-                            <h3 class="mb-5 text-white">Ders Adı </h3>
-                            <h6 class="mb-0 text-white">Eğitmen Adı</h6>
-                        </div>
+                        <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
+                        <h5 class=" text-white d-inline-block mb-0 ml-10">@item.SeansSayisi</h5>
                     </div>
-                    <p class="mb-0  text-white d-inline-block">Seans Sayısı: </p>
-                    <h5 class=" text-white d-inline-block mb-0 ml-10">2</h5>
                 </div>
-            </div>
-        </a>
-    </div>
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongLabel">Seanslar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <form>
+            </a>
+        </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Seans Numarası</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>1</option>
-                                <option disabled>2</option>
-                                <option disabled>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Tarih</label>
-                            <input type="text" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker">
-                        </div>
+        <div class="modal fade" id="exampleModalLong-@item.DersAdi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongLabel">Seans Tarihi Planlama</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            @using (Html.BeginForm("SeansEkle", "FirmaDersler", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary("", htmlAttributes: new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Seans Numarası</label>
+                                    <select class="form-control" name="SinificiIcerikId" >
+                                        @foreach (var seans in @item.seanslar)
+                                        {
+                                            i++;
+                                            <option class="seans-@seans.SinifIciIcerikId" value="@seans.SinifIciIcerikId">@i . Seans</option>
+                                        }
 
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Saat</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
-                                <option>09:00</option>
-                                <option>13:00</option>
-                                <option>16:00</option>
-                                <option disabled>20:00</option>
-                                
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Tarih</label>
+                                    <input type="text" name="Tarih" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Saat</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option>09:00</option>
+                                        <option>13:00</option>
+                                        <option>16:00</option>
+                                        <option disabled>20:00</option>
+
+                                    </select>
+                                </div>
+                            }
+                            </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                        <button type="button" class="btn btn-primary"> Kaydet</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        i = 0;
+    }
 </div>
+
 
 @section Scripts{
     <script src="~/Content/plugins/moment/moment.js"></script>

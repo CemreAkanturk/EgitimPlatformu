@@ -10,6 +10,12 @@ namespace Entities
 {
     public class SinifIciIcerik
     {
+
+        public SinifIciIcerik()
+        {
+            this.EgitimSeans = new HashSet<EgitimSeans>();
+        }
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SinifIciIcerikId { get; set; }
         [ForeignKey("SinifIciDers")]
@@ -20,5 +26,7 @@ namespace Entities
         public string EgitmenMedya { get; set; }
 
         public virtual SinifIciDers SinifIciDers { get; set; }
+
+        public virtual ICollection<EgitimSeans> EgitimSeans { get; set; }
     }
 }

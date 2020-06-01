@@ -89,6 +89,7 @@
     <Compile Include="KisiSeans.cs" />
     <Compile Include="OnlineDers.cs" />
     <Compile Include="OnlineIcerik.cs" />
+    <Compile Include="OnlineSeans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SinifIciDers.cs" />
     <Compile Include="SinifIciIcerik.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="ViewModel\Firma\DersBilgilerimVM.cs" />
     <Compile Include="ViewModel\Firma\DerslerimVM.cs" />
     <Compile Include="ViewModel\Firma\SatilanDerslerVM.cs" />
+    <Compile Include="ViewModel\Firma\TarihPlanlamaVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriIndexVM.cs" />
     <Compile Include="ViewModel\Kategori\KategoriVM.cs" />
     <Compile Include="ViewModel\OnlineSinav\CokluSoruEkle.cs" />

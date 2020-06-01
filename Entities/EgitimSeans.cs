@@ -16,16 +16,12 @@ namespace Entities
         }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EgitimSeansId { get; set; }
-        [ForeignKey("Dersler")]
-        public int DersId { get; set; }
-        public string Katilimcilar { get; set; }
-       
-      
-        public System.DateTime HedefTarihi { get; set; }
-        public System.DateTime BitisTarihi { get; set; }
+        [ForeignKey("Seans")]
+        public int SinificiIcerikId { get; set; }
+        public System.DateTime Tarih { get; set; }
+        public string Adres { get; set; }
 
-        public virtual Dersler Dersler { get; set; }
-     
+        public virtual SinifIciIcerik Seans { get; set; }
 
         public virtual ICollection<KisiSeans> KisiSeans { get; set; }
 

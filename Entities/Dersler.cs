@@ -10,11 +10,7 @@ namespace Entities
 {
    public class Dersler
     {
-        public Dersler()
-        {
-            this.EgitimSeans = new HashSet<EgitimSeans>();
-        }
-
+      
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DersId { get; set; }
 
@@ -33,7 +29,7 @@ namespace Entities
 
         public virtual Kategoriler Kategoriler { get; set; }
       
-        public virtual ICollection<EgitimSeans> EgitimSeans { get; set; }
+      
         public virtual ICollection<Firma> firmalar { get; set; }
         public virtual OnlineDers OnlineDers { get; set; }
         public virtual SinifIciDers SinifIciDers { get; set; }

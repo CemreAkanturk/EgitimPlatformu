@@ -35,5 +35,6 @@ namespace Entities
         public virtual OnlineDers OnlineDers { get; set; }
       
         public virtual ICollection<Sorular> Sorular { get; set; }
+        public virtual ICollection<OnlineSeans> OnlineSeans { get; set; }
     }
 }

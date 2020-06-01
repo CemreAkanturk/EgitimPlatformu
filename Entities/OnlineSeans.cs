@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-   public class KisiSeans
+   public class OnlineSeans
     {
+
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int KisiSeansId { get; set; }
+        public int OnlineSeansId { get; set; }
         [ForeignKey("Kisi")]
         public string KisiId { get; set; }
-        [ForeignKey("EgitimSeans")]
-        public int EgitimSeansid { get; set; }
+        [ForeignKey("OnlineIcerik")]
+        public int OnlineIcerikId { get; set; }
 
-        public string KatılımDurumu { get; set; }
+        public string BaşarıDurumu { get; set; }
 
-        public virtual EgitimSeans EgitimSeans { get; set; }
+        public virtual OnlineIcerik OnlineIcerik { get; set; }
         public virtual Kisi Kisi { get; set; }
     }
 }

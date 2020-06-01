@@ -13,5 +13,10 @@ namespace EgitimPlatformu.Controllers
         {
             return View();
         }
+
+        public ActionResult TakipListe()
+        {
+            return View();
+        }
     }
 }

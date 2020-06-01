@@ -81,7 +81,24 @@ namespace EgitimPlatformu.Controllers
         }
         public ActionResult dersTarihiPlanlama()
         {
-            return View();
+            List<TarihPlanlamaVM> model = new List<TarihPlanlamaVM>();
+            var dersler = db.SinifIciDers.ToList();
+
+            foreach (var item in dersler)
+            {
+                var seanslar = db.SinifIciIcerik.Where(x => x.SinifIciId == item.SinifIciId).ToList();
+                var seansSayisi = db.SinifIciIcerik.Where(x => x.SinifIciId == item.SinifIciId).Count();
+                model.Add(new TarihPlanlamaVM()
+                {
+                    DersAdi=item.Dersler.DersAdi,
+                    EgitmenAdi=item.Dersler.Egitmen.Ad,
+                    seanslar=seanslar,
+                    SeansSayisi=seansSayisi
+                }); ;
+
+            }
+
+            return View(model);
         }
         [HttpPost]
         public ActionResult Sil(string kisiId)

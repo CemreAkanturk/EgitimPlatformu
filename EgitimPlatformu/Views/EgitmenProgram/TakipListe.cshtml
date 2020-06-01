@@ -1,0 +1,317 @@
+﻿
+@{
+    ViewBag.Title = "TakipListe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="ik ik-book bg-blue"></i>
+                <div class="d-inline">
+                    <h5>Sinif içi Takip Listeleri</h5>
+                    <span>Yoklamalar </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html"><i class="ik ik-book"></i></a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#"> Anasayfa</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Sinif içi Takip Listeleri</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="card table-card">
+        <div class="card-header" style="margin-bottom:20px;">
+            <h3>Ders Seansları Yoklama Listeleri</h3>
+            <div class="card-header-right">
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#demoModal">
+                    <i class="ik ik-plus-circle" style="font-size:15px"></i>
+                    <span>Yoklama Listesi Ekle</span>
+                </button>
+            </div>
+        </div>
+        <div class="card-block p-b-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-borderless mb-0">
+                    <thead style="background-color:white">
+                        <tr>
+                            <th>Ders Bilgileri</th>
+                            <th></th>
+                            <th>Tarihi</th>
+                            <th>Saati</th>
+                            <th>Katılımcılar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-inline-block align-middle">
+                                    <h6>İş Sağlığı ve Güvenliği Dersi</h6>
+
+                                </div>
+                            </td>
+                            <td><p class="text-muted mb-0">1. Seans</p></td>
+                            <td>17.05.2020</td>
+                            <td>15:00</td>
+                            <td class="text-blue"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalLong">Katılımcıları Gör!</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-inline-block align-middle">
+                                    <h6>İş Sağlığı ve Güvenliği Dersi</h6>
+
+                                </div>
+                            </td>
+                            <td><p class="text-muted mb-0">2. Seans</p></td>
+                            <td>19.05.2020</td>
+                            <td>15:00</td>
+                            <td class="text-blue"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalLong">Katılımcıları Gör!</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-inline-block align-middle">
+                                    <h6>Networking/İlişki Yönetimi Dersi</h6>
+
+                                </div>
+                            </td>
+                            <td><p class="text-muted mb-0">3. Seans</p></td>
+                            <td>21.05.2020</td>
+                            <td>09:00</td>
+                            <td class="text-blue"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalLong">Katılımcıları Gör!</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-inline-block align-middle">
+                                    <h6>Networking/İlişki Yönetimi Dersi</h6>
+
+                                </div>
+                            </td>
+                            <td><p class="text-muted mb-0">5. Seans</p></td>
+                            <td>25.05.2020</td>
+                            <td>13:00</td>
+                            <td class="text-blue"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalLong">Katılımcıları Gör!</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongLabel">Katılımcılar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="card new-cust-card">
+
+                    <div class="card-block">
+                        <div class="align-middle mb-25">
+                            <img src="~/Content/img/users/1.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                            <div class="d-inline-block">
+                                <a href="#!"><h6>Ahmet Taş</h6></a>
+                            </div>
+                        </div>
+                        <div class="align-middle mb-25">
+                            <img src="~/Content/img/users/2.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                            <div class="d-inline-block">
+                                <a href="#!"><h6>Oktay Demir</h6></a>
+                            </div>
+                        </div>
+                        <div class="align-middle mb-25">
+                            <img src="~/Content/img/users/3.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                            <div class="d-inline-block">
+                                <a href="#!"><h6>Yusuf AltıOğulları</h6></a>
+                            </div>
+                        </div>
+                        <div class="align-middle mb-25">
+                            <img src="~/Content/img/users/4.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                            <div class="d-inline-block">
+                                <a href="#!"><h6>Bülent Sert</h6></a>
+                            </div>
+                        </div>
+                        <div class="align-middle mb-25">
+                            <img src="~/Content/img/users/4.jpg" alt="user image" class="rounded-circle img-40 align-top mr-15">
+                            <div class="d-inline-block">
+                                <a href="#!"><h6>Atilla Can</h6></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="demoModalLabel">Yoklama Listesi Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="sample-form">
+                            <div class="form-group">
+                                <label for="">Sınıf içi Derslerim</label>
+                                <select class="form-control select2">
+                                    <option value="cheese">Etkili Takım Çalışması Eğitimi</option>
+                                    <option value="tomatoes">Zaman Yönetimi Eğitimi</option>
+                                    <option value="mozarella">Kurum Kültürü Eğitimi</option>
+                                    <option value="mushrooms">Outdoor-Indoor Team Building Eğitimi</option>
+                                    <option value="pepperoni">Dijital Pazarlama Eğitimi</option>
+                                    <option value="onions">Örgütsel Çatışma Yönetimi Eğitimi</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="sample-form">
+                            <div class="form-group">
+                                <label for="">Ders Seanları</label>
+                                <select class="form-control select2">
+                                    <option value="cheese">Seans 1</option>
+                                    <option value="tomatoes">Seans 2</option>
+                                    <option value="mozarella">Seans 3</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="sample-form">
+                            <div class="form-group">
+                                <label for="">Derse Katılan Katılımcıları</label>
+
+
+                                <div class="checkbox-color checkbox-success col-md-12">
+                                    <input id="checkbox13" type="checkbox" >
+                                    <label for="checkbox13">
+                                        Bekir Tümer
+                                    </label>
+                                </div>
+                                <div class="checkbox-color checkbox-success col-md-12">
+                                    <input id="checkbox12" type="checkbox" >
+                                    <label for="checkbox12">
+                                        Oktay Pekmez
+                                    </label>
+                                </div>
+                                <div class="checkbox-color checkbox-success col-md-12">
+                                    <input id="checkbox11" type="checkbox" >
+                                    <label for="checkbox11">
+                                        Damla Üstün
+                                    </label>
+                                </div>
+                                <div class="checkbox-color checkbox-success col-md-12">
+                                    <input id="checkbox10" type="checkbox" >
+                                    <label for="checkbox10">
+                                        Numan Karadağ
+                                    </label>
+                                </div>
+                                <div class="checkbox-color checkbox-success col-md-12">
+                                    <input id="checkbox14" type="checkbox" >
+                                    <label for="checkbox14">
+                                        Emin Yiğit Umur
+                                    </label>
+                                </div>
+                                <div class="checkbox-color checkbox-success col-md-12">
+                                    <input id="checkbox16" type="checkbox">
+                                    <label for="checkbox16">
+                                        Merve Demir
+                                    </label>
+                                </div>
+
+                            </div>
+                        </form>
+                    
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Listeyi Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="border-checkbox-group border-checkbox-group-success">
+        <input class="border-checkbox" type="checkbox" id="checkbox2">
+        <label class="border-checkbox-label" for="checkbox2">Success</label>
+    </div>
+
+
+
+
+    @section Styles{
+
+
+
+        <link rel="stylesheet" href="~/Content/plugins/select2/dist/css/select2.min.css">
+        <link rel="stylesheet" href="~/Content/plugins/summernote/dist/summernote-bs4.css">
+        <link rel="stylesheet" href="~/Content/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+        <link rel="stylesheet" href="~/Content/plugins/mohithg-switchery/dist/switchery.min.css">
+
+
+
+    }
+
+    @section Scripts
+{
+
+        <script src="~/Content/plugins/select2/dist/js/select2.min.js"></script>
+        <script src="~/Content/plugins/summernote/dist/summernote-bs4.min.js"></script>
+        <script src="~/Content/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+        <script src="~/Content/plugins/jquery.repeater/jquery.repeater.min.js"></script>
+        <script src="~/Content/plugins/mohithg-switchery/dist/switchery.min.js"></script>
+        <script src="~/Content/js/form-advanced.js"></script>
+
+        <script>
+
+
+            $(document).ready(function () {
+
+
+            });
+
+                                        });
+
+        </script>
+
+    }

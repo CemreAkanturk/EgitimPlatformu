@@ -130,13 +130,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\202005300055364_cemre.cs" />
-    <Compile Include="Migrations\202005300055364_cemre.designer.cs">
-      <DependentUpon>202005300055364_cemre.cs</DependentUpon>
+    <Compile Include="Migrations\202005310345156_cemre4.cs" />
+    <Compile Include="Migrations\202005310345156_cemre4.designer.cs">
+      <DependentUpon>202005310345156_cemre4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005300239296_deneme.cs" />
-    <Compile Include="Migrations\202005300239296_deneme.designer.cs">
-      <DependentUpon>202005300239296_deneme.cs</DependentUpon>
+    <Compile Include="Migrations\202005310351539_cemre41.cs" />
+    <Compile Include="Migrations\202005310351539_cemre41.designer.cs">
+      <DependentUpon>202005310351539_cemre41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005310354356_cemre.cs" />
+    <Compile Include="Migrations\202005310354356_cemre.designer.cs">
+      <DependentUpon>202005310354356_cemre.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,11 +156,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005300055364_cemre.resx">
-      <DependentUpon>202005300055364_cemre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005310345156_cemre4.resx">
+      <DependentUpon>202005310345156_cemre4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005300239296_deneme.resx">
-      <DependentUpon>202005300239296_deneme.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005310351539_cemre41.resx">
+      <DependentUpon>202005310351539_cemre41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005310354356_cemre.resx">
+      <DependentUpon>202005310354356_cemre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
